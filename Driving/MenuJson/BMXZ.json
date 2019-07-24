@@ -1,4 +1,6 @@
-[
+{
+code:0,
+res:[
 {
 "title":"报名须知",
 "icon":"set_share",
@@ -30,3 +32,4 @@
 "url":"BaoMingXuzhi/zuobiyuchufa.html"
 }
 ]
+}
