@@ -1,21 +1,21 @@
 [{
       "tag": "1",
-      "title": "心好累?你该卸下什么包袱?",
-      "subtitle": "超准的心理测试题篇一", 
-      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/e706322c58664a79a1d48e600277d2e5.jpg",
-      "url": "Tiku_1.json"
+      "title": "测测你会拿什么和魔鬼交易?",
+      "subtitle": "如果有一天你遇到了魔鬼，他允许你用生命中的一样东西来交换亿万元的资产，你会用什么来做交换呢？",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/20111017101011.jpg",
+      "url": "Tiku_character_1.json"
     },
     {
       "tag": "2",
       "title": "你是沉迷过去害怕变化的人吗?",
-      "subtitle": "超准的心理测试题篇二", 
+      "subtitle": "为什么人们会沉迷于痛苦，陷入一次又一次“强迫性重复”呢？",
       "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/7d5f1460db624cff8d5e2cbc3279987a.png",
       "url": "Tiku_2.json"
     },
     {
       "tag": "3",
       "title": "猪年你怎样做才能更受欢迎?",
-      "subtitle": "超准的心理测试题篇三",  
+      "subtitle": "大多数人在生活、恋爱、职场上，因为沟通的问题，而感到压力巨大，深受困扰",  
       "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/0df68090b1c44cb3af3db4abacbd2266.jpeg",
       "url": "Tiku_3.json"
     }
