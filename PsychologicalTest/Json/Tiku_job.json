@@ -1,0 +1,22 @@
+[{
+      "tag": "1",
+      "title": "心好累?你该卸下什么包袱?",
+      "subtitle": "超准的心理测试题篇一", 
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/e706322c58664a79a1d48e600277d2e5.jpg",
+      "url": "Tiku_1.json"
+    },
+    {
+      "tag": "2",
+      "title": "你是沉迷过去害怕变化的人吗?",
+      "subtitle": "超准的心理测试题篇二", 
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/7d5f1460db624cff8d5e2cbc3279987a.png",
+      "url": "Tiku_2.json"
+    },
+    {
+      "tag": "3",
+      "title": "猪年你怎样做才能更受欢迎?",
+      "subtitle": "超准的心理测试题篇三",  
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/0df68090b1c44cb3af3db4abacbd2266.jpeg",
+      "url": "Tiku_3.json"
+    }
+  ]

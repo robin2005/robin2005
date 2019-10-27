@@ -4,19 +4,19 @@
       "title": "情感",
       "menutype": "1",
       "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/love.png",
-      "url": "Tiku_1.json"
+      "url": "Tiku_love.json"
     },{
       "tag": "2",
       "title": "性格",
       "menutype": "1",
       "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/character.png",
-      "url": "Tiku_1.json"
+      "url": "Tiku_character.json"
     },{
       "tag": "3",
       "title": "职业",
       "menutype": "1",
       "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/job.png",
-      "url": "Tiku_1.json"
+      "url": "Tiku_job.json"
     }],
   "menunews": [{
       "tag": "1",
