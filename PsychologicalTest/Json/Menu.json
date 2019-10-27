@@ -1,27 +1,24 @@
 {
   "menus": [{
       "tag": "1",
-      "title": "情感",
+      "title": "心好累?你该卸下什么包袱?",
+      "subtitle": "超准的心理测试题篇一", 
       "image": "28题",
       "path": "Tiku_1.json"
     },
     {
       "tag": "2",
-      "title": "健康",
+      "title": "你是沉迷过去害怕变化的人吗?",
+      "subtitle": "超准的心理测试题篇二", 
       "image": "93题",
       "path": "Tiku_2.json"
     },
     {
       "tag": "3",
-      "title": "性格",
+      "title": "猪年你怎样做才能更受欢迎?",
+      "subtitle": "超准的心理测试题篇三", 
       "image": "72题",
-      "path": "Tiku_2.json"
-    },
-    {
-      "tag": "4",
-      "title": "职业",
-      "image": "93题",
-      "path": "Tiku_2.json"
+      "path": "Tiku_3.json"
     }
   ],
   "news": [{
