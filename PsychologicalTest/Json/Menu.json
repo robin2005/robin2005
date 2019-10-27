@@ -1,0 +1,18 @@
+ {
+  "menus":[{"tag": "1", "title": "情感", "image": "28题", "path": "Tiku_1.json"},
+  {"tag": "2", "title": "健康", "image": "93题", "path": "Tiku_2.json"},
+  {"tag": "3", "title": "性格", "image": "72题", "path": "Tiku_2.json"},
+  {"tag": "4", "title": "职业", "image": "93题", "path": "Tiku_2.json"}]
+  "news":[{
+    "title": "MBTI性格类型与专业选择？",
+    "subtitle": "选专业之前首先要全面评估与认知自己的个人特质，起码包括性格特征、兴趣偏向、能力结构、和价值观四大方面",
+    "imageUrl": "https://robin2005.github.io/MBTI/5.png",
+    "url": "https://robin2005.github.io/MBTI/5.html"
+},{
+    "title": "最受企业青睐4个特质，你符合哪几条？",
+    "subtitle": "知乎上有一个高人气话题叫做\"几月份跳槽比较好\"，有人说金三银四，有人说年后拿完年终奖，每个都能说出几分道理，但看完以后，让人更纠结了，要跳槽到底选几月呢？",
+    "imageUrl": "https://robin2005.github.io/MBTI/4_02.jpg",
+    "url": "https://robin2005.github.io/MBTI/4.html"
+} 
+]
+ }
