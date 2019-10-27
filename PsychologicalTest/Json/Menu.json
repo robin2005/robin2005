@@ -17,6 +17,12 @@
       "menutype": "1",
       "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/job.png",
       "url": "Tiku_job.json"
+    },{
+      "tag": "3",
+      "title": "社交",
+      "menutype": "1",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/social.png",
+      "url": "Tiku_social.json"
     }],
   "menunews": [{
       "tag": "1",
@@ -36,7 +42,7 @@
       "tag": "3",
       "title": "猪年你怎样做才能更受欢迎?",
       "subtitle": "超准的心理测试题篇三",  
-      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/0df68090b1c44cb3af3db4abacbd2266.jpg",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/0df68090b1c44cb3af3db4abacbd2266.jpeg",
       "url": "Tiku_3.json"
     }
   ],
