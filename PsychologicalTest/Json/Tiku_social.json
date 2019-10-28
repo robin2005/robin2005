@@ -4,6 +4,13 @@
     "subtitle": "高冷分很多种,可以是不善于表达,也可以是骄傲自满。冰山美人,看似冷漠。",
     "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/a6f75225b33d4102966ed43ebb051bdb.jpg",
     "url": "Tiku_social_1.json"
-  }
+  },
+{
+  "tag": "2",
+  "title": "BDI贝克抑郁自评量表",
+  "subtitle": "贝克抑郁自评量表(BDI)是专门评测抑郁程度的。下面有13组项目，每组有4句陈述，你可根据一周来的感觉，选择最适合自己情况。",
+  "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/cf1b9d16fdfaaf51ce16e73e8c5494eef11f7abd.jpg",
+  "url": "Tiku_social_2.json"
+}
 ]
 
