@@ -11,6 +11,13 @@
   "subtitle": "贝克抑郁自评量表(BDI)是专门评测抑郁程度的。下面有13组项目，每组有4句陈述，你可根据一周来的感觉，选择最适合自己情况。",
   "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/cf1b9d16fdfaaf51ce16e73e8c5494eef11f7abd.jpg",
   "url": "Tiku_social_2.json"
+},
+{
+  "tag": "3",
+  "title": "你的善解人意指数高吗？ ",
+  "subtitle": "治愈系的女子，同时拥有母性情怀和少女天真的女性，可以在别人烦恼与痛苦的时候听人苦闷，为人疗伤，那么骨子里，你是治愈系的女子吗？",
+  "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/201803161750.jpg",
+  "url": "Tiku_social_3.json"
 }
 ]
 
