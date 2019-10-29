@@ -25,19 +25,18 @@
       "url": "Tiku_social.json"
     }],
   "menunews": [{
-      "tag": "1",
-      "title": "心好累?你该卸下什么包袱?",
-      "subtitle": "生活总有一千种方式将我们爆捶，复杂的社会、残酷的竞争、无形的压力……桩桩件件都让人倍感绝望，那么，你的心究竟有多累了？快来测测吧！", 
-      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/e706322c58664a79a1d48e600277d2e5.jpg",
-      "url": "Tiku_1.json"
-    },
+    "tag": "1",
+    "title": "测你有沒有当领导的能力",
+    "subtitle": "如果把职场比作一个金字塔，每一层都会代表一个职位，最高层的一定是领导层，最底层的一定是执行者。你在职场是否有能力做领导者呢？",
+    "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/201712081251.jpg",
+    "url": "Tiku_job_2.json"
+  },
     {
       "tag": "2",
-      "title": "你是沉迷过去害怕变化的人吗?",
-      "subtitle": "超准的心理测试题篇二", 
-      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/7d5f1460db624cff8d5e2cbc3279987a.png",
-      "url": "Tiku_2.json"
-    },
+      "title": "全国人格分裂等级认证！",
+      "subtitle": "人格分裂，在影视剧中似乎很神秘，但现实生活中，却离我们并不遥远。",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/b67fd066-87f8-40ad-bdee-1b3bd07b2b3e.jpeg",
+        "url": "Tiku_character_2.json"},
     {
       "tag": "3",
       "title": "猪年你怎样做才能更受欢迎?",
