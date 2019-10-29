@@ -24,12 +24,13 @@
       "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/social.png",
       "url": "Tiku_social.json"
     }],
-  "menunews": [{
+  "menunews": [
+  {
     "tag": "1",
-    "title": "测你有沒有当领导的能力",
-    "subtitle": "如果把职场比作一个金字塔，每一层都会代表一个职位，最高层的一定是领导层，最底层的一定是执行者。你在职场是否有能力做领导者呢？",
-    "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/201712081251.jpg",
-    "url": "Tiku_job_2.json"
+    "title": "国际标准智商测试",
+    "subtitle": "智商，通俗地可以理解为智力，是指空间、逻辑、创造、记忆等能力。",
+    "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/20140722180825.png",
+    "url": "Tiku_job_5.json"
   },
     {
       "tag": "2",
