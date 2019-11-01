@@ -23,6 +23,18 @@
       "menutype": "1",
       "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/social.png",
       "url": "Tiku_social.json"
+    },{
+      "tag": "4",
+      "title": "能力",
+      "menutype": "1",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/ability.png",
+      "url": "Tiku_ability.json"
+    },{
+      "tag": "5",
+      "title": "趣味",
+      "menutype": "1",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/taste.png",
+      "url": "Tiku_taste.json"
     }],
   "menunews": [
   {
