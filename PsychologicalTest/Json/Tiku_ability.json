@@ -1,6 +1,12 @@
 [
  {
    "tag": "4",
+   "title": "你是“戏精”吗？",
+   "subtitle": "戏精，该词由来已久，最早是比喻表演、演戏很厉害的人。你是“戏精”吗？快来测测吧！",
+   "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/8d528e7093b8432ca76638df65609e77.jpg",
+   "url": "Tiku_ability_2.json"
+ },{
+   "tag": "4",
    "title": "你的先天大脑优势是什么？",
    "subtitle": "后天天赋是受成长因素，先天天赋是与生俱来，你挖掘到了吗？来测测你的大脑先天优势吧！",
    "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/5ab5c9ea15ce36d37f99da91cfe57482e850b18a.jpg",
