@@ -8,6 +8,13 @@
  },
  {
    "tag": "4",
+   "title": "你内心的赌性有多大？",
+   "subtitle": "很多人身上都是带有赌性的，尽管这个人并不一定非得是个好赌之徒。赌性在某种程度上说，是血性的一种表现方式。当人们体味过了人生的艰难和辛苦之后，与其坐以待毙，为什么不爽快地赌上一把呢，想知道你的赌性有多大吗，来做测试吧。",
+   "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/5e33c5e4184b418ea20e81d74cc948f9.jpg",
+   "url": "Tiku_taste_4.json"
+ },
+ {
+   "tag": "4",
    "title": "你的灵魂重量有多少？",
    "subtitle": "我们常听到“灵魂的重量是21克”的说法，然而，每个人的灵魂分量都不一样重，你的灵魂承载了多少分量？快来测测吧！",
    "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/1ea15ce36d37f99da9a.jpg",
@@ -21,6 +28,9 @@
    "url": "Tiku_taste_3.json"
  }
 ]
+
+
+
 
 
 
