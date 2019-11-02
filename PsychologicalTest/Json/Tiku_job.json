@@ -1,6 +1,10 @@
-[
-
-{
+[{
+  "tag": "5",
+  "title": "职业能力倾向测试",
+  "subtitle": "职业能力倾向测试可以发现一个人的潜在才能，预测个体在将来的学习和工作中可能达到的成功程度，帮助选择适合自己的职业",
+  "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/gatb.jpg",
+  "url": "Tiku_job_6.json"
+},{
   "tag": "5",
   "title": "国际标准智商测试",
   "subtitle": "智商，通俗地可以理解为智力，是指空间、逻辑、创造、记忆等能力。",
