@@ -1,5 +1,10 @@
-[
- {
+[{
+   "tag": "4",
+   "title": "你的气场有多大？",
+   "subtitle": "你的气场有多强大？测了就知道！",
+   "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/26213733363942749085.jpg",
+   "url": "Tiku_ability_4.json"
+ },{
    "tag": "4",
    "title": "你是“戏精”吗？",
    "subtitle": "戏精，该词由来已久，最早是比喻表演、演戏很厉害的人。你是“戏精”吗？快来测测吧！",
