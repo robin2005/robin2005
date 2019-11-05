@@ -6,6 +6,12 @@
    "url": "Tiku_ability_4.json"
  },{
    "tag": "4",
+   "title": "生活常识大检验",
+   "subtitle": "趣味生活知识竞赛，看看你有足够的生活常识吗，这里有几道题，帮你掌握更多生活小知识哦~",
+   "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/22122267.jpg",
+   "url": "Tiku_ability_5.json"
+ },{
+   "tag": "4",
    "title": "你是“戏精”吗？",
    "subtitle": "戏精，该词由来已久，最早是比喻表演、演戏很厉害的人。你是“戏精”吗？快来测测吧！",
    "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/8d528e7093b8432ca76638df65609e77.jpg",
