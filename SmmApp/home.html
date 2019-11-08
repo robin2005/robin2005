@@ -10,10 +10,10 @@
         content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <meta name="flexible" content="initial-dpr=1" />
     <link href="css/home.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/alert.css">
+    <!-- <link rel="stylesheet" href="css/alert.css"> -->
     <script src="js/viewport.js"></script>
     <script src="js/jquery.min.js"></script> 
-    <script src='js/alert.js'></script>
+    <!-- <script src='js/alert.js'></script> -->
     <script>
 
         var startIndex = 0;
@@ -93,7 +93,7 @@
                 $('.card-list').empty();
                 var appWidth = $("#app").width();
                 var appHeight = $("body").height();
-                $('#app').attr("style", "background-size: 300px 143px;background-position:" + (appWidth - 300) + "px " + (appHeight- 60 - 143) + "px;");
+                $('#app').attr("style", "background-size: 300px 143px;background-position:" + (appWidth - 300) + "px " + (appHeight - 60 - 143) + "px;");
                 var data = [{ title: "What’s your gender?", a: "Male", b: "Female" },
                 { title: "The Boomers intended to change the world. If there's a chance to back to the WW2 , which roles would you like to be?", a: "A poet with romantic fantasy", b: "A scholar with advanced ideas" },
                 { title: "Name a place where it might be romantic to get stranded with your partner.", a: "Cabin/Lodge", b: "Park" },
