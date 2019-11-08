@@ -58,9 +58,10 @@
 
             function startHtml() {
                 startIndex = 0;
-                var width = $("#app").width();
-                var height = width * 143.0 / 300;
-                $('#app').attr("style", "background-size: " + (width) + "px  " + height + "px;background-position:0px " + ($(window).height() - 60 - height) + "px;");
+                var appWidth = $("#app").width();
+                var appHeight = $("body").height();
+                var height = appWidth * 143.0 / 300;
+                $('#app').attr("style", "background-size: " + (appWidth) + "px  " + height + "px;background-position:0px " + (appHeight - 60 - height) + "px;");
                 var starHtml = '<div class="card-box active"><div class="card"><div class="question-wrap"><div class="question fs-30 text-center"><span class="d-ibm icon-wrap"><i class="d-b icon-starttop"></i></span></div><div class="question fs-30 text-center">' +
                     'Test which celebrity you match the most' +
                     '</div><div class="question fs-24 text-center">' +
@@ -79,8 +80,9 @@
 
             function showResultHtml() {
                 startIndex = 0;
-                var width = $("#app").width();
-                var height = width * 143.0 / 300;
+                var appWidth = $("#app").width();
+                var appHeight = $("body").height();
+                var height = appWidth * 143.0 / 300;
                 $('#app').attr("style", "background-size: 0px 0px;background-position:0px 0px;");
                 var starHtml = ''; 
                 $('.card-list').empty();
@@ -89,8 +91,9 @@
 
             function startExam() {
                 $('.card-list').empty();
-                var width = $("#app").width();
-                $('#app').attr("style", "background-size: 300px 143px;background-position:" + (width - 300) + "px " + ($(window).height() - 60 - 143) + "px;");
+                var appWidth = $("#app").width();
+                var appHeight = $("body").height();
+                $('#app').attr("style", "background-size: 300px 143px;background-position:" + (appWidth - 300) + "px " + (appHeight- 60 - 143) + "px;");
                 var data = [{ title: "What’s your gender?", a: "Male", b: "Female" },
                 { title: "The Boomers intended to change the world. If there's a chance to back to the WW2 , which roles would you like to be?", a: "A poet with romantic fantasy", b: "A scholar with advanced ideas" },
                 { title: "Name a place where it might be romantic to get stranded with your partner.", a: "Cabin/Lodge", b: "Park" },
