@@ -61,7 +61,7 @@
                 var appWidth = $("#app").width();
                 var appHeight = $("body").height();
                 var height = appWidth * 143.0 / 300;
-                $('#app').attr("style", "background-size: " + (appWidth) + "px  " + height + "px;background-position:0px " + (appHeight - 60 - height) + "px;");
+                $('#app').attr("style", "background-size: " + (appWidth) + "px  " + height + "px;background-position:0px " + (appHeight - 60 - height) + "px;-webkit-background-position:0px " + (appHeight - 60 - height) + "px");
                 var starHtml = '<div class="card-box active"><div class="card"><div class="question-wrap"><div class="question fs-30 text-center"><span class="d-ibm icon-wrap"><i class="d-b icon-starttop"></i></span></div><div class="question fs-30 text-center">' +
                     'Test which celebrity you match the most' +
                     '</div><div class="question fs-24 text-center">' +
