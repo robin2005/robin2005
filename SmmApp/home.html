@@ -10,13 +10,15 @@
         content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <meta name="flexible" content="initial-dpr=1" />
     <link href="css/home.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/alert.css">
     <script src="js/viewport.js"></script>
-    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script> 
+    <script src='js/alert.js'></script>
     <script>
 
         var startIndex = 0;
         $(document).ready(function () {
-            
+
             $('#app').addClass("fs-14").addClass("app-page--has-topbar");
 
             $("#app").on("click", ".option", function () {
@@ -25,12 +27,22 @@
                 var list = $('.card-list');
                 list.children().eq(startIndex).find(".cp-btn").removeClass("cp-btn--disabled");
             });
+
+            $("#app").on("click", ".icon-back", function () {
+                startHtml();
+            });
+
+            $("#app").on("click", ".startaction", function () {
+                startExam();
+            });
+
             $("#app").on("click", ".nextaction", function () {
                 if ($(this).hasClass("cp-btn--disabled")) return;
                 var list = $('.card-list');
                 var length = list.children().length;
                 if (startIndex == length - 1) {
                     alert('Over');
+                    showResultHtml();
                 } else {
                     list.children().removeClass('prev').removeClass('active');
                     list.children().eq(startIndex).hide();
@@ -44,19 +56,41 @@
                 }
             });
 
-            $("#app").on("click", ".startaction", function () {
-                startExam();
-            }); 
-
             function startHtml() {
-                var height = $(window).width() * 143.0 / 300;
-                $('#app').attr("style", "background-size: " + ($(window).width()) + "px  " + height + "px;background-position:0px " + ($(window).height() - 60 - height) + "px;");
+                startIndex = 0;
+                var width = $("#app").width();
+                var height = width * 143.0 / 300;
+                $('#app').attr("style", "background-size: " + (width) + "px  " + height + "px;background-position:0px " + ($(window).height() - 60 - height) + "px;");
+                var starHtml = '<div class="card-box active"><div class="card"><div class="question-wrap"><div class="question fs-30 text-center"><span class="d-ibm icon-wrap"><i class="d-b icon-starttop"></i></span></div><div class="question fs-30 text-center">' +
+                    'Test which celebrity you match the most' +
+                    '</div><div class="question fs-24 text-center">' +
+                    'Share to your friends to have fun together' +
+                    '</div><ul class="options"><div class="option-line"></div><div class="action-wrap"><div class="cp-btn startaction cp-btn--yellow">' +
+                    'start</div></div></ul><div class="question fs-start-18 text-center"><br>' +
+                    'Share to your friends to have fun together</div></div></div></div>'; 
+                $('.card-list').empty();
+                $('.card-list').append(starHtml);
+                if(width < 375){ 
+                    $('.fs-30').attr("style", "font-size:25px");
+                    $('.fs-24').attr("style", "font-size:20px");
+                    $('.fs-18').attr("style", "font-size:15px");
+                } 
             }
-            startHtml();
+
+            function showResultHtml() {
+                startIndex = 0;
+                var width = $("#app").width();
+                var height = width * 143.0 / 300;
+                $('#app').attr("style", "background-size: 0px 0px;background-position:0px 0px;");
+                var starHtml = ''; 
+                $('.card-list').empty();
+                $('.card-list').append(starHtml);
+            }
 
             function startExam() {
                 $('.card-list').empty();
-                $('#app').attr("style", "background-size: 300px 143px;background-position:" + ($(window).width() - 300) + "px " + ($(window).height() - 60 - 143) + "px;");
+                var width = $("#app").width();
+                $('#app').attr("style", "background-size: 300px 143px;background-position:" + (width - 300) + "px " + ($(window).height() - 60 - 143) + "px;");
                 var data = [{ title: "What’s your gender?", a: "Male", b: "Female" },
                 { title: "The Boomers intended to change the world. If there's a chance to back to the WW2 , which roles would you like to be?", a: "A poet with romantic fantasy", b: "A scholar with advanced ideas" },
                 { title: "Name a place where it might be romantic to get stranded with your partner.", a: "Cabin/Lodge", b: "Park" },
@@ -77,15 +111,16 @@
                     optionHtml += '</div></div><div class="option-line"></div><div class="option-line"></div>';
                     optionHtml += '<div class="action-wrap"><div class="nextaction cp-btn cp-btn--yellow cp-btn--disabled">';
                     if (i == data.length - 1) {
-                        optionHtml +=  '&nbsp;&nbsp;'+'Submission'.toUpperCase() + '&nbsp;&nbsp;';
+                        optionHtml += '&nbsp;&nbsp;' + 'Submission'.toUpperCase() + '&nbsp;&nbsp;';
                     } else {
-                        optionHtml += 'NEXT'; 
+                        optionHtml += 'NEXT';
                     }
                     optionHtml += '</div></div></ul></div></div></div>';
                     $('.card-list').append(optionHtml);
                 }
             }
 
+            startHtml();
 
         });
 
@@ -102,36 +137,6 @@
         </div>
         <div class="page-answer app-page__inner">
             <div class="card-list">
-                <div class="card-box active">
-                    <div class="card">
-                        <div class="question-wrap">
-
-                                <div class="question fs-30 text-center">
-                                        <span class="d-ibm icon-wrap"><i class="d-b icon-starttop"></i></span>
-                                    </div>
-
-                            <div class="question fs-30 text-center">
-                                Test which celebrity
-                                you match the most
-                            </div>
-                            <div class="question fs-24 text-center">
-                                Share to your friends to
-                                have fun together
-                            </div>
-                            <ul class="options">
-                                <div class="option-line"></div> 
-                                <div class="action-wrap">
-                                    <div class="cp-btn startaction cp-btn--yellow">start</div>
-                                </div>
-                            </ul> 
-                            <div class="option-line"></div> 
-                            <div class="question fs-start-18 text-center">
-                                    Share to your friends to
-                                    have fun together
-                            </div>
-                        </div>
-                    </div>
-                </div>
             </div>
             <div class="page-mark flex">
                 <i class="d-b icon-ios flex__item"></i>

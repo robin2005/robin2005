@@ -1329,7 +1329,7 @@ h1, h2, h3, h4, h5, h6 {
 
   .topbar {
     /* border-bottom: 1px #EAEAEA solid; */
-    /* background: #fff; */
+    background:rgba(156, 16, 37, 1);
     position: fixed;
     left: 50%;
     top: 0;
@@ -2882,7 +2882,7 @@ h1, h2, h3, h4, h5, h6 {
     box-shadow:  0 0 0 transparent;  
   }
   .page-answer .card-list .card-box.active .card{
-
+    display: block;
     bottom: 0rem;
   }
 
@@ -2892,10 +2892,12 @@ h1, h2, h3, h4, h5, h6 {
 
   .page-answer .card-list .card-box.next {
     padding: 0px;
+    display: none;
   }
 
   .page-answer .card-list .card-box.next2 {
       padding: 0px;
+      display: none;
   }
 
   .page-answer .card-list .card-box .card .action-wrap:after 
