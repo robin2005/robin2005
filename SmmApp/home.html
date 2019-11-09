@@ -28,7 +28,6 @@
                 } else {
                     var platform = getQueryVariable('smm_platform') + ' ';
                     if (platform && (platform.match(/ios/i) || platform.match(/android/i))) {
-                        $('#app').addClass("app-page--has-topbar");
                         jqueryAlert({
                             'content': platform,
                             'closeTime': 2000,
