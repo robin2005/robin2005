@@ -13,32 +13,36 @@
         var random = Math.random();
         document.write('<link href="css/home.css?v=' + random + '" rel="stylesheet" type="text/css"/>');
     </script>
-    <!-- <link rel="stylesheet" href="css/alert.css"> -->
+    <link rel="stylesheet" href="css/alert.css">
     <script src="js/viewport.js"></script>
     <script src="js/jquery.min.js"></script>
-    <!-- <script src='js/alert.js'></script> -->
+    <script src='js/alert.js'></script>
     <script>
-
         var startIndex = 0;
         $(document).ready(function () {
-
-            //打开（下载）App
             function topBar() {
                 $('#app').addClass("fs-14");
-                var ua = window.navigator.userAgent.toLowerCase(); 
+                var ua = window.navigator.userAgent.toLowerCase();
                 if (ua.match(/MicroMessenger/i) == 'micromessenger') {
-                    //   $('#app').addClass("app-page--has-topbar");
+                    $('#app').addClass("app-page--has-topbar");
                 } else {//非微信浏览器
-                    if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) { 
-                      $('#app').addClass("app-page--has-topbar");
-                    } else if (navigator.userAgent.match(/android/i)) { 
-                      $('#app').addClass("app-page--has-topbar");
-                    }else{ 
-                       $('#app').addClass("app-page--has-topbar");
+                    if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+                        $('#app').addClass("app-page--has-topbar");
+                    } else if (navigator.userAgent.match(/android/i)) {
+                        $('#app').addClass("app-page--has-topbar");
+                    } else {
+                        $('#app').addClass("app-page--has-topbar");
                     }
                 }
+                jqueryAlert({
+                    'content': navigator.userAgent,
+                    'closeTime': 2000,
+                    'end': function () {
+                        console.log('已关闭弹框')
+                    }
+                }).show();
             }
-            topBar(); 
+            topBar();
             $("#app").on("click", ".option", function () {
                 $(this).parent().children().removeClass("selected");
                 $(this).addClass("selected");
