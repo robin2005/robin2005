@@ -34,7 +34,6 @@
             $("#app").on("click", ".icon-back", function () {
                 startHtml();
             });
-
             $("#app").on("click", ".startaction", function () {
                 startExam();
             });
@@ -64,6 +63,7 @@
                 var appWidth = $("#app").width();
                 var appHeight = $("body").height();
                 var height = appWidth * 138.0 / 300;
+                $(".icon-back").hide();
                 $('.card-list').attr("style", "background-size: " + (appWidth) + "px  " + height + "px;background-position:right bottom;");
                 var starHtml = '<div class="card-box active"><div class="card"><div class="question-wrap"><div class="question fs-30 text-center"><span class="d-ibm icon-wrap"><i class="d-b icon-starttop"></i></span></div><div class="question fs-30 text-center">' +
                     'Test which celebrity you match the most' +
@@ -94,6 +94,7 @@
 
             function startExam() {
                 $('.card-list').empty();
+                $(".icon-back").show();
                 var appWidth = $("#app").width();
                 var appHeight = $("body").height();
                 $('.card-list').attr("style", "background-size: 300px 138px;background-position:right bottom;");

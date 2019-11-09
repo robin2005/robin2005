@@ -2893,7 +2893,7 @@ h1, h2, h3, h4, h5, h6 {
     overflow: hidden;
     background-image: url(../images/bottompigbar.png) ; 
     background-repeat: no-repeat;
-    background-size: 300px 143px;
+    background-size: 300px 138px;
     background-position: right bottom;
     height: calc(100vh - 75px - 50px);
 }
