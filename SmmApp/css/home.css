@@ -1117,7 +1117,7 @@ h1, h2, h3, h4, h5, h6 {
     font-family: 'PingFangSC-Regular', 'DroidSansFallback', 'Microsoft YaHei', '\5FAE\8F6F\96C5\9ED1', Arial, Helvetica, Verdana, sans-serif;
   }
   .app-page--has-topbar {
-    padding-top: 1.18667rem;
+    /* padding-top: 1.18667rem; */
   }
   .app-page--has-topbar .topbar {
       display: block;
@@ -1490,9 +1490,9 @@ h1, h2, h3, h4, h5, h6 {
   }
   }
   /*有topBar 的时候，top值才要大一点，否则是0*/
-  .topbar ~ .indexPage .handPick .section-handler .container {
+  /* .topbar ~ .indexPage .handPick .section-handler .container {
     top: 1.17333rem;
-  }
+  } */
   .indexPage-search-box {
     background: #f4f4f5;
     border-radius: 0.10667rem;
@@ -1901,200 +1901,8 @@ h1, h2, h3, h4, h5, h6 {
     line-height: 1.33333rem;
     text-align: center;
     color: #999;
-  }
-  
-  .page-answer {
-    position: relative;
-    height: 100vh;
-  }
-  
-  .topbar ~ .page-answer {
-      margin-top: -1.17333rem;
-  }
-  .page-answer .card-list {
-      position: absolute;
-      width: 10rem;
-      top: 0.66667rem;
-      left: 0;
-      right: 0;
-      bottom: 2.04rem;
-      /*height: px2rem(1050);*/
-      overflow: hidden;
-  }
-  .topbar ~ .page-answer .card-list {
-        top: 1.84rem;
-  }
-  .page-answer .card-list .card-box {
-        position: absolute;
-        top: 0;
-        margin: 0 0.70667rem;
-        -webkit-box-sizing: border-box;
-                box-sizing: border-box;
-        width: 8.58667rem;
-        /*height: px2rem(1003);*/
-        bottom: 0rem;
-        -webkit-transition: all .25s;
-        transition: all .25s;
-        box-sizing: border-box;
-  }
-  .page-answer .card-list .card-box.active {
-          -webkit-transform: translate(0%, 0);
-                  transform: translate(0%, 0);
-          bottom: 0.26667rem;
-  }
-  .page-answer .card-list .card-box.active .card {
-            /*margin: px2rem(59) 0;*/
-            bottom: 0.2rem;
-            top: 0;
-  }
-  .page-answer .card-list .card-box.prev2 {
-          padding: 7% 0;
-          -webkit-transform: translate(-9.02667rem, 0);
-                  transform: translate(-9.02667rem, 0);
-  }
-  .page-answer .card-list .card-box.prev2 .card {
-            -webkit-box-shadow: none;
-                    box-shadow: none;
-  }
-  .page-answer .card-list .card-box.prev {
-          padding: 7% 0;
-          -webkit-transform: translate(-9.02667rem, 0);
-                  transform: translate(-9.02667rem, 0);
-  }
-  .page-answer .card-list .card-box.next {
-          padding: 7% 0;
-          -webkit-transform: translate(9.02667rem, 0);
-                  transform: translate(9.02667rem, 0);
-  }
-  .page-answer .card-list .card-box.next2 {
-          padding: 7% 0;
-          -webkit-transform: translate(9.02667rem, 0);
-                  transform: translate(9.02667rem, 0);
-  }
-  .page-answer .card-list .card-box.next2 .card {
-            -webkit-box-shadow: none;
-                    box-shadow: none;
-  }
-  .page-answer .card-list .card-box .card {
-          position: absolute;
-          top: 0.78667rem;
-          left: 0;
-          right: 0;
-          bottom: 0.78667rem;
-          /*height: px2rem(868);*/
-          -webkit-box-sizing: border-box;
-                  box-sizing: border-box;
-          background: #FFFFFF;
-          -webkit-box-shadow: 0 0.14667rem 0.21333rem 0 rgba(0, 0, 0, 0.21);
-                  box-shadow: 0 0.14667rem 0.21333rem 0 rgba(0, 0, 0, 0.21);
-          border-radius: 0.16rem;
-          padding: 0.53333rem 0.96rem 0.8rem 0.96rem;
-          color: #333;
-          overflow-y: scroll;
-  }
-  .page-answer .card-list .card-box .card .question-wrap {
-            position: absolute;
-            top: 0.53333rem;
-            left: 0rem;
-            right: 0rem;
-            bottom: 2.04rem;
-            padding: 0 0.96rem 0.8rem 0.96rem;
-            overflow-y: scroll;
-  }
-  .page-answer .card-list .card-box .card .question {
-            line-height: 0.74667rem;
-            margin-bottom: 0.53333rem;
-  }
-  .page-answer .card-list .card-box .card .img-wrapper {
-            width: 100%;
-            margin-bottom: 0.4rem;
-            border: 1px solid #eaeaea;
-  }
-  .page-answer .card-list .card-box .card .img-wrapper img {
-              max-width: 100%;
-              max-height: 100%;
-  }
-  .page-answer .card-list .card-box .card .options .option {
-            padding: 0.26667rem 0;
-            line-height: 0.74667rem;
-            border-bottom: 1px solid #eaeaea;
-  }
-  .page-answer .card-list .card-box .card .options .option:last-child {
-              border-bottom: none;
-  }
-  .page-answer .card-list .card-box .card .options .option-label {
-              margin-right: 0.30667rem;
-  }
-  .page-answer .card-list .card-box .card .options .option-radio {
-              margin-left: 0.30667rem;
-  }
-  .page-answer .card-list .card-box .card .options .option-radio .radio {
-                width: 0.26667rem;
-                height: 0.26667rem;
-                border: 0.05333rem solid #ffdd2b;
-                border-radius: 50%;
-  }
-  .page-answer .card-list .card-box .card .options .option-radio .radio.selected {
-                  background: #ffdd2b;
-  }
-  .page-answer .card-list .card-box .card .action-wrap {
-            position: absolute;
-            left: 0.96rem;
-            right: 0.96rem;
-            bottom: 0.8rem;
-            height: 1.17333rem;
-            line-height: 1.17333rem;
-            /*width: 100%;*/
-  }
-  .page-answer .card-list .card-box .card .action-wrap:after {
-              content: '';
-              position: absolute;
-              /* width: 100%; */
-              height: 42px;
-              top: -1.30667rem;
-              background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(20%, rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.8)));
-              background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.8) 100%);
-  }
-  .page-answer .card-list .card-box .card .action-wrap .cp-btn--yellow {
-              color: #fff;
-  }
-  .page-answer .card-list .card-box .card .action-wrap .submit {
-              margin-left: 0.26667rem;
-  }
-  .page-answer .card-list .card-box .card .action-wrap .submit.cp-btn--yellow {
-                color: #333;
-  }
-  .page-answer .page-mark {
-      position: absolute;
-      bottom: 0.4rem;
-      left: 0;
-      right: 0;
-      text-align: center;
-  }
-  .page-answer .page-mark .line {
-        display: inline-block;
-        width: 1px;
-        height: 0.93333rem;
-        background: #666;
-        -webkit-transform: rotate(30deg);
-                transform: rotate(30deg);
-  }
-  .page-answer .page-mark .curIndex {
-        position: absolute;
-        top: -0.13333rem;
-        left: 50%;
-        color: #333;
-        -webkit-transform: translate(-110%, 0%);
-                transform: translate(-110%, 0%);
-  }
-  .page-answer .page-mark .totalIndex {
-        position: absolute;
-        color: #666;
-        bottom: 0;
-        right: 50%;
-        -webkit-transform: translate(110%, 0);
-                transform: translate(110%, 0);
-  }
+  } 
+
   
   .fun-result .icon-close {
     display: block;
@@ -2868,6 +2676,197 @@ h1, h2, h3, h4, h5, h6 {
       background: #FFDD2B;
   }
   
+
+  /* .topbar ~ .page-answer {
+      margin-top: -1.17333rem;
+  } */
+
+  /*page-answer */ 
+  .page-answer .card-list {
+    position: absolute;
+    width: 10rem;
+    top: 0.66667rem;
+    left: 0;
+    right: 0;
+    bottom: 2.04rem;
+    /*height: px2rem(1050);*/
+    overflow: hidden;
+}
+/* .topbar ~ .page-answer .card-list {
+      top: 1.84rem;
+} */
+.page-answer .card-list .card-box {
+      position: absolute;
+      top: 0;
+      margin: 0 0.70667rem;
+      -webkit-box-sizing: border-box;
+              box-sizing: border-box;
+      width: 8.58667rem;
+      /*height: px2rem(1003);*/
+      bottom: 0rem;
+      -webkit-transition: all .25s;
+      transition: all .25s;
+      box-sizing: border-box;
+}
+.page-answer .card-list .card-box.active {
+        -webkit-transform: translate(0%, 0);
+                transform: translate(0%, 0);
+        bottom: 0.26667rem;
+}
+.page-answer .card-list .card-box.active .card {
+          /*margin: px2rem(59) 0;*/
+          bottom: 0.2rem;
+          top: 0;
+}
+.page-answer .card-list .card-box.prev2 {
+        padding: 7% 0;
+        -webkit-transform: translate(-9.02667rem, 0);
+                transform: translate(-9.02667rem, 0);
+}
+.page-answer .card-list .card-box.prev2 .card {
+          -webkit-box-shadow: none;
+                  box-shadow: none;
+}
+.page-answer .card-list .card-box.prev {
+        padding: 7% 0;
+        -webkit-transform: translate(-9.02667rem, 0);
+                transform: translate(-9.02667rem, 0);
+}
+.page-answer .card-list .card-box.next {
+        padding: 7% 0;
+        -webkit-transform: translate(9.02667rem, 0);
+                transform: translate(9.02667rem, 0);
+}
+.page-answer .card-list .card-box.next2 {
+        padding: 7% 0;
+        -webkit-transform: translate(9.02667rem, 0);
+                transform: translate(9.02667rem, 0);
+}
+.page-answer .card-list .card-box.next2 .card {
+          -webkit-box-shadow: none;
+                  box-shadow: none;
+}
+.page-answer .card-list .card-box .card {
+        position: absolute;
+        top: 0.78667rem;
+        left: 0;
+        right: 0;
+        bottom: 0.78667rem;
+        /*height: px2rem(868);*/
+        -webkit-box-sizing: border-box;
+                box-sizing: border-box;
+        background: #FFFFFF;
+        -webkit-box-shadow: 0 0.14667rem 0.21333rem 0 rgba(0, 0, 0, 0.21);
+                box-shadow: 0 0.14667rem 0.21333rem 0 rgba(0, 0, 0, 0.21);
+        border-radius: 0.16rem;
+        padding: 0.53333rem 0.96rem 0.8rem 0.96rem;
+        color: #333;
+        overflow-y: scroll;
+}
+.page-answer .card-list .card-box .card .question-wrap {
+          position: absolute;
+          top: 0.53333rem;
+          left: 0rem;
+          right: 0rem;
+          bottom: 2.04rem;
+          padding: 0 0.96rem 0.8rem 0.96rem;
+          overflow-y: scroll;
+}
+.page-answer .card-list .card-box .card .question {
+          line-height: 0.74667rem;
+          margin-bottom: 0.53333rem;
+}
+.page-answer .card-list .card-box .card .img-wrapper {
+          width: 100%;
+          margin-bottom: 0.4rem;
+          border: 1px solid #eaeaea;
+}
+.page-answer .card-list .card-box .card .img-wrapper img {
+            max-width: 100%;
+            max-height: 100%;
+}
+.page-answer .card-list .card-box .card .options .option {
+          padding: 0.26667rem 0;
+          line-height: 0.74667rem;
+          border-bottom: 1px solid #eaeaea;
+}
+.page-answer .card-list .card-box .card .options .option:last-child {
+            border-bottom: none;
+}
+.page-answer .card-list .card-box .card .options .option-label {
+            margin-right: 0.30667rem;
+}
+.page-answer .card-list .card-box .card .options .option-radio {
+            margin-left: 0.30667rem;
+}
+.page-answer .card-list .card-box .card .options .option-radio .radio {
+              width: 0.26667rem;
+              height: 0.26667rem;
+              border: 0.05333rem solid #ffdd2b;
+              border-radius: 50%;
+}
+.page-answer .card-list .card-box .card .options .option-radio .radio.selected {
+                background: #ffdd2b;
+}
+.page-answer .card-list .card-box .card .action-wrap {
+          position: absolute;
+          left: 0.96rem;
+          right: 0.96rem;
+          bottom: 0.8rem;
+          height: 1.17333rem;
+          line-height: 1.17333rem;
+          /*width: 100%;*/
+}
+.page-answer .card-list .card-box .card .action-wrap:after {
+            content: '';
+            position: absolute;
+            /* width: 100%; */
+            height: 42px;
+            top: -1.30667rem;
+            background: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0)), color-stop(20%, rgba(255, 255, 255, 0.5)), to(rgba(255, 255, 255, 0.8)));
+            background: linear-gradient(top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.5) 20%, rgba(255, 255, 255, 0.8) 100%);
+}
+.page-answer .card-list .card-box .card .action-wrap .cp-btn--yellow {
+            color: #fff;
+}
+.page-answer .card-list .card-box .card .action-wrap .submit {
+            margin-left: 0.26667rem;
+}
+.page-answer .card-list .card-box .card .action-wrap .submit.cp-btn--yellow {
+              color: #333;
+}
+.page-answer .page-mark {
+    position: absolute;
+    bottom: 0.4rem;
+    left: 0;
+    right: 0;
+    text-align: center;
+}
+.page-answer .page-mark .line {
+      display: inline-block;
+      width: 1px;
+      height: 0.93333rem;
+      background: #666;
+      -webkit-transform: rotate(30deg);
+              transform: rotate(30deg);
+}
+.page-answer .page-mark .curIndex {
+      position: absolute;
+      top: -0.13333rem;
+      left: 50%;
+      color: #333;
+      -webkit-transform: translate(-110%, 0%);
+              transform: translate(-110%, 0%);
+}
+.page-answer .page-mark .totalIndex {
+      position: absolute;
+      color: #666;
+      bottom: 0;
+      right: 50%;
+      -webkit-transform: translate(110%, 0);
+              transform: translate(110%, 0);
+}
+
   /*new css */ 
   #app {
     max-width: 10rem;
@@ -2887,7 +2886,7 @@ h1, h2, h3, h4, h5, h6 {
 .page-answer .card-list {
     position: absolute;
     width: 10rem;
-    bottom: 75px;
+    top: 0px;
     left: 0;
     right: 0; 
     overflow: hidden;
@@ -2897,14 +2896,15 @@ h1, h2, h3, h4, h5, h6 {
     background-position: right bottom;
     height: calc(100vh - 75px - 50px);
 }
+/* 
   
 .topbar ~ .page-answer {
-    margin-top: 0px;
+    margin-top: 50px;
 } 
-
-.topbar ~ .page-answer .card-list {
+ */
+/* .topbar ~ .page-answer .card-list {
     top: 0px;
-}
+} */
 
 
 .card-list::-webkit-scrollbar, .card-box::-webkit-scrollbar{
@@ -2913,10 +2913,12 @@ h1, h2, h3, h4, h5, h6 {
 
 .page-answer {
     position: absolute;
-    height: calc(100vh - 50px);
-    bottom: 0;
+    height: calc(100vh - 50px); 
+    margin-top: 50px;
+    width: 100%;
  } 
-  .page-answer .card-list .card-box 
+
+.page-answer .card-list .card-box 
   {
     margin: 0;
     width: 10rem; 
