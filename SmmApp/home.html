@@ -61,7 +61,7 @@
                 var appWidth = $("#app").width();
                 var appHeight = $("body").height();
                 var height = appWidth * 143.0 / 300;
-                $('#app').attr("style", "background-size: " + (appWidth) + "px  " + height + "px;background-position:0px " + (appHeight - 60 - height) + "px;-webkit-background-position:0px " + (appHeight - 60 - height) + "px;");
+                $('.card-list').attr("style", "background-size: " + (appWidth) + "px  " + height + "px;background-position:right bottom;");
                 var starHtml = '<div class="card-box active"><div class="card"><div class="question-wrap"><div class="question fs-30 text-center"><span class="d-ibm icon-wrap"><i class="d-b icon-starttop"></i></span></div><div class="question fs-30 text-center">' +
                     'Test which celebrity you match the most' +
                     '</div><div class="question fs-24 text-center">' +
@@ -71,7 +71,7 @@
                     'Share to your friends to have fun together</div></div></div></div>'; 
                 $('.card-list').empty();
                 $('.card-list').append(starHtml);
-                if(width < 375){ 
+                if(appWidth < 375){ 
                     $('.fs-30').attr("style", "font-size:25px");
                     $('.fs-24').attr("style", "font-size:20px");
                     $('.fs-18').attr("style", "font-size:15px");
@@ -83,7 +83,7 @@
                 var appWidth = $("#app").width();
                 var appHeight = $("body").height();
                 var height = appWidth * 143.0 / 300;
-                $('#app').attr("style", "background-size: 0px 0px;background-position:0px 0px;");
+                $('.card-list').attr("style", "background-size: 0px 0px;background-position:0px 0px;");
                 var starHtml = ''; 
                 $('.card-list').empty();
                 $('.card-list').append(starHtml);
@@ -93,7 +93,7 @@
                 $('.card-list').empty();
                 var appWidth = $("#app").width();
                 var appHeight = $("body").height();
-                $('#app').attr("style", "background-size: 300px 143px;background-position:" + (appWidth - 300) + "px " + (appHeight - 60 - 143) + "px;");
+                $('.card-list').attr("style", "background-size: 300px 143px;background-position:right bottom;");
                 var data = [{ title: "What’s your gender?", a: "Male", b: "Female" },
                 { title: "The Boomers intended to change the world. If there's a chance to back to the WW2 , which roles would you like to be?", a: "A poet with romantic fantasy", b: "A scholar with advanced ideas" },
                 { title: "Name a place where it might be romantic to get stranded with your partner.", a: "Cabin/Lodge", b: "Park" },
@@ -138,7 +138,7 @@
             <div class="fs-23 topbar-title s-tabcell"><span class="d-ibm">Happy Thanksgiving</span></div>
             <div class="s-tabcell topbar-right fr"></div>
         </div>
-        <div class="page-answer app-page__inner">
+        <div class="page-answer">
             <div class="card-list">
             </div>
             <div class="page-mark flex">
