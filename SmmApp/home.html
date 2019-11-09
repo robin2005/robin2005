@@ -27,7 +27,7 @@
                     $('#app').addClass("app-page--has-topbar");
                 } else {
                     var platform = getQueryVariable('smm_platform')
-                    if (platform.match(/ios/i) || platform.match(/android/i)) {
+                    if (platform && (platform.match(/ios/i) || platform.match(/android/i))) {
                         $('#app').addClass("app-page--has-topbar");
                         jqueryAlert({
                             'content': platform,
