@@ -10,20 +10,35 @@
         content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
     <meta name="flexible" content="initial-dpr=1" />
     <script>
-            var random=Math.random();
-            document.write('<link href="css/home.css?v='+random+'" rel="stylesheet" type="text/css"/>');
-   </script>
+        var random = Math.random();
+        document.write('<link href="css/home.css?v=' + random + '" rel="stylesheet" type="text/css"/>');
+    </script>
     <!-- <link rel="stylesheet" href="css/alert.css"> -->
     <script src="js/viewport.js"></script>
-    <script src="js/jquery.min.js"></script> 
+    <script src="js/jquery.min.js"></script>
     <!-- <script src='js/alert.js'></script> -->
     <script>
 
         var startIndex = 0;
         $(document).ready(function () {
 
-            $('#app').addClass("fs-14").addClass("app-page--has-topbar");
-
+            //打开（下载）App
+            function topBar() {
+                $('#app').addClass("fs-14");
+                var ua = window.navigator.userAgent.toLowerCase(); 
+                if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+                    //   $('#app').addClass("app-page--has-topbar");
+                } else {//非微信浏览器
+                    if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) { 
+                      $('#app').addClass("app-page--has-topbar");
+                    } else if (navigator.userAgent.match(/android/i)) { 
+                      $('#app').addClass("app-page--has-topbar");
+                    }else{ 
+                       $('#app').addClass("app-page--has-topbar");
+                    }
+                }
+            }
+            topBar(); 
             $("#app").on("click", ".option", function () {
                 $(this).parent().children().removeClass("selected");
                 $(this).addClass("selected");
@@ -71,14 +86,14 @@
                     'Share to your friends to have fun together' +
                     '</div><ul class="options"><div class="option-line"></div><div class="action-wrap"><div class="cp-btn startaction cp-btn--yellow">' +
                     'start</div></div></ul><div class="question fs-start-18 text-center"><br>' +
-                    'Share to your friends to have fun together</div></div></div></div>'; 
+                    'Share to your friends to have fun together</div></div></div></div>';
                 $('.card-list').empty();
                 $('.card-list').append(starHtml);
-                if(appWidth < 375){ 
+                if (appWidth < 375) {
                     $('.fs-30').attr("style", "font-size:25px");
                     $('.fs-24').attr("style", "font-size:20px");
                     $('.fs-18').attr("style", "font-size:15px");
-                } 
+                }
             }
 
             function showResultHtml() {
@@ -87,7 +102,7 @@
                 var appHeight = $("body").height();
                 var height = appWidth * 143.0 / 300;
                 $('.card-list').attr("style", "background-size: 0px 0px;background-position:0px 0px;");
-                var starHtml = ''; 
+                var starHtml = '';
                 $('.card-list').empty();
                 $('.card-list').append(starHtml);
             }
