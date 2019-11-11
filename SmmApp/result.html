@@ -19,11 +19,12 @@
 	<script src='js/alert.js'></script>
 	<script src='js/result.js'></script>
 	<script src="js/viewport.js"></script>
-	<script> 
-		$(document).ready(function () { 
+	<script>
+		$(document).ready(function () {
 			topBar();
 			$("#app").on("click", ".share-btn", function () {
-                platform = getQueryVariable('smm_platform') + '';
+				platform = getQueryVariable('smm_platform') + '';
+				var shareData = { sharetitle: 'Happy Thanksgiving', sharecontent: 'Happy Thanksgiving', sharelinkurl: 'Happy Thanksgiving', shareimg: 'Happy Thanksgiving' };
 				if (platform && platform.match(/ios/i)) {
 					window.webkit.messageHandlers.shareHandler.postMessage(shareData);
 				} else if (platform && platform.match(/android/i)) {
@@ -56,7 +57,7 @@
 </head>
 
 <body>
-	<div id="app" >
+	<div id="app">
 		<div class="topbar">
 			<div class="s-tabcell topbar-left fl"><span class="d-ibm icon-wrap"><i class="d-b icon-back"></i></span>
 			</div>
