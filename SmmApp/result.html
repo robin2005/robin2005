@@ -23,6 +23,7 @@
 		$(document).ready(function () { 
 			topBar();
 			$("#app").on("click", ".share-btn", function () {
+                platform = getQueryVariable('smm_platform') + '';
 				if (platform && platform.match(/ios/i)) {
 					window.webkit.messageHandlers.shareHandler.postMessage(shareData);
 				} else if (platform && platform.match(/android/i)) {
