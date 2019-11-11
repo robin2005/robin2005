@@ -29,9 +29,9 @@
 					window.webkit.messageHandlers.shareHandler.postMessage(shareData);
 				} else if (platform && platform.match(/android/i)) {
 					window.webkit.messageHandlers.shareHandler.postMessage(shareData);
-				}
+				}  
 			});
-
+			
 			$("#app").on("click", ".icon-back", function () {
 				window.location = 'home.html?smm_platform=' + platform;
 			});
