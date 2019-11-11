@@ -42,7 +42,6 @@
                 var list = $('.card-list');
                 var length = list.children().length;
                 if (startIndex == length - 1) {
-                    shareNavHandler();
                     window.location = 'result.html?smm_platform=' + platform + '&radom=' + Date.now();
                 } else {
                     list.children().removeClass('prev').removeClass('active');
@@ -120,7 +119,7 @@
         $(window).load(function(){   
             loadFunction();
         });
-
+        
     </script>
 </head>
 

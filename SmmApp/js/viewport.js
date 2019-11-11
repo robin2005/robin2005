@@ -124,21 +124,16 @@ function loadFunction()
     } else if (platform && platform.match(/android/i)) {
         window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
     } 
-}
+} 
 
-function shareNavHandler() {
+function loadShareFunction()
+{
     platform = getQueryVariable('smm_platform') + '';
     var shareData = { sharetitle: 'Happy Thanksgiving', sharecontent: 'Happy Thanksgiving', sharelinkurl: 'Happy Thanksgiving', shareimg: 'Happy Thanksgiving' };
-    if (platform && platform.match(/ios/i)) {
+    if (platform && platform.match(/ios/i) && window.webkit.messageHandlers.chaneNavColor) {
         window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
-        jqueryAlert({
-            'content': platform,
-            'closeTime': 2000,
-            'end': function () {
-                console.log('已关闭弹框')
-           }
-        }).show();
     } else if (platform && platform.match(/android/i)) {
-        window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
-    }
+        android.shareNavHandler(shareData);
+    } 
 }
+ 
