@@ -124,7 +124,16 @@ function shareNavHandler() {
     platform = getQueryVariable('smm_platform') + '';
     if (platform && platform.match(/ios/i)) {
         window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
+
+        jqueryAlert({
+            'content': platform,
+            'closeTime': 2000,
+            'end': function () {
+                console.log('已关闭弹框')
+            }
+        }).show();
     } else if (platform && platform.match(/android/i)) {
         window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
     }
+
 }
