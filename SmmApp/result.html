@@ -21,17 +21,18 @@
 	<script src='js/result.js'></script>
 	<script>
 
-		var platform = getQueryVariable('smm_platform') + '';
-		function shareNavHandler() {
-			if (platform && platform.match(/ios/i)) {
-				window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
-			} else if (platform && platform.match(/android/i)) {
-				window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
-			}
-		}
 
 		$(document).ready(function () {
-			topBar(); 
+			var platform = getQueryVariable('smm_platform') + '';
+			function shareNavHandler() {
+				if (platform && platform.match(/ios/i)) {
+					window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
+				} else if (platform && platform.match(/android/i)) {
+					window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
+				}
+			}
+
+			topBar();
 			$("#app").on("click", ".share-btn", function () {
 				if (platform && platform.match(/ios/i)) {
 					window.webkit.messageHandlers.shareHandler.postMessage(shareData);
@@ -60,12 +61,13 @@
 				$('.card-list').append(resultHtml);
 			}
 			showExamResult();
+			shareNavHandler();
 		});
 	</script>
 </head>
 
 <body>
-	<div id="app" onload="shareNavHandler()">
+	<div id="app" >
 		<div class="topbar">
 			<div class="s-tabcell topbar-left fl"><span class="d-ibm icon-wrap"><i class="d-b icon-back"></i></span>
 			</div>
