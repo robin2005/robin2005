@@ -3048,6 +3048,7 @@ h1, h2, h3, h4, h5, h6 {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 129px 56px;;
+    display: none;
 }
 
 .page-mark .icon-andriod{ 
@@ -3055,7 +3056,12 @@ h1, h2, h3, h4, h5, h6 {
     background-repeat: no-repeat;
     background-position: center;
     background-size: 129px 56px;
+    display: none;
 } 
+.app-page--has-topbar .icon-ios,.app-page--has-topbar .icon-andriod
+{
+ display: block;
+}
 
 .icon-back {
     background-image: url(../images/back.png);
