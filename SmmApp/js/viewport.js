@@ -110,12 +110,7 @@ function topBar() {
             $('#app').removeClass("app-page--has-topbar"); 
             $("#app").on("click", ".icon-andriod", function () {
                 openApp();
-            });
-            if(platform.match(/ios/i)){
-                window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
-            }else{
-                window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
-            }
+            }); 
         } else {
             $('#app').addClass("app-page--has-topbar");
             $("#app").on("click", ".icon-ios", function () {
@@ -136,8 +131,12 @@ function shareNavHandler() {
                 console.log('已关闭弹框')
             }
         }).show();
+        if(platform.match(/ios/i)){
+            window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
+        }else{
+            window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
+        }
     } else if (platform && platform.match(/android/i)) {
         window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
-    }
-
+    } 
 }
