@@ -120,6 +120,7 @@ function topBar() {
     }
 } 
 function shareNavHandler() { 
+    var shareData = { sharetitle: 'Happy Thanksgiving', sharecontent: 'Happy Thanksgiving', sharelinkurl: 'Happy Thanksgiving', shareimg: 'Happy Thanksgiving' };
     platform = getQueryVariable('smm_platform') + '';
     if (platform && platform.match(/ios/i)) {
         window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
