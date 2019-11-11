@@ -21,8 +21,8 @@
 	<script src='js/result.js'></script>
 	<script>
 
+		var platform = getQueryVariable('smm_platform') + '';
 		function shareNavHandler() {
-			var platform = getQueryVariable('smm_platform') + '';
 			if (platform && platform.match(/ios/i)) {
 				window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
 			} else if (platform && platform.match(/android/i)) {
@@ -31,8 +31,7 @@
 		}
 
 		$(document).ready(function () {
-			topBar();
-			var platform = getQueryVariable('smm_platform') + '';
+			topBar(); 
 			$("#app").on("click", ".share-btn", function () {
 				if (platform && platform.match(/ios/i)) {
 					window.webkit.messageHandlers.shareHandler.postMessage(shareData);
@@ -42,7 +41,7 @@
 			});
 
 			$("#app").on("click", ".icon-back", function () {
-				window.location = 'home.html?smm_platform=' + platform+'&radom=' + Date.now();
+				window.location = 'home.html?smm_platform=' + platform;
 			});
 
 			function showExamResult() {
