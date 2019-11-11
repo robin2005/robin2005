@@ -13,14 +13,23 @@
 		var random = Math.random();
 		document.write('<link href="css/home.css?v=' + random + '" rel="stylesheet" type="text/css"/>');
 	</script>
-    <title>Happy Thanksgiving</title>
+	<title>Happy Thanksgiving</title>
 	<link rel="stylesheet" href="css/alert.css">
 	<script src="js/viewport.js"></script>
 	<script src="js/jquery.min.js"></script>
 	<script src='js/alert.js'></script>
 	<script src='js/result.js'></script>
 	<script>
-		var startIndex = 0;
+
+		function shareNavHandler() {
+			var platform = getQueryVariable('smm_platform') + '';
+			if (platform && platform.match(/ios/i)) {
+				window.webkit.messageHandlers.shareNavHandler.postMessage({ sharetitle: '', sharecontent: '', sharelinkurl: '', shareimg: '' });
+			} else if (platform && platform.match(/android/i)) {
+				window.webkit.messageHandlers.shareNavHandler.postMessage({ sharetitle: '', sharecontent: '', sharelinkurl: '', shareimg: '' });
+			}
+		} 
+		
 		$(document).ready(function () {
 			topBar();
 			var platform = getQueryVariable('smm_platform') + '';
@@ -54,15 +63,6 @@
 			}
 			showExamResult();
 		});
-
-		function shareNavHandler() {
-			var platform = getQueryVariable('smm_platform') + '';
-			if (platform && platform.match(/ios/i)) {
-				window.webkit.messageHandlers.shareNavHandler.postMessage({ sharetitle: '', sharecontent: '', sharelinkurl: '', shareimg: '' });
-			} else if (platform && platform.match(/android/i)) {
-				window.webkit.messageHandlers.shareNavHandler.postMessage({ sharetitle: '', sharecontent: '', sharelinkurl: '', shareimg: '' });
-			}
-		}
 	</script>
 </head>
 
