@@ -59,34 +59,72 @@ function getQueryVariable(variable) {
     return (false);
 }
 
+function openAppIOS() {
+    var _clickTime = +(new Date());
+    var ifr = document.createElement("iframe");
+    ifr.src = "smm://";
+    ifr.style.display = "none";
+    document.body.appendChild(ifr);
+    //启动间隔20ms运行的定时器，并检测累计消耗时间是否超过3000ms，超过则结束
+    var _count = 0, intHandle;
+    intHandle = setInterval(function () {
+        _count++;
+        var elsTime = +(new Date()) - _clickTime;
+        console.log(_count, elsTime, +(new Date()), _clickTime)
+        if (_count >= 100 || elsTime > 3000) {
+            clearInterval(intHandle);
+            document.body.removeChild(ifr);
+            //检查app是否打开
+            if (document.hidden || document.webkitHidden) {
+                // 打开了
+                window.close();
+            } else {
+                window.location = "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728";//ios下载地址
+            }
+        }
+    }, 20);
+}
+
+function openAppAndroid() {
+    var _clickTime = new Date().getTime();
+    window.location.href = '？？？？？？？？？？？？？？？？？？'; /***打开app的协议，有安卓同事提供***/
+
+    //启动间隔20ms运行的定时器，并检测累计消耗时间是否超过3000ms，超过则结束
+    var _count = 0, intHandle;
+    intHandle = setInterval(function () {
+        _count++;
+        var elsTime = new Date().getTime() - _clickTime;
+        if (_count >= 100 || elsTime > 3000) {
+            console.log(_count)
+            console.log(elsTime)
+            clearInterval(intHandle);
+            //检查app是否打开
+            if (document.hidden || document.webkitHidden) {
+                // 打开了
+                window.close();
+            } else {
+                // 没打开
+                alert('没打开')
+                // window.location.href = "？？？？？？？？？？？？？？";//下载链接
+            }
+        }
+    }, 20);
+
+}
+
+
 //打开（下载）App
 function openApp() {
-    var ua = window.navigator.userAgent.toLowerCase();
-    //微信
-    if (ua.match(/MicroMessenger/i) == 'micromessenger') {
-        window.location.href = 'downLoadForPhone';
-    } else {//非微信浏览器
-        if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
-            var loadDateTime = new Date();
-            window.setTimeout(function () {
-                var timeOutDateTime = new Date();
-                if (timeOutDateTime - loadDateTime < 5000) {
-                    window.location = "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728";//ios下载地址
-                } else {
-                    window.close();
-                }
-            }, 2000);
-            window.location = "smm://";
-        } else if (navigator.userAgent.match(/android/i)) {
-            var state = null;
-            try {
-                window.location = 'smm://';
-                setTimeout(function () {
-                    window.location = ""; //android下载地址 
-                }, 500);
-            } catch (e) { }
-        }
+    var u = window.navigator.userAgent;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+    if (isAndroid) {
+        openAppAndroid();
     }
+    if (isiOS) {
+        openAppIOS();
+    }
+
 }
 
 var platform = '';
@@ -98,7 +136,7 @@ function topBar() {
         $('#app').addClass("app-page--has-topbar");
     } else {
         platform = getQueryVariable('smm_platform') + '';
-        if (platform && (platform.match(/ios/i) || platform.match(/android/i))) { 
+        if (platform && (platform.match(/ios/i) || platform.match(/android/i))) {
             $('#app').removeClass("app-page--has-topbar");
         } else {
             $('#app').addClass("app-page--has-topbar");
@@ -112,24 +150,21 @@ function topBar() {
     });
 }
 
-function loadFunction()
-{
+function loadFunction() {
     platform = getQueryVariable('smm_platform') + '';
     if (platform && platform.match(/ios/i) && window.webkit.messageHandlers.chaneNavColor) {
         window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
     } else if (platform && platform.match(/android/i)) {
         window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
-    } 
-} 
+    }
+}
 
-function loadShareFunction()
-{
+function loadShareFunction() {
     platform = getQueryVariable('smm_platform') + '';
     var shareData = { sharetitle: 'Happy Thanksgiving', sharecontent: 'Happy Thanksgiving', sharelinkurl: window.location.href, shareimg: 'http://api.cocoachina.com/uploads/191111/57260b5a78cdbaf0d4cc92125da2e96b.png' };
     if (platform && platform.match(/ios/i) && window.webkit.messageHandlers.chaneNavColor) {
         window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
     } else if (platform && platform.match(/android/i)) {
         android.shareNavHandler(shareData);
-    } 
+    }
 }
- 
