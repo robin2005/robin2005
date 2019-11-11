@@ -29,9 +29,9 @@
 					window.webkit.messageHandlers.shareHandler.postMessage(shareData);
 				} else if (platform && platform.match(/android/i)) {
 					window.webkit.messageHandlers.shareHandler.postMessage(shareData);
-				}  
+				}
 			});
-			
+
 			$("#app").on("click", ".icon-back", function () {
 				window.location = 'home.html?smm_platform=' + platform;
 			});
@@ -41,23 +41,26 @@
 				var appHeight = $("body").height();
 				var height = appWidth * 138.0 / 300;
 				$('.card-list').attr("style", "background-image:url();");
-				var model = result["AAAAA"];
-				var resultHtml = '<div class="card-box active"><div class="card"><div class="question-wrap result-card"><div class="question fs-18 result-html"><div class="result-avatar">' +
-					'<img src="' + model.img + '" /><div class="result-title">Congratulation!!</div>' +
-					'<div class="result-subtitle">Your match with Abraham Lincoln is<span> ' + model.sacle + '</span></div></div>' +
-					'<div class="result-content"><div class="content"> ' +
-					model.content +
-					'</div > <div class="share-title text-center"> Share to win a Super Match</div> <div class="action-wrap"><div class="cp-btn cp-btn--yellow share-btn">SHARE</div></div></div ></div ></div ></div ></div > ';
-				$('.card-list').empty();
-				$('.card-list').append(resultHtml);
+				var options = getQueryVariable('options') + '';
+				if (result[options]) {
+					var model = result[options];
+					var resultHtml = '<div class="card-box active"><div class="card"><div class="question-wrap result-card"><div class="question fs-18 result-html"><div class="result-avatar">' +
+						'<img src="' + model.img + '" /><div class="result-title">Congratulation!!</div>' +
+						'<div class="result-subtitle">Your match with Abraham Lincoln is<span> ' + model.sacle + '</span></div></div>' +
+						'<div class="result-content"><div class="content"> ' +
+						model.content +
+						'</div > <div class="share-title text-center"> Share to win a Super Match</div> <div class="action-wrap"><div class="cp-btn cp-btn--yellow share-btn">SHARE</div></div></div ></div ></div ></div ></div > ';
+					$('.card-list').empty();
+					$('.card-list').append(resultHtml);
+				}
 			}
 			showExamResult();
 		});
 
-        $(window).load(function(){   
-            loadShareFunction();
+		$(window).load(function () {
+			loadShareFunction();
 		});
-		
+
 	</script>
 </head>
 

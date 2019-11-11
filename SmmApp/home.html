@@ -42,7 +42,13 @@
                 var list = $('.card-list');
                 var length = list.children().length;
                 if (startIndex == length - 1) {
-                    window.location = 'result.html?smm_platform=' + platform + '&radom=' + Date.now();
+                    $('.option').hasClass("selected"); 
+                    var options = $('.option.selected');
+                    var value = '';
+                    for (let index = 0; index < options.length; index++) {
+                        value += options[index].attributes['data-optionid'].value; 
+                    }  
+                    window.location = 'result.html?smm_platform=' + platform + '&radom=' + Date.now() +'&options='+value;
                 } else {
                     list.children().removeClass('prev').removeClass('active');
                     list.children().eq(startIndex).hide();
@@ -82,12 +88,8 @@
                 var appWidth = $("#app").width();
                 var appHeight = $("body").height();
                 $('.card-list').attr("style", "background-size: 300px 138px;background-position:right bottom;");
-                var data = [{ title: "What’s your gender?", a: "Male", b: "Female" },
-                { title: "The Boomers intended to change the world. If there's a chance to back to the WW2 , which roles would you like to be?", a: "A poet with romantic fantasy", b: "A scholar with advanced ideas" },
-                { title: "Name a place where it might be romantic to get stranded with your partner.", a: "Cabin/Lodge", b: "Park" },
-                { title: "Name a food you would cook first on the grill for Thanksgiving Dinner.", a: "A poet with romantic fantasy", b: "A scholar with advanced ideas" }]
-                for (var i = 0; i < data.length; i++) {
-                    var element = data[i];
+                for (var i = 0; i < dataExam.length; i++) {
+                    var element = dataExam[i];
                     var optionHtml = '<div class="card-box next2"><div class="card flex"><div class="question-wrap"><div class="question fs-18">';
                     if (i == 0) {
                         optionHtml = '<div class="card-box active"><div class="card"><div class="question-wrap"><div class="question fs-18">';
@@ -95,13 +97,13 @@
                         optionHtml = '<div class="card-box next"><div class="card"><div class="question-wrap"><div class="question fs-18">';
                     }
                     optionHtml += (i + 1) + '. ' + element.title;
-                    optionHtml += '</div><ul class="options"><div data-optionid="3410" class="fs-16 option"><div class="option-content flex__item">';
+                    optionHtml += '</div><ul class="options"><div data-optionid="A" class="fs-16 option"><div class="option-content flex__item">';
                     optionHtml += element.a;
-                    optionHtml += '</div></div><div class="option-line"></div><div data-optionid="3411" class="fs-16 option"><div class="option-content flex__item">';
+                    optionHtml += '</div></div><div class="option-line"></div><div data-optionid="B" class="fs-16 option"><div class="option-content flex__item">';
                     optionHtml += element.b;
                     optionHtml += '</div></div><div class="option-line"></div><div class="option-line"></div>';
                     optionHtml += '<div class="action-wrap"><div class="nextaction cp-btn cp-btn--yellow cp-btn--disabled">';
-                    if (i == data.length - 1) {
+                    if (i == dataExam.length - 1) {
                         optionHtml += '&nbsp;&nbsp;' + 'Submission'.toUpperCase() + '&nbsp;&nbsp;';
                     } else {
                         optionHtml += 'NEXT';
