@@ -16,14 +16,13 @@
     <title>Happy Thanksgiving</title>
     <link rel="stylesheet" href="css/alert.css">
     <script src="js/jquery.min.js"></script>
-    <script src='js/alert.js'></script>
+    <script src='js/alert.js'></script> 
+    <script src="js/result.js"></script> 
+    <script src="js/viewport.js"></script>
     <script>
-        var random = Math.random();
-        document.write('<script src="js/viewport.js?v=' + random + '"></script>');
-    </script>
-    <script>
+        var startIndex = 0;
         $(document).ready(function () {
-            var startIndex = 0;
+
             $("#app").on("click", ".option", function () {
                 $(this).parent().children().removeClass("selected");
                 $(this).addClass("selected");
@@ -44,7 +43,7 @@
                 var length = list.children().length;
                 if (startIndex == length - 1) {
                     shareNavHandler();
-                    window.location = 'result.html?smm_platform=' + platform + '&radom=' + Date.now();
+                      window.location = 'result.html?smm_platform=' + platform + '&radom=' + Date.now();
                 } else {
                     list.children().removeClass('prev').removeClass('active');
                     list.children().eq(startIndex).hide();
@@ -76,7 +75,7 @@
                     $('.fs-24').attr("style", "font-size:20px");
                     $('.fs-18').attr("style", "font-size:15px");
                 }
-            }
+            } 
 
             function startExam() {
                 $('.card-list').empty();
