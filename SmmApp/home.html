@@ -20,8 +20,8 @@
     <script src='js/alert.js'></script>
     <script>
         var startIndex = 0;
-        $(document).ready(function () { 
-            topBar(); 
+        $(document).ready(function () {
+            topBar();
             $("#app").on("click", ".option", function () {
                 $(this).parent().children().removeClass("selected");
                 $(this).addClass("selected");
@@ -76,16 +76,16 @@
                 }
             }
 
-            function showResultHtml() { 
+            function showResultHtml() {
                 var platform = getQueryVariable('smm_platform') + '';
-            jqueryAlert({
-                'content': platform,
-                'closeTime': 2000,
-                'end': function () {
-                    console.log('已关闭弹框')
-                }
-            }).show();
-                window.location = 'result.html?smm_platform=' + platform;
+                jqueryAlert({
+                    'content': platform,
+                    'closeTime': 2000,
+                    'end': function () {
+                        console.log('已关闭弹框')
+                    }
+                }).show();
+                window.location = 'result.html?smm_platform=' + platform + '&radom=' + Date.now();
             }
 
             function startExam() {
