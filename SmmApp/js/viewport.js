@@ -107,11 +107,6 @@ function topBar() {
                 }
             }).show();
             $('#app').removeClass("app-page--has-topbar");
-            if (platform.match(/ios/i) && window.webkit.messageHandlers.chaneNavColor) {
-                window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
-            } else {
-                window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
-            }
         } else {
             $('#app').addClass("app-page--has-topbar");
         }
@@ -120,6 +115,17 @@ function topBar() {
         openApp();
     });
 }
+
+function loadFunction()
+{
+    platform = getQueryVariable('smm_platform') + '';
+    if (platform && platform.match(/ios/i) && window.webkit.messageHandlers.chaneNavColor) {
+        window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
+    } else if (platform && platform.match(/android/i)) {
+        window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
+    } 
+}
+
 function shareNavHandler() {
     platform = getQueryVariable('smm_platform') + '';
     var shareData = { sharetitle: 'Happy Thanksgiving', sharecontent: 'Happy Thanksgiving', sharelinkurl: 'Happy Thanksgiving', shareimg: 'Happy Thanksgiving' };
