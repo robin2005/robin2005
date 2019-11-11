@@ -19,29 +19,8 @@
     <script src='js/alert.js'></script>
     <script>
         var startIndex = 0;
-        $(document).ready(function () {
-            function topBar() {
-                $('#app').addClass("fs-14");
-                var ua = window.navigator.userAgent.toLowerCase();
-                if (ua.match(/MicroMessenger/i) == 'micromessenger') {
-                    $('#app').addClass("app-page--has-topbar");
-                } else {
-                    var platform = getQueryVariable('smm_platform') + ' ';
-                    if (platform && (platform.match(/ios/i) || platform.match(/android/i))) {
-                        jqueryAlert({
-                            'content': platform,
-                            'closeTime': 2000,
-                            'end': function () {
-                                console.log('已关闭弹框')
-                            }
-                        }).show();
-                        $('#app').removeClass("app-page--has-topbar");
-                    } else {
-                        $('#app').addClass("app-page--has-topbar");
-                    }
-                }
-            }
-            topBar();
+        $(document).ready(function () { 
+            topBar(); 
             $("#app").on("click", ".option", function () {
                 $(this).parent().children().removeClass("selected");
                 $(this).addClass("selected");
@@ -56,12 +35,12 @@
                 startExam();
             });
 
+
             $("#app").on("click", ".nextaction", function () {
                 if ($(this).hasClass("cp-btn--disabled")) return;
                 var list = $('.card-list');
                 var length = list.children().length;
                 if (startIndex == length - 1) {
-                    alert('Over');
                     showResultHtml();
                 } else {
                     list.children().removeClass('prev').removeClass('active');
@@ -70,9 +49,6 @@
                     list.children().eq(startIndex).next().removeClass('next').addClass('active');
                     list.children().eq(startIndex).next().next().removeClass('next2').addClass('next');
                     startIndex += 1;
-                    if (startIndex == length - 1) {
-
-                    }
                 }
             });
 
@@ -101,13 +77,8 @@
 
             function showResultHtml() {
                 startIndex = 0;
-                var appWidth = $("#app").width();
-                var appHeight = $("body").height();
-                var height = appWidth * 143.0 / 300;
-                $('.card-list').attr("style", "background-size: 0px 0px;background-position:0px 0px;");
-                var starHtml = '';
-                $('.card-list').empty();
-                $('.card-list').append(starHtml);
+                var platform = getQueryVariable('smm_platform') + '';
+                window.location = 'result.html?platform=' + platform;
             }
 
             function startExam() {
@@ -162,6 +133,9 @@
         </div>
         <div class="page-answer ">
             <div class="card-list">
+                <div class="card-box active">
+
+                </div>
             </div>
             <div class="page-mark flex">
                 <i class="d-b icon-ios flex__item"></i>
@@ -169,7 +143,7 @@
             </div>
         </div>
     </div>
-
+    </div>
 </body>
 
 </html>

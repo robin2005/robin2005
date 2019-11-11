@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<meta name="flexible" content="initial-dpr=1" />
+	<script>
+		var random = Math.random();
+		document.write('<link href="css/home.css?v=' + random + '" rel="stylesheet" type="text/css"/>');
+	</script>
+	<link rel="stylesheet" href="css/alert.css">
+	<script src="js/viewport.js"></script>
+	<script src="js/jquery.min.js"></script>
+	<script src='js/alert.js'></script>
+	<script src='js/result.js'></script>
+	<script>
+		var startIndex = 0;
+		$(document).ready(function () {
+			topBar();
+			$("#app").on("click", ".share-btn", function () {
+				var platform = getQueryVariable('smm_platform') + ''; 
+				if (platform && platform.match(/ios/i)){
+					window.webkit.messageHandlers.shareHandler.postMessage({sharetitle:'',sharecontent:'',sharelinkurl:'',shareimg:''});
+				} else if (platform && platform.match(/android/i)){ 
+					window.webkit.messageHandlers.shareHandler.postMessage({sharetitle:'',sharecontent:'',sharelinkurl:'',shareimg:''});
+				}
+			});
+
+			$("#app").on("click", ".icon-back", function () {
+				var platform = getQueryVariable('smm_platform') + '';
+				window.location = 'result.html?smm_platform=' + platform;
+			});
+
+			function showExamResult() {
+				var appWidth = $("#app").width();
+				var appHeight = $("body").height();
+				var height = appWidth * 138.0 / 300;
+				$('.card-list').attr("style", "background-image:url();");
+				var model = result["AAAAA"];
+				var resultHtml = '<div class="card-box active"><div class="card"><div class="question-wrap result-card"><div class="question fs-18 result-html"><div class="result-avatar">' +
+					'<img src="' + model.img + '" /><div class="result-title">Congratulation!!</div>' +
+					'<div class="result-subtitle">Your match with Abraham Lincoln is<span> ' + model.sacle + '</span></div></div>' +
+					'<div class="result-content"><div class="content"> ' +
+					model.content +
+					'</div > <div class="share-title text-center"> Share to win a Super Match</div> <div class="action-wrap"><div class="cp-btn cp-btn--yellow share-btn">SHARE</div></div></div ></div ></div ></div ></div > ';
+				$('.card-list').empty();
+				$('.card-list').append(resultHtml);
+			}
+			showExamResult();
+		});
+
+	</script>
+</head>
+
+<body>
+	<div id="app">
+		<div class="topbar">
+			<div class="s-tabcell topbar-left fl"><span class="d-ibm icon-wrap"><i class="d-b icon-back"></i></span>
+			</div>
+			<div class="fs-23 topbar-title s-tabcell"><span class="d-ibm">Happy Thanksgiving</span></div>
+			<div class="s-tabcell topbar-right fr"></div>
+		</div>
+		<div class="page-answer ">
+			<div class="card-list">
+
+			</div>
+			<div class="page-mark flex">
+				<i class="d-b icon-ios flex__item"></i>
+				<i class="d-b icon-andriod flex__item "></i>
+			</div>
+		</div>
+	</div>
+	</div>
+</body>
+
+</html>

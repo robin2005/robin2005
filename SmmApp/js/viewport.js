@@ -59,3 +59,62 @@ function getQueryVariable(variable)
        }
        return(false);
 }
+
+//打开（下载）App
+function openApp() {
+    var ua = window.navigator.userAgent.toLowerCase();
+    //微信
+    if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+        window.location.href = 'downLoadForPhone';
+    } else {//非微信浏览器
+        if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+            var loadDateTime = new Date();
+            window.setTimeout(function () {
+                var timeOutDateTime = new Date();
+                if (timeOutDateTime - loadDateTime < 5000) {
+                    window.location = "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728";//ios下载地址
+                } else {
+                    window.close();
+                }
+            }, 2000);
+            window.location = "smm://";
+        } else if (navigator.userAgent.match(/android/i)) {
+            var state = null;
+            try {
+                window.location = 'smm://';
+                setTimeout(function () {
+                    window.location = ""; //android下载地址 
+                }, 500);
+            } catch (e) { }
+        }
+    }
+} 
+
+
+function topBar() {
+    $('#app').addClass("fs-14");
+    var ua = window.navigator.userAgent.toLowerCase();
+    if (ua.match(/MicroMessenger/i) == 'micromessenger') {
+        $('#app').addClass("app-page--has-topbar");
+    } else {
+        var platform = getQueryVariable('smm_platform') + ' ';
+        if (platform && (platform.match(/ios/i) || platform.match(/android/i))) {
+            jqueryAlert({
+                'content': platform,
+                'closeTime': 2000,
+                'end': function () {
+                    console.log('已关闭弹框')
+                }
+            }).show();
+            $('#app').removeClass("app-page--has-topbar"); 
+            $("#app").on("click", ".icon-andriod", function () {
+                openApp();
+            });
+        } else {
+            $('#app').addClass("app-page--has-topbar");
+            $("#app").on("click", ".icon-ios", function () {
+                openApp();
+            });
+        }
+    }
+}
