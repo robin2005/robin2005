@@ -24,9 +24,9 @@
 		function shareNavHandler() {
 			var platform = getQueryVariable('smm_platform') + '';
 			if (platform && platform.match(/ios/i)) {
-				window.webkit.messageHandlers.shareHandler.postMessage(shareData);
+				window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
 			} else if (platform && platform.match(/android/i)) {
-				window.webkit.messageHandlers.shareHandler.postMessage(shareData);
+				window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
 			}
 		}
 
@@ -39,7 +39,6 @@
 				} else if (platform && platform.match(/android/i)) {
 					window.webkit.messageHandlers.shareHandler.postMessage(shareData);
 				}
-				shareNavHandler();
 			});
 
 			$("#app").on("click", ".icon-back", function () {
