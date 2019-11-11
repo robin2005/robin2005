@@ -107,16 +107,13 @@ function topBar() {
                 }
             }).show();
             $('#app').removeClass("app-page--has-topbar");
-            $("#app").on("click", ".icon-andriod", function () {
-                openApp();
-            });
         } else {
             $('#app').addClass("app-page--has-topbar");
-            $("#app").on("click", ".icon-ios", function () {
-                openApp();
-            });
         }
     }
+    $("#app").on("click", ".icon-andriod", function () {
+        openApp();
+    });
 }
 function shareNavHandler() {
     platform = getQueryVariable('smm_platform') + '';
