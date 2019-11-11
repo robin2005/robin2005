@@ -98,7 +98,7 @@ function topBar() {
     if (ua.match(/MicroMessenger/i) == 'micromessenger') {
         $('#app').addClass("app-page--has-topbar");
     } else {
-         platform = getQueryVariable('smm_platform') + ' ';
+         platform = getQueryVariable('smm_platform') + '';
         if (platform && (platform.match(/ios/i) || platform.match(/android/i))) {
             jqueryAlert({
                 'content': platform,
@@ -120,6 +120,7 @@ function topBar() {
     }
 } 
 function shareNavHandler() { 
+    platform = getQueryVariable('smm_platform') + '';
     if (platform && platform.match(/ios/i)) {
         window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
     } else if (platform && platform.match(/android/i)) {
