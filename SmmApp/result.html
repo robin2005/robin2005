@@ -22,16 +22,7 @@
 	<script>
 
 
-		$(document).ready(function () {
-			var platform = getQueryVariable('smm_platform') + '';
-			function shareNavHandler() {
-				if (platform && platform.match(/ios/i)) {
-					window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
-				} else if (platform && platform.match(/android/i)) {
-					window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
-				}
-			}
-
+		$(document).ready(function () { 
 			topBar();
 			$("#app").on("click", ".share-btn", function () {
 				if (platform && platform.match(/ios/i)) {
@@ -61,7 +52,6 @@
 				$('.card-list').append(resultHtml);
 			}
 			showExamResult();
-			shareNavHandler();
 		});
 	</script>
 </head>
