@@ -35,3 +35,5 @@ var result = {
         content:"Abraham Lincoln - who announced that the last Thursday of November as the Federal Thanksgiving Day.<br /><br />You’re overbearing with strong possession. In real life, you’re a cold outside and hot inside person.It’s lucky to be with you, because you’re too gentle to spoil your lover.",
     }
 };
+
+var sgaredata = { sharetitle: 'Happy Thanksgiving', sharecontent: 'Happy Thanksgiving', sharelinkurl: 'Happy Thanksgiving', shareimg: 'Happy Thanksgiving' };
