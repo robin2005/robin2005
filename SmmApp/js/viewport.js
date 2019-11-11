@@ -59,68 +59,123 @@ function getQueryVariable(variable) {
     return (false);
 }
 
-function openAppIOS() {
-    var _clickTime = +(new Date());
-    var ifr = document.createElement("iframe");
-    ifr.src = "smm://";
-    ifr.style.display = "none";
-    document.body.appendChild(ifr);
-    //启动间隔20ms运行的定时器，并检测累计消耗时间是否超过3000ms，超过则结束
-    var _count = 0, intHandle;
-    intHandle = setInterval(function () {
-        _count++;
-        var elsTime = +(new Date()) - _clickTime;
-        console.log(_count, elsTime, +(new Date()), _clickTime)
-        if (_count >= 100 || elsTime > 3000) {
-            clearInterval(intHandle);
-            document.body.removeChild(ifr);
-            //检查app是否打开
-            if (document.hidden || document.webkitHidden) { 
-                window.close();
-            } else {
-                window.location = "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728";//ios下载地址
-            }
-        }
-    }, 20);
-}
+// function openAppIOS() {
+//     var _clickTime = +(new Date());
+//     var ifr = document.createElement("iframe");
+//     ifr.src = "smm://";
+//     ifr.style.display = "none";
+//     document.body.appendChild(ifr);
+//     //启动间隔20ms运行的定时器，并检测累计消耗时间是否超过3000ms，超过则结束
+//     var _count = 0, intHandle;
+//     intHandle = setInterval(function () {
+//         _count++;
+//         var elsTime = +(new Date()) - _clickTime;
+//         console.log(_count, elsTime, +(new Date()), _clickTime)
+//         if (_count >= 100 || elsTime > 3000) {
+//             clearInterval(intHandle);
+//             document.body.removeChild(ifr);
+//             //检查app是否打开
+//             if (document.hidden || document.webkitHidden) { 
+//                 window.close();
+//             } else {
+//                 window.location = "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728";//ios下载地址
+//             }
+//         }
+//     }, 20);
+// }
 
-function openAppAndroid() {
-    var _clickTime = new Date().getTime();
-    window.location.href = "smm://"; 
-    //启动间隔20ms运行的定时器，并检测累计消耗时间是否超过3000ms，超过则结束
-    var _count = 0, intHandle;
-    intHandle = setInterval(function () {
-        _count++;
-        var elsTime = new Date().getTime() - _clickTime;
-        if (_count >= 100 || elsTime > 3000) {
-            console.log(_count)
-            console.log(elsTime)
-            clearInterval(intHandle);
-            //检查app是否打开
-            if (document.hidden || document.webkitHidden) { 
-                window.close();
-            } else { 
-                window.location = "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728";//ios下载地址
-            }
-        }
-    }, 20);
+// function openAppAndroid() {
+//     var _clickTime = new Date().getTime();
+//     window.location.href = "smm://"; 
+//     //启动间隔20ms运行的定时器，并检测累计消耗时间是否超过3000ms，超过则结束
+//     var _count = 0, intHandle;
+//     intHandle = setInterval(function () {
+//         _count++;
+//         var elsTime = new Date().getTime() - _clickTime;
+//         if (_count >= 100 || elsTime > 3000) {
+//             console.log(_count)
+//             console.log(elsTime)
+//             clearInterval(intHandle);
+//             //检查app是否打开
+//             if (document.hidden || document.webkitHidden) { 
+//                 window.close();
+//             } else { 
+//                 window.location = "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728";//ios下载地址
+//             }
+//         }
+//     }, 20);
 
-}
-
+// }
 
 //打开（下载）App
-function openApp() {
-    var u = window.navigator.userAgent;
-    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
-    var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
-    if (isAndroid) {
-        openAppAndroid();
-    }
-    if (isiOS) {
-        openAppIOS();
-    }
+// function openApp() {
+//     var u = window.navigator.userAgent;
+//     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+//     var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+//     if (isAndroid) {
+//         openAppAndroid();
+//     }
+//     if (isiOS) {
+//         openAppIOS();
+//     }
 
+// }
+function openApp(){
+    //判断浏览器
+    var u = navigator.userAgent;
+    if(/MicroMessenger/gi.test(u)) {
+       // 引导用户在浏览器中打开
+        alert('请在浏览器中打开');
+        return;
+    }
+    var d = new Date();
+    var t0 = d.getTime();
+    if(u.indexOf('Android') > -1 || u.indexOf('Linux') > -1){
+        //Android
+        if(openAppURL("smm://")){
+            openAppURL("smm://");
+        }else{
+            //由于打开需要1～2秒，利用这个时间差来处理－－打开app后，返回h5页面会出现页面变成app下载页面，影响用户体验
+            var delay = setInterval(function(){
+                 var d = new Date();
+                 var t1 = d.getTime();
+                 if( t1-t0<3000 && t1-t0>2000){
+                     window.location.href = "app下载地址";
+                 }
+                 if(t1-t0>=3000){
+                      clearInterval(delay);
+                 }
+            },1000);
+        }
+    }else if(u.indexOf('iPhone') > -1){
+        //IOS
+        if(openAppURL("smm://")){  
+            openAppURL("smm://");
+        }else{
+            var delay = setInterval(function(){
+                var d = new Date();
+                var t1 = d.getTime();
+                if( t1-t0<3000 && t1-t0>2000){ 
+                    window.location.href = "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728";//ios下载地址
+                }
+                if(t1-t0>=3000){
+                    clearInterval(delay);
+                }
+            },1000);
+        }
+    }    
 }
+ 
+function openAppURL(src) { 
+     var ifr = document.createElement('iframe');
+     ifr.src = src;
+     ifr.style.display = 'none';
+     document.body.appendChild(ifr);
+     window.setTimeout(function(){
+          document.body.removeChild(ifr);
+     },2000);
+}
+
 
 var platform = '';
 
