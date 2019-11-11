@@ -107,6 +107,9 @@ function topBar() {
     $("#app").on("click", ".icon-andriod", function () {
         openApp();
     });
+    $("#app").on("click", ".icon-ios", function () {
+        openApp();
+    });
 }
 
 function loadFunction()
@@ -122,7 +125,7 @@ function loadFunction()
 function loadShareFunction()
 {
     platform = getQueryVariable('smm_platform') + '';
-    var shareData = { sharetitle: 'Happy Thanksgiving', sharecontent: 'Happy Thanksgiving', sharelinkurl: 'Happy Thanksgiving', shareimg: 'Happy Thanksgiving' };
+    var shareData = { sharetitle: 'Happy Thanksgiving', sharecontent: 'Happy Thanksgiving', sharelinkurl: window.location.href, shareimg: 'http://api.cocoachina.com/uploads/191111/57260b5a78cdbaf0d4cc92125da2e96b.png' };
     if (platform && platform.match(/ios/i) && window.webkit.messageHandlers.chaneNavColor) {
         window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
     } else if (platform && platform.match(/android/i)) {
