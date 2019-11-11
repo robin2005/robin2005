@@ -75,8 +75,7 @@ function openAppIOS() {
             clearInterval(intHandle);
             document.body.removeChild(ifr);
             //检查app是否打开
-            if (document.hidden || document.webkitHidden) {
-                // 打开了
+            if (document.hidden || document.webkitHidden) { 
                 window.close();
             } else {
                 window.location = "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728";//ios下载地址
@@ -99,13 +98,10 @@ function openAppAndroid() {
             console.log(elsTime)
             clearInterval(intHandle);
             //检查app是否打开
-            if (document.hidden || document.webkitHidden) {
-                // 打开了
+            if (document.hidden || document.webkitHidden) { 
                 window.close();
-            } else {
-                // 没打开
-                alert('没打开')
-                // window.location.href = "？？？？？？？？？？？？？？";//下载链接
+            } else { 
+                window.location = "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728";//ios下载地址
             }
         }
     }, 20);
