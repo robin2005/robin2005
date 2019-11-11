@@ -111,13 +111,18 @@ function topBar() {
             $("#app").on("click", ".icon-andriod", function () {
                 openApp();
             });
+            if(platform.match(/ios/i)){
+                window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
+            }else{
+                window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
+            }
         } else {
             $('#app').addClass("app-page--has-topbar");
             $("#app").on("click", ".icon-ios", function () {
                 openApp();
-            });
+            }); 
         }
-    }
+    } 
 } 
 function shareNavHandler() { 
     platform = getQueryVariable('smm_platform') + '';
