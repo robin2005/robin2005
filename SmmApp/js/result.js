@@ -2,6 +2,7 @@
 var dataExam = [{ title: "What’s your gender?", a: "Male", b: "Female" },
 { title: "The Boomers intended to change the world. If there's a chance to back to the WW2 , which roles would you like to be?", a: "A poet with romantic fantasy", b: "A scholar with advanced ideas" },
 { title: "Name a place where it might be romantic to get stranded with your partner.", a: "Cabin/Lodge", b: "Park" },
+{ title: "Name a food you would cook first on the grill for Thanksgiving Dinner.", a: "A poet with romantic fantasy", b: "A scholar with advanced ideas" },
 { title: "Name a food you would cook first on the grill for Thanksgiving Dinner.", a: "A poet with romantic fantasy", b: "A scholar with advanced ideas" }];
 
 var result = {

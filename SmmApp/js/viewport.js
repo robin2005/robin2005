@@ -98,14 +98,7 @@ function topBar() {
         $('#app').addClass("app-page--has-topbar");
     } else {
         platform = getQueryVariable('smm_platform') + '';
-        if (platform && (platform.match(/ios/i) || platform.match(/android/i))) {
-            jqueryAlert({
-                'content': platform,
-                'closeTime': 2000,
-                'end': function () {
-                    console.log('已关闭弹框')
-                }
-            }).show();
+        if (platform && (platform.match(/ios/i) || platform.match(/android/i))) { 
             $('#app').removeClass("app-page--has-topbar");
         } else {
             $('#app').addClass("app-page--has-topbar");
