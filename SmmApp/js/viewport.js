@@ -49,15 +49,14 @@
     }
 }(window, window.lib || (window.lib = {}));
 
-function getQueryVariable(variable)
-{
-       var query = window.location.search.substring(1);
-       var vars = query.split("&");
-       for (var i=0;i<vars.length;i++) {
-               var pair = vars[i].split("=");
-               if(pair[0] == variable){return pair[1];}
-       }
-       return(false);
+function getQueryVariable(variable) {
+    var query = window.location.search.substring(1);
+    var vars = query.split("&");
+    for (var i = 0; i < vars.length; i++) {
+        var pair = vars[i].split("=");
+        if (pair[0] == variable) { return pair[1]; }
+    }
+    return (false);
 }
 
 //打开（下载）App
@@ -88,7 +87,7 @@ function openApp() {
             } catch (e) { }
         }
     }
-} 
+}
 
 var platform = '';
 
@@ -98,7 +97,7 @@ function topBar() {
     if (ua.match(/MicroMessenger/i) == 'micromessenger') {
         $('#app').addClass("app-page--has-topbar");
     } else {
-         platform = getQueryVariable('smm_platform') + '';
+        platform = getQueryVariable('smm_platform') + '';
         if (platform && (platform.match(/ios/i) || platform.match(/android/i))) {
             jqueryAlert({
                 'content': platform,
@@ -107,23 +106,23 @@ function topBar() {
                     console.log('已关闭弹框')
                 }
             }).show();
-            $('#app').removeClass("app-page--has-topbar"); 
+            $('#app').removeClass("app-page--has-topbar");
             $("#app").on("click", ".icon-andriod", function () {
                 openApp();
-            }); 
+            });
         } else {
             $('#app').addClass("app-page--has-topbar");
             $("#app").on("click", ".icon-ios", function () {
                 openApp();
-            }); 
+            });
         }
-    } 
-} 
-function shareNavHandler() { 
+    }
+}
+function shareNavHandler() {
     platform = getQueryVariable('smm_platform') + '';
     var shareData = { sharetitle: 'Happy Thanksgiving', sharecontent: 'Happy Thanksgiving', sharelinkurl: 'Happy Thanksgiving', shareimg: 'Happy Thanksgiving' };
     if (platform && platform.match(/ios/i)) {
-        window.webkit.messageHandlers.shareNavHandler.postMessage(shareData); 
+        window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
         jqueryAlert({
             'content': platform,
             'closeTime': 2000,
@@ -131,12 +130,12 @@ function shareNavHandler() {
                 console.log('已关闭弹框')
             }
         }).show();
-        if(platform.match(/ios/i)){
+        if (platform.match(/ios/i)) {
             window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
-        }else{
+        } else {
             window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
         }
     } else if (platform && platform.match(/android/i)) {
         window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
-    } 
+    }
 }
