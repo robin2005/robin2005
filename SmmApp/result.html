@@ -22,17 +22,16 @@
 		var startIndex = 0;
 		$(document).ready(function () {
 			topBar();
+			var platform = getQueryVariable('smm_platform') + '';
 			$("#app").on("click", ".share-btn", function () {
-				var platform = getQueryVariable('smm_platform') + ''; 
-				if (platform && platform.match(/ios/i)){
-					window.webkit.messageHandlers.shareHandler.postMessage({sharetitle:'',sharecontent:'',sharelinkurl:'',shareimg:''});
-				} else if (platform && platform.match(/android/i)){ 
-					window.webkit.messageHandlers.shareHandler.postMessage({sharetitle:'',sharecontent:'',sharelinkurl:'',shareimg:''});
+				if (platform && platform.match(/ios/i)) {
+					window.webkit.messageHandlers.shareHandler.postMessage({ sharetitle: '', sharecontent: '', sharelinkurl: '', shareimg: '' });
+				} else if (platform && platform.match(/android/i)) {
+					window.webkit.messageHandlers.shareHandler.postMessage({ sharetitle: '', sharecontent: '', sharelinkurl: '', shareimg: '' });
 				}
 			});
 
 			$("#app").on("click", ".icon-back", function () {
-				var platform = getQueryVariable('smm_platform') + '';
 				window.location = 'home.html?smm_platform=' + platform;
 			});
 
@@ -54,11 +53,19 @@
 			showExamResult();
 		});
 
+		function shareNavHandler() {
+			var platform = getQueryVariable('smm_platform') + '';
+			if (platform && platform.match(/ios/i)) {
+				window.webkit.messageHandlers.shareNavHandler.postMessage({ sharetitle: '', sharecontent: '', sharelinkurl: '', shareimg: '' });
+			} else if (platform && platform.match(/android/i)) {
+				window.webkit.messageHandlers.shareNavHandler.postMessage({ sharetitle: '', sharecontent: '', sharelinkurl: '', shareimg: '' });
+			}
+		}
 	</script>
 </head>
 
 <body>
-	<div id="app">
+	<div id="app" onload="shareNavHandler()">
 		<div class="topbar">
 			<div class="s-tabcell topbar-left fl"><span class="d-ibm icon-wrap"><i class="d-b icon-back"></i></span>
 			</div>
