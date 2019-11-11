@@ -78,6 +78,13 @@
             function showResultHtml() {
                 startIndex = 0;
                 var platform = getQueryVariable('smm_platform') + '';
+            jqueryAlert({
+                'content': platform,
+                'closeTime': 2000,
+                'end': function () {
+                    console.log('已关闭弹框')
+                }
+            }).show();
                 window.location = 'result.html?smm_platform=' + platform;
             }
 
