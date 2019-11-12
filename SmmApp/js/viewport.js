@@ -95,9 +95,9 @@ function goDownLoad() {
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
     var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     if (isAndroid) {
-        openAppFun('smm://', "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728");
+        openAppFun('smm://', "https://go.onelink.me/eO1y/thanksgiving");
     } else if (isIos) {
-        openAppFun('smm://', "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728");
+        openAppFun('smm://', "https://go.onelink.me/eO1y/thanksgiving");
     } else { 
         window.location.href = "https://www.seniormeetme.com/";
     }
@@ -115,10 +115,31 @@ function loadFunction() {
 
 function loadShareFunction() {
     platform = getQueryVariable('smm_platform') + '';
-    var shareData = { sharetitle: 'Happy Thanksgiving', sharecontent: 'Happy Thanksgiving', sharelinkurl: window.location.href, shareimg: 'http://api.cocoachina.com/uploads/191111/57260b5a78cdbaf0d4cc92125da2e96b.png' };
     if (platform && platform.match(/ios/i) && window.webkit.messageHandlers.chaneNavColor) {
-        window.webkit.messageHandlers.shareNavHandler.postMessage(shareData);
+        window.webkit.messageHandlers.shareNavHandler.postMessage(window.shareData);
     } else if (platform && platform.match(/android/i)) {
-        window.android.shareNavHandler(shareData);
+        window.android.shareNavHandler(window.shareData);
     }
+}
+
+// 根据生日的月份和日期，计算星座。
+function getAstro(month,day){
+    var s="魔羯水瓶双鱼牡羊金牛双子巨蟹狮子处女天秤天蝎射手魔羯";
+    var arr=[20,19,21,21,21,22,23,23,23,23,22,22];
+    return s.substr(month*2-(day<arr[month-1]?2:0),2);
+}
+
+// 根据生日的月份和日期，计算星座。0 魔羯 1 水瓶 2 双鱼 3牡羊 4金牛 5双子 6巨蟹 7狮子 8处女 9天秤 10天蝎 11射手 12魔羯
+function getAstroIndex(m,d){
+    return m-(d<"102223444433".charAt(m-1)- -19);  //输出0～12的数字，0表示摩羯，1表示水瓶，依此类推，...，11是射手，12是摩羯。
+}
+
+function radomDescription(){
+    var shareData = {sharetitle: 'Happy Thanksgiving', sharecontent: '3 secs to meet real you, so accurate!', sharelinkurl: window.location.href};
+    window.shareData = shareData;  
+    document.write('<meta property="og:image" content="https://robin2005.github.io/SmmApp/images/sharefb.png" />');
+	document.write('<meta property="og:title" content="'+window.shareData.sharecontent+'" />');
+	document.write('<meta property="og:description" content="'+window.shareData.sharecontent+'" />');
+	document.write('<meta property="og:type" content="Senior Meet Me" />');
+	document.write('<meta property="og:url" content="'+window.shareData.sharelinkurl+'" />');
 }
