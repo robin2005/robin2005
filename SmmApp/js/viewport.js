@@ -137,8 +137,4 @@ function getAstroIndex(m,d){
 function radomDescription(){
     var shareData = {sharetitle: 'Happy Thanksgiving', sharecontent: '3 secs to meet real you, so accurate!', sharelinkurl: window.location.href};
     window.shareData = shareData;   
-	document.write('<meta property="og:title" content="'+window.shareData.sharecontent+'" />');
-	document.write('<meta property="og:description" content="'+window.shareData.sharecontent+'" />');
-	document.write('<meta property="og:type" content="Senior Meet Me" />');
-	document.write('<meta property="og:url" content="'+window.shareData.sharelinkurl+'" />');
 }
