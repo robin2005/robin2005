@@ -3230,3 +3230,8 @@ background-image: -webkit-linear-gradient(top, #f0f0f0, #e6e6e6);
 color: #666;
 height: 30px;
 }
+
+input[type="date"]::-webkit-clear-button {
+  -webkit-appearance: none;
+   display: none;
+ }
