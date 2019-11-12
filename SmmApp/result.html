@@ -31,7 +31,7 @@
 				if (platform && platform.match(/ios/i)) {
 					window.webkit.messageHandlers.shareHandler.postMessage(shareData);
 				} else if (platform && platform.match(/android/i)) {
-					window.webkit.messageHandlers.shareHandler.postMessage(shareData);
+					window.android.shareHandler.postMessage(shareData);
 				}
 			});
 
