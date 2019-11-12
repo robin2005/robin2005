@@ -52,7 +52,7 @@
 				var appHeight = $("body").height();
 				var height = appWidth * 138.0 / 300;
 				$('.card-list').attr("style", "background-image:url();");
-				var options = getQueryVariable('options') + '';
+				var options = getQueryVariable('gender') + '_' + getQueryVariable('astro') + '';
 				if (result[options]) {
 					var model = result[options];
 					var resultHtml = '<div class="card-box active"><div class="card"><div class="question-wrap result-card"><div class="question fs-18 result-html"><div class="result-avatar">' +

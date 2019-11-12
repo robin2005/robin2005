@@ -138,3 +138,105 @@ function radomDescription(){
     var shareData = {sharetitle: 'Happy Thanksgiving', sharecontent: '3 secs to meet real you, so accurate!', sharelinkurl: window.location.href};
     window.shareData = shareData;  
 } 
+
+function dataMobileSelect(){
+    var years = [];
+    var month = [];
+    var day = [];
+    var myDate = new Date();
+    myDate.getFullYear();    //获取完整的年份(4位,1970-????)
+    myDate.getMonth();       //获取当前月份(0-11,0代表1月)
+    myDate.getDate();
+    var _data = [];
+    for (i = 0; i < myDate.getFullYear() - 1980; i++) {
+        //年
+        var obj = {};
+        var yer = 1980 + i + 1;
+        obj.value = 1980 + i + 1;
+        var _data2 = [];
+        for (n = 0; n < 12; n++) {
+            //月
+            var obj2 = {};
+            if (n < 9) {
+                obj2.value = '0' + (n + 1);
+            } else {
+                obj2.value = n + 1;
+            }
+            var _data3 = [];
+            if (n == 1) {
+                var cond1 = yer % 4 == 0;  //条件1：年份必须要能被4整除
+                var cond2 = yer % 100 != 0;  //条件2：年份不能是整百数
+                var cond3 = yer % 400 == 0;
+                var cond = cond1 && cond2 || cond3;
+                //闰年
+                if (cond) {
+                    for (y = 0; y < 29; y++) {
+                        //日
+                        var obj3 = {};
+                        if (y < 9) {
+                            obj3.value = '0' + (y + 1);
+                        } else {
+                            obj3.value = y + 1;
+                        }
+                        _data3.push(obj3)
+                    }
+                } else {
+                    for (y = 0; y < 28; y++) {
+                        //日
+                        var obj3 = {};
+                        if (y < 9) {
+                            obj3.value = '0' + (y + 1);
+                        } else {
+                            obj3.value = y + 1;
+                        }
+                        _data3.push(obj3)
+                    }
+                }
+            } else if (n == 0 || n == 2 || n == 4 || n == 6 || n == 7 || n == 9 || n == 11) {
+                for (y = 0; y < 31; y++) {
+                    //日
+                    var obj3 = {};
+                    if (y < 9) {
+                        obj3.value = '0' + (y + 1);
+                    } else {
+                        obj3.value = y + 1;
+                    }
+                    _data3.push(obj3)
+                }
+            } else {
+                for (y = 0; y < 30; y++) {
+                    //日
+                    var obj3 = {};
+                    if (y < 9) {
+                        obj3.value = '0' + (y + 1);
+                    } else {
+                        obj3.value = y + 1;
+                    }
+                    _data3.push(obj3)
+                }
+            }
+            obj2.childs = _data3;
+            _data2.push(obj2);
+        }
+        obj.childs = _data2;
+        _data.push(obj)
+    }
+    var mobileSelect1 = new MobileSelect({
+        trigger: '.optiondate',
+        title: 'Choose Birthday',
+        wheels: [
+            { data: _data }
+        ],
+        transitionEnd: function (indexArr, data) {
+            console.log(data);
+        },
+        callback: function (indexArr, data) {
+            $(".optiondate").text(data[1].value + '/'+ data[2].value + '/' + data[0].value );
+            console.log($(".optiondate").text());
+            $(".optiondate").addClass("selected");
+            var list = $('.card-list'); 
+            $('.optiondate').attr("data-optionid", getAstroIndex(data[1].value,data[2].value)); 
+            list.children().eq(startIndex).find(".cp-btn").removeClass("cp-btn--disabled");
+        }
+    });
+}  

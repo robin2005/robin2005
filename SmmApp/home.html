@@ -29,7 +29,7 @@
         var startIndex = 0;
         $(document).ready(function () {
 
-            $("#app").on("click", ".option", function () {
+            $("#app").on("click", ".optionitem", function () {
                 $(this).parent().children().removeClass("selected");
                 $(this).addClass("selected");
                 var list = $('.card-list');
@@ -40,7 +40,7 @@
                 startHtml();
             });
             $("#app").on("click", ".startaction", function () {
-                // startExam();
+                startExam();
             });
 
             $("#app").on("click", ".nextaction", function () {
@@ -48,14 +48,12 @@
                 var list = $('.card-list');
                 var length = list.children().length;
                 if (startIndex == length - 1) {
-                    if (goDownLoad()) return;
-                    $('.option').hasClass("selected");
-                    var options = $('.option.selected');
-                    var value = '';
-                    for (let index = 0; index < options.length; index++) {
-                        value += options[index].attributes['data-optionid'].value;
-                    }
-                    window.location = 'result.html?smm_platform=' + platform + '&radom=' + Date.now() + '&options=' + value;
+                    // if (goDownLoad()) return;
+                    var options = $('.optionitem.selected');
+                    var value = ''; 
+                    value += options[0].attributes['data-optionid'].value;
+                    var optiondate = $('.optiondate')[0].attributes['data-optionid'].value;
+                    window.location = 'result.html?smm_platform=' + platform + '&radom=' + Date.now() + '&gender=' + value + '&astro=' + optiondate;
                 } else {
                     list.children().removeClass('prev').removeClass('active');
                     list.children().eq(startIndex).hide();
@@ -103,12 +101,20 @@
                     } else if (i == 1) {
                         optionHtml = '<div class="card-box next"><div class="card"><div class="question-wrap"><div class="question fs-18">';
                     }
-                    optionHtml += (i + 1) + '. ' + element.title;
-                    optionHtml += '</div><ul class="options"><div data-optionid="A" class="fs-16 option"><div class="option-content flex__item">';
-                    optionHtml += element.a;
-                    optionHtml += '</div></div><div class="option-line"></div><div data-optionid="B" class="fs-16 option"><div class="option-content flex__item">';
-                    optionHtml += element.b;
-                    optionHtml += '</div></div><div class="option-line"></div><div class="option-line"></div>';
+                    optionHtml += (i + 1) + '. ' + element.title + '</div>';
+                    if (element.isDate === true) {
+                        optionHtml += '<ul class="options"><div data-optionid="A" class="fs-16 option optiondate"><div class="option-content flex__item">';
+                        optionHtml += 'mm / dd / yy';
+                        optionHtml += '</div></div><div class="option-line"></div>';
+                    } else {
+                        optionHtml += '<ul class="options"><div data-optionid="A" class="fs-16 option optionitem"><div class="option-content flex__item">';
+                        optionHtml += element.a;
+                        optionHtml += '</div></div><div class="option-line"></div><div data-optionid="B" class="fs-16 option optionitem"><div class="option-content flex__item">';
+                        optionHtml += element.b;
+                        optionHtml += '</div></div><div class="option-line"></div><div class="option-line"></div>';
+                    }
+
+
                     optionHtml += '<div class="action-wrap"><div class="nextaction cp-btn cp-btn--yellow cp-btn--disabled">';
                     if (i == dataExam.length - 1) {
                         optionHtml += '&nbsp;&nbsp;' + 'Submission'.toUpperCase() + '&nbsp;&nbsp;';
@@ -118,110 +124,10 @@
                     optionHtml += '</div></div></ul></div></div></div>';
                     $('.card-list').append(optionHtml);
                 }
+                dataMobileSelect();
             }
-
-            function dataMobileSelect(){
-                var years = [];
-                var month = [];
-                var day = [];
-                var myDate = new Date();
-                myDate.getFullYear();    //获取完整的年份(4位,1970-????)
-                myDate.getMonth();       //获取当前月份(0-11,0代表1月)
-                myDate.getDate();
-                var _data = [];
-                for (i = 0; i < myDate.getFullYear() - 1980; i++) {
-                    //年
-                    var obj = {};
-                    var yer = 1980 + i + 1;
-                    obj.value = 1980 + i + 1;
-                    var _data2 = [];
-                    for (n = 0; n < 12; n++) {
-                        //月
-                        var obj2 = {};
-                        if (n < 9) {
-                            obj2.value = '0' + (n + 1);
-                        } else {
-                            obj2.value = n + 1;
-                        }
-                        var _data3 = [];
-                        if (n == 1) {
-                            var cond1 = yer % 4 == 0;  //条件1：年份必须要能被4整除
-                            var cond2 = yer % 100 != 0;  //条件2：年份不能是整百数
-                            var cond3 = yer % 400 == 0;
-                            var cond = cond1 && cond2 || cond3;
-                            //闰年
-                            if (cond) {
-                                for (y = 0; y < 29; y++) {
-                                    //日
-                                    var obj3 = {};
-                                    if (y < 9) {
-                                        obj3.value = '0' + (y + 1);
-                                    } else {
-                                        obj3.value = y + 1;
-                                    }
-                                    _data3.push(obj3)
-                                }
-                            } else {
-                                for (y = 0; y < 28; y++) {
-                                    //日
-                                    var obj3 = {};
-                                    if (y < 9) {
-                                        obj3.value = '0' + (y + 1);
-                                    } else {
-                                        obj3.value = y + 1;
-                                    }
-                                    _data3.push(obj3)
-                                }
-                            }
-                        } else if (n == 0 || n == 2 || n == 4 || n == 6 || n == 7 || n == 9 || n == 11) {
-                            for (y = 0; y < 31; y++) {
-                                //日
-                                var obj3 = {};
-                                if (y < 9) {
-                                    obj3.value = '0' + (y + 1);
-                                } else {
-                                    obj3.value = y + 1;
-                                }
-                                _data3.push(obj3)
-                            }
-                        } else {
-                            for (y = 0; y < 30; y++) {
-                                //日
-                                var obj3 = {};
-                                if (y < 9) {
-                                    obj3.value = '0' + (y + 1);
-                                } else {
-                                    obj3.value = y + 1;
-                                }
-                                _data3.push(obj3)
-                            }
-                        }
-                        obj2.childs = _data3;
-                        _data2.push(obj2);
-                    }
-                    obj.childs = _data2;
-                    _data.push(obj)
-                }
-                var mobileSelect1 = new MobileSelect({
-                    trigger: '.startaction',
-                    title: '日期选择',
-                    wheels: [
-                        { data: _data }
-                    ],
-                    transitionEnd: function (indexArr, data) {
-                        console.log(data);
-                    },
-                    callback: function (indexArr, data) {
-                        console.log(data);
-                        $("#trigger1").val(data[0].value + '-' + data[1].value + '-' + data[2].value)
-                    }
-                });
-            }
-
-
             topBar();
             startHtml();
-            dataMobileSelect();
         });
 
         $(window).load(function () {
