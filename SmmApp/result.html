@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="pragma" content="no-cache">
@@ -22,17 +23,17 @@
 	<title>Happy Thanksgiving</title>
 	<link rel="stylesheet" href="css/alert.css">
 	<script src="js/jquery.min.js"></script>
-	<script src='js/alert.js'></script> 
-    <script src='js/openApp.js'></script>  
-    <script>
-            var now = new Date().getTime();
-			document.write('<script src="js/result.js?v=' + now + '"><\/script\>');
-    </script> 
+	<script src='js/alert.js'></script>
+	<script src='js/openApp.js'></script>
+	<script>
+		var now = new Date().getTime();
+		document.write('<script src="js/result.js?v=' + now + '"><\/script\>');
+	</script>
 	<script src="js/viewport.js"></script>
 	<script>
-		radomDescription();
 
 		$(document).ready(function () {
+			radomDescription();
 			topBar();
 			$("#app").on("click", ".share-btn", function () {
 				platform = getQueryVariable('smm_platform') + '';
