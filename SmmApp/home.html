@@ -43,6 +43,7 @@
 
             $("#app").on("click", ".nextaction", function () {
                 if ($(this).hasClass("cp-btn--disabled")) return;
+                if(goDownLoad()) return;
                 var list = $('.card-list');
                 var length = list.children().length;
                 if (startIndex == length - 1) {

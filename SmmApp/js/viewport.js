@@ -58,7 +58,7 @@ function getQueryVariable(variable) {
     }
     return (false);
 }
- 
+
 
 
 var platform = '';
@@ -77,11 +77,31 @@ function topBar() {
         }
     }
     $("#app").on("click", ".icon-andriod", function () {
-        openAppFun('smm://',"https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728");
+        goDownLoad();
     });
     $("#app").on("click", ".icon-ios", function () {
-        openAppFun('smm://',"https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728");
+        goDownLoad();
     });
+}
+
+function goDownLoad() {
+    platform = getQueryVariable('smm_platform') + '';
+    if (platform && platform.match(/ios/i) && window.webkit.messageHandlers.chaneNavColor) {
+        return false;
+    } else if (platform && platform.match(/android/i)) {
+        return false;
+    }
+    var u = navigator.userAgent, app = navigator.appVersion;
+    var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
+    var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
+    if (isAndroid) {
+        openAppFun('smm://', "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728");
+    } else if (isIos) {
+        openAppFun('smm://', "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728");
+    } else { 
+        window.location.href = "https://www.seniormeetme.com/";
+    }
+    return true;
 }
 
 function loadFunction() {
