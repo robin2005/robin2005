@@ -15,6 +15,7 @@
     </script>
     <title>Happy Thanksgiving</title>
     <link rel="stylesheet" href="css/alert.css">
+    <link rel="stylesheet" href="css/mobileSelect.css">
     <script src="js/jquery.min.js"></script>
     <script src='js/alert.js'></script>
     <script src='js/openApp.js'></script>
@@ -23,6 +24,7 @@
         document.write('<script src="js/result.js?v=' + now + '"><\/script\>');
     </script>
     <script src="js/viewport.js"></script>
+    <script src="js/mobileSelect.js"></script>
     <script>
         var startIndex = 0;
         $(document).ready(function () {
@@ -38,7 +40,7 @@
                 startHtml();
             });
             $("#app").on("click", ".startaction", function () {
-                startExam();
+                // startExam();
             });
 
             $("#app").on("click", ".nextaction", function () {
@@ -75,7 +77,7 @@
                     'Test which celebrity you match the most' +
                     '</div><div class="question fs-24 text-center">' +
                     'Share to your friends to have fun together' +
-                    '</div><ul class="options"><div class="option-line" style="height: 45px"><input type="date"/></div><div class="action-wrap"><div class="cp-btn startaction cp-btn--yellow">' +
+                    '</div><ul class="options"><div class="option-line" style="height: 15px"></div><div class="action-wrap"><div class="cp-btn startaction cp-btn--yellow">' +
                     'start</div></div></ul><div class="question fs-start-18 text-center"><br>' +
                     'Share to your friends to have fun together</div></div></div></div>';
                 $('.card-list').empty();
@@ -118,9 +120,108 @@
                 }
             }
 
+            function dataMobileSelect(){
+                var years = [];
+                var month = [];
+                var day = [];
+                var myDate = new Date();
+                myDate.getFullYear();    //获取完整的年份(4位,1970-????)
+                myDate.getMonth();       //获取当前月份(0-11,0代表1月)
+                myDate.getDate();
+                var _data = [];
+                for (i = 0; i < myDate.getFullYear() - 1980; i++) {
+                    //年
+                    var obj = {};
+                    var yer = 1980 + i + 1;
+                    obj.value = 1980 + i + 1;
+                    var _data2 = [];
+                    for (n = 0; n < 12; n++) {
+                        //月
+                        var obj2 = {};
+                        if (n < 9) {
+                            obj2.value = '0' + (n + 1);
+                        } else {
+                            obj2.value = n + 1;
+                        }
+                        var _data3 = [];
+                        if (n == 1) {
+                            var cond1 = yer % 4 == 0;  //条件1：年份必须要能被4整除
+                            var cond2 = yer % 100 != 0;  //条件2：年份不能是整百数
+                            var cond3 = yer % 400 == 0;
+                            var cond = cond1 && cond2 || cond3;
+                            //闰年
+                            if (cond) {
+                                for (y = 0; y < 29; y++) {
+                                    //日
+                                    var obj3 = {};
+                                    if (y < 9) {
+                                        obj3.value = '0' + (y + 1);
+                                    } else {
+                                        obj3.value = y + 1;
+                                    }
+                                    _data3.push(obj3)
+                                }
+                            } else {
+                                for (y = 0; y < 28; y++) {
+                                    //日
+                                    var obj3 = {};
+                                    if (y < 9) {
+                                        obj3.value = '0' + (y + 1);
+                                    } else {
+                                        obj3.value = y + 1;
+                                    }
+                                    _data3.push(obj3)
+                                }
+                            }
+                        } else if (n == 0 || n == 2 || n == 4 || n == 6 || n == 7 || n == 9 || n == 11) {
+                            for (y = 0; y < 31; y++) {
+                                //日
+                                var obj3 = {};
+                                if (y < 9) {
+                                    obj3.value = '0' + (y + 1);
+                                } else {
+                                    obj3.value = y + 1;
+                                }
+                                _data3.push(obj3)
+                            }
+                        } else {
+                            for (y = 0; y < 30; y++) {
+                                //日
+                                var obj3 = {};
+                                if (y < 9) {
+                                    obj3.value = '0' + (y + 1);
+                                } else {
+                                    obj3.value = y + 1;
+                                }
+                                _data3.push(obj3)
+                            }
+                        }
+                        obj2.childs = _data3;
+                        _data2.push(obj2);
+                    }
+                    obj.childs = _data2;
+                    _data.push(obj)
+                }
+                var mobileSelect1 = new MobileSelect({
+                    trigger: '.startaction',
+                    title: '日期选择',
+                    wheels: [
+                        { data: _data }
+                    ],
+                    transitionEnd: function (indexArr, data) {
+                        console.log(data);
+                    },
+                    callback: function (indexArr, data) {
+                        console.log(data);
+                        $("#trigger1").val(data[0].value + '-' + data[1].value + '-' + data[2].value)
+                    }
+                });
+            }
+
+
             topBar();
             startHtml();
-
+            dataMobileSelect();
         });
 
         $(window).load(function () {
@@ -149,6 +250,7 @@
                 <i class="d-b icon-andriod flex__item "></i>
             </div>
         </div>
-    </div> 
-</body> 
+    </div>
+</body>
+
 </html>

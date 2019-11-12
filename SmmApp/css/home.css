@@ -3231,7 +3231,12 @@ color: #666;
 height: 30px;
 }
 
-input[type="date"]::-webkit-clear-button {
+input{
   -webkit-appearance: none;
-   display: none;
+   border:0; /*清除边框*/
+   outline: 0; /*清除轮廓*/
+   border: 1px solid #333333; /*设置边框为为1px，实体框，颜色为#33333*/
+   height: 40px;
+   padding-left: 20px; /*设置padding的左区域为20px,也就是说内容显示区域向右移动20px*/
+   width: 150px;
  }
