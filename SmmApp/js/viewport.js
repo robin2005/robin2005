@@ -60,38 +60,34 @@ function getQueryVariable(variable) {
 }
 
 function openApp() {
-    //判断浏览器
-    var u = navigator.userAgent;
-    if (/MicroMessenger/gi.test(u)) {
-        // 引导用户在浏览器中打开
-        alert('请在浏览器中打开');
-        return;
+    let _downLoadUrl = '';
+    let _schema = '';
+    let _protocal = '';
+    if (global.getIOSorAndroid() === 'ios') {
+        _downLoadUrl = "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728";//ios下载地址
+        _schema = '?open';
+        _protocal = 'smm';
+    } else if (global.getIOSorAndroid() === 'android') {
+        _downLoadUrl = 'http://fusion.qq.com/cgi-bin/qzapps/unified_jump?actionFlag=0&appid=42342315&appinstall=0&params=pname%3Dcom.xituchina.umbrella%26versioncode%3D96%26channelid%3D%26actionflag%3D0&from=mqq';
+        _schema = '?open';
+        _protocal = 'smm';
     }
-    var schemeUrl = "smm://";
-    if (navigator.userAgent.match(/(iPhone|iPod|iPad)/i)) {
-        var t=Date.now();//取当前时间戳
-        //延迟直接跳转唤起app协议地址
-        setTimeout(function(){
-            location.href= "smm://";
-        },96);
-        //延迟执行 如果1s没响应，就表示你手机中没有该app。就可以去下载了
-        setTimeout(function(){
-            if(Date.now() - t < 1200){
-                location.href = "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728";//ios下载地址
-            }
-        },1001);
-
-    } else if (navigator.userAgent.match(/android/i)) {
-        var state = null;
-        try {
-            state = window.open(schemeUrl, '_blank');
-        } catch (e) { }
-        if (state) {
-            window.close();
-        } else {
-            window.location.href = "https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728";//ios下载地址
+    openAppFun.loadSchema({
+        // 通过NN打开某个链接
+        schema: _schema,
+        //schema头协议，实际情况填写
+        protocal: _protocal,
+        //发起唤醒请求后，会等待loadWaiting时间，超时则跳转到failUrl，默认3000ms
+        loadWaiting: "1000",
+        //唤起失败时的跳转链接，默认跳转到下载页
+        failUrl: _downLoadUrl,
+        // apk信息,请根据实际情况填写
+        apkInfo: {
+            PKG: "com.xituchina.umbrella",
+            CATEGORY: "android.intent.category.DEFAULT",
+            ACTION: "android.intent.action.VIEW"
         }
-    }
+    });
 }
 
 
