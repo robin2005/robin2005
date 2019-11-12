@@ -148,11 +148,11 @@ function dataMobileSelect(){
     myDate.getMonth();       //获取当前月份(0-11,0代表1月)
     myDate.getDate();
     var _data = [];
-    for (i = 0; i < myDate.getFullYear() - 1980; i++) {
+    for (i = 0; i < myDate.getFullYear() - 45 - 1920 ; i++) {
         //年
         var obj = {};
-        var yer = 1980 + i + 1;
-        obj.value = 1980 + i + 1;
+        var yer = 1920 + i + 1;
+        obj.value = 1920 + i + 1;
         var _data2 = [];
         for (n = 0; n < 12; n++) {
             //月
@@ -231,7 +231,7 @@ function dataMobileSelect(){
             console.log(data);
         },
         callback: function (indexArr, data) {
-            $(".optiondate").text(data[1].value + '/'+ data[2].value + '/' + data[0].value );
+            $(".optiondate").text(data[1].value + ' / '+ data[2].value + ' / ' + data[0].value );
             console.log($(".optiondate").text());
             $(".optiondate").addClass("selected");
             var list = $('.card-list'); 
