@@ -137,5 +137,5 @@ function getAstroIndex(m,d){
 function radomDescription(){
     var shareData = {sharetitle: 'Happy Thanksgiving', sharecontent: '3 secs to meet real you, so accurate!', sharelinkurl: window.location.href};
     window.shareData = shareData;  
-    $(":meta[name='og:description']").attr("content","淘宝网返现,返利修改"); 
+    $('meta[property="og:description"]').attr('content',"***" );
 }
