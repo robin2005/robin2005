@@ -46,7 +46,7 @@
 			});
 
 			$("#app").on("click", ".icon-back", function () {
-				window.location = 'home.html?smm_platform=' + platform;
+				window.history.go(-1);
 			});
 
 			function showExamResult() {

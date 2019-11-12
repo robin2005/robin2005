@@ -86,7 +86,7 @@ function topBar() {
 
 function goDownLoad() {
     platform = getQueryVariable('smm_platform') + '';
-    if (platform && platform.match(/ios/i) && window.webkit.messageHandlers.chaneNavColor) {
+    if (platform && platform.match(/ios/i)) {
         return false;
     } else if (platform && platform.match(/android/i)) {
         return false;
