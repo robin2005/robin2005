@@ -37,7 +37,7 @@ function openAppFun(openUrl, callback) {
     if (callback) {
         checkOpen(function (opened) {//checkOpen中的cbk参数 = function (opened)
             if(opened == 0){
-                //用户没有安装app 可以请求下载地址并跳转 跳转方法：window.location.href 即可
+                  window.location.href = callback;
             }else if(opened ==1){
                 //用户打开了app  用户有安装app 
             }
