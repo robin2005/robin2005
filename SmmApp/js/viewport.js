@@ -58,10 +58,7 @@ function getQueryVariable(variable) {
     }
     return (false);
 }
-
-function openApp() {
-    openAppFun('smm://',"https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728");
-}
+ 
 
 
 var platform = '';
@@ -80,10 +77,10 @@ function topBar() {
         }
     }
     $("#app").on("click", ".icon-andriod", function () {
-        openApp();
+        openAppFun('smm://',"https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728");
     });
     $("#app").on("click", ".icon-ios", function () {
-        openApp();
+        openAppFun('smm://',"https://apps.apple.com/cn/app/senior-meet-me-dating-50/id1465679728");
     });
 }
 
