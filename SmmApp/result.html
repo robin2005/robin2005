@@ -35,7 +35,7 @@
 		$(document).ready(function () {
 			radomDescription();
 			topBar();
-			$("#app").on("click", ".share-btn", function () {
+			$("#app").on("click", ".share", function () {
 				platform = getQueryVariable('smm_platform') + '';
 				if (platform && platform.match(/ios/i)) {
 					window.webkit.messageHandlers.shareHandler.postMessage(window.shareData);
@@ -43,6 +43,10 @@
 					window.android.shareHandler.postMessage(window.shareData);
 				}
 			});
+
+			$("#app").on("click", ".start", function () {
+				window.location = 'home.html';
+			}); 
 
 			$("#app").on("click", ".icon-back", function () {
 				window.history.go(-1);
@@ -54,6 +58,7 @@
 				var height = appWidth * 138.0 / 300;
 				$('.card-list').attr("style", "background-image:url();");
 				var options = getQueryVariable('gender') + '_' + getQueryVariable('astro') + '';
+				var share = getQueryVariable('share') + '';
 				var model = result[options] || {
 					sacle: "",
 					name: "",
@@ -65,8 +70,12 @@
 						'<img src="' + model.img + '" /><div class="result-title">Congratulation!!</div>' +
 						'<div class="result-subtitle">Your match with ' + model.name + ' is<span> ' + model.sacle + '</span></div></div>' +
 						'<div class="result-content"><div class="content"> ' +
-						model.content +
-						'</div > <div class="share-title text-center"> Share to win a Super Match</div> <div class="action-wrap"><div class="cp-btn cp-btn--yellow share-btn">SHARE</div></div></div ></div ></div ></div ></div > ';
+						model.content ;
+						if(share.length > 0){
+							resultHtml += 		'</div > <div class="share-title text-center"> Share to win a Super Match</div> <div class="action-wrap"><div class="cp-btn cp-btn--yellow share-btn start">START</div></div></div ></div ></div ></div ></div > ';
+				        }else{
+							resultHtml += 		'</div > <div class="share-title text-center"> Share to win a Super Match</div> <div class="action-wrap"><div class="cp-btn cp-btn--yellow share-btn share">SHARE</div></div></div ></div ></div ></div ></div > ';
+				        }
 					$('.card-list').empty();
 					$('.card-list').append(resultHtml);
 				}

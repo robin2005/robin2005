@@ -1269,7 +1269,7 @@ body {
   color: #fff;
   border-radius: 0.2rem;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%); fs-30
+          transform: translate(-50%, -50%);
   -webkit-transition: top .3s, opacity .3s;
   transition: top .3s, opacity .3s;
 }
