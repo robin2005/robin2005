@@ -97,7 +97,7 @@ function goDownLoad() {
     if (isAndroid) {
         openAppFun('smm://', "https://apps.apple.com/us/app/seniormeetme-date-50-singles/id1465679728");
     } else if (isIos) {
-        openAppFun('smm://', "https://go.onelink.me/eO1y/thanksgiving");
+        openAppFun('smm://', "https://apps.apple.com/us/app/seniormeetme-date-50-singles/id1465679728");
     } else {
         window.location.href = "https://www.seniormeetme.com/";
     }
