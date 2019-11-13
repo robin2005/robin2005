@@ -95,9 +95,9 @@ function goDownLoad() {
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
     var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     if (isAndroid) {
-        openAppFun('smm://', "https://go.onelink.me/eO1y?pid=Social%20Facebook&is_retargeting=true");
+        openAppFun('smm://', "https://apps.apple.com/us/app/seniormeetme-date-50-singles/id1465679728");
     } else if (isIos) {
-        openAppFun('smm://', "https://go.onelink.me/eO1y?pid=Social%20Facebook&is_retargeting=true");
+        openAppFun('smm://', "https://go.onelink.me/eO1y/thanksgiving");
     } else {
         window.location.href = "https://www.seniormeetme.com/";
     }
