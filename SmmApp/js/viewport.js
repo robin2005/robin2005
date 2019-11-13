@@ -132,19 +132,24 @@ function getAstroIndex(m, d) {
     return m - (d < "102223444433".charAt(m - 1) - -19);  //输出0～12的数字，0表示摩羯，1表示水瓶，依此类推，...，11是射手，12是摩羯。
 }
 
-function radomDescription() { 
+function radomDescription() {
     var options = getQueryVariable('gender') + '_' + getQueryVariable('astro') + '';
-    var model = result[options];
+    var model = result[options] || {
+        sacle: "",
+        name: "",
+        img: "images/avtar_1.png",
+        content: ""
+    };
     var shareArray = ['Notice：My latest identity on Thanksgiving day is xxx',
         '3 secs to meet real you, so accurate!',
         'OMG: I have made such contribution to Thanksgiving!',
         'Finally get to know something when I see this result.',
         'Never expected! 100 years ago, my identity turned out to be...',
         '5 questions figure out my personality, unbelievable!',
-        'Wow! My match with xxx has reached ###, click to start your test.'];  
-    var index = Math.floor(Math.floor(Math.random() * 100) % shareArray.length); 
+        'Wow! My match with xxx has reached ###, click to start your test.'];
+    var index = Math.floor(Math.floor(Math.random() * 100) % shareArray.length);
     var shareContent = shareArray[index] + '';
-    shareContent = shareContent.replace("xxx",model.name).replace("###",model.sacle);
+    shareContent = shareContent.replace("xxx", model.name).replace("###", model.sacle);
     var shareData = { sharetitle: 'Happy Thanksgiving', sharecontent: shareContent, sharelinkurl: window.location.href };
     window.shareData = shareData;
 }

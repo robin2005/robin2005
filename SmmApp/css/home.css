@@ -1269,7 +1269,7 @@ body {
   color: #fff;
   border-radius: 0.2rem;
   -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%); fs-30
   -webkit-transition: top .3s, opacity .3s;
   transition: top .3s, opacity .3s;
 }
@@ -2915,10 +2915,20 @@ input[type="search"]::-webkit-search-cancel-button {
   margin-top: 50px;
 }
 
-.app-page--has-topbar .page-answer .card-list
+.page-answer .card-list
+{ 
+  /* height: calc(100vh);  */
+  height: calc(100vh - 75px - 50px);
+} 
+
+/* .app-page--has-topbar .page-answer .card-list
 { 
   height: calc(100vh - 75px - 50px);
 } 
+.app-page--has-topbar .page-answer .page-mark
+{ 
+  display: block;
+}  */
 
 
 .page-answer .card-list .card-box 
@@ -3042,6 +3052,7 @@ input[type="search"]::-webkit-search-cancel-button {
   height: 75px;
   text-align: center;
   width: 10rem;
+  /* display: none; */
 }
 
 .page-mark .icon-ios{ 
@@ -3107,18 +3118,18 @@ display: block;
 
 
 .page-answer .card-list .card-box .card .fs-24 {
-  font-size: 24px;
-  line-height: 0.78667rem;
+  font-size: 0.64rem;
+  line-height: 0.68667rem;
 }
 
 .page-answer .card-list .card-box .card .fs-30 {
-  font-size: 30px;
+  font-size: 0.8rem;
   line-height: 0.80667rem;
 }
 .page-answer .card-list .card-box .card .fs-start-18 {
-  font-size: 18px;
+  font-size: 0.48rem;
   opacity: 0.6;
-  line-height: 0.60667rem;
+  line-height: 0.48rem;
 
 }
 .icon-starttop {

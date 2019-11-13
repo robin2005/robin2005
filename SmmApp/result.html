@@ -54,8 +54,13 @@
 				var height = appWidth * 138.0 / 300;
 				$('.card-list').attr("style", "background-image:url();");
 				var options = getQueryVariable('gender') + '_' + getQueryVariable('astro') + '';
-				var model = result[options];
-				if (model) { 
+				var model = result[options] || {
+					sacle: "",
+					name: "",
+					img: "images/avtar_1.png",
+					content: ""
+				};;
+				if (model) {
 					var resultHtml = '<div class="card-box active"><div class="card"><div class="question-wrap result-card"><div class="question fs-18 result-html"><div class="result-avatar">' +
 						'<img src="' + model.img + '" /><div class="result-title">Congratulation!!</div>' +
 						'<div class="result-subtitle">Your match with ' + model.name + ' is<span> ' + model.sacle + '</span></div></div>' +
@@ -89,10 +94,10 @@
 
 			</div>
 			<div class="page-mark flex DownloadApp">
-					<i class="d-b icon-logo flex__item"></i>
-					<i class="d-b flex__item d-bm downtext" >Download SeniorMeetMe to 
-							meet singles over 45</i>
-					<i class="d-b icon-down flex__item"></i>
+				<i class="d-b icon-logo flex__item"></i>
+				<i class="d-b flex__item d-bm downtext">Download SeniorMeetMe to
+					meet singles over 45</i>
+				<i class="d-b icon-down flex__item"></i>
 			</div>
 		</div>
 	</div>
