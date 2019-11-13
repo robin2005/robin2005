@@ -76,7 +76,7 @@ function topBar() {
             $('#app').addClass("app-page--has-topbar");
         }
     }
-    
+
     $("#app").on("click", ".DownloadApp", function () {
         goDownLoad();
     });
@@ -93,9 +93,9 @@ function goDownLoad() {
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
     var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     if (isAndroid) {
-        openAppFun('smm://', "https://itunes.apple.com/us/app/id1465679728?mt=8");
-    } else if (isIos) {
         openAppFun('smm://', "https://play.google.com/store/apps/details?id=com.successfulmatch.seniormatchdating");
+    } else if (isIos) {
+        openAppFun('smm://', "https://itunes.apple.com/us/app/id1465679728?mt=8");
     } else {
         window.location.href = "https://www.seniormeetme.com/";
     }
