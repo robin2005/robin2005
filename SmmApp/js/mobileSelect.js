@@ -156,8 +156,8 @@
 
 		renderWheels: function(wheelsData, cancelBtnText, ensureBtnText){
 			var _this = this;
-			var cancelText = cancelBtnText ? cancelBtnText : 'CANCEL';
-			var ensureText = ensureBtnText ? ensureBtnText : 'OK';
+			var cancelText = cancelBtnText ? cancelBtnText : 'Cancel';
+			var ensureText = ensureBtnText ? ensureBtnText : 'Ok';
 			_this.mobileSelect = document.createElement("div");
 			_this.mobileSelect.className = "mobileSelect";
 			_this.mobileSelect.innerHTML = 

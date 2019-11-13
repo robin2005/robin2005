@@ -95,10 +95,10 @@ function goDownLoad() {
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
     var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     if (isAndroid) {
-        openAppFun('smm://', "https://go.onelink.me/eO1y/thanksgiving");
+        openAppFun('smm://', "https://go.onelink.me/eO1y?pid=Social%20Facebook&is_retargeting=true");
     } else if (isIos) {
-        openAppFun('smm://', "https://go.onelink.me/eO1y/thanksgiving");
-    } else { 
+        openAppFun('smm://', "https://go.onelink.me/eO1y?pid=Social%20Facebook&is_retargeting=true");
+    } else {
         window.location.href = "https://www.seniormeetme.com/";
     }
     return true;
@@ -123,23 +123,32 @@ function loadShareFunction() {
 }
 
 // 根据生日的月份和日期，计算星座。
-function getAstro(month,day){
-    var s="魔羯水瓶双鱼牡羊金牛双子巨蟹狮子处女天秤天蝎射手魔羯";
-    var arr=[20,19,21,21,21,22,23,23,23,23,22,22];
-    return s.substr(month*2-(day<arr[month-1]?2:0),2);
+function getAstro(month, day) {
+    var s = "魔羯水瓶双鱼牡羊金牛双子巨蟹狮子处女天秤天蝎射手魔羯";
+    var arr = [20, 19, 21, 21, 21, 22, 23, 23, 23, 23, 22, 22];
+    return s.substr(month * 2 - (day < arr[month - 1] ? 2 : 0), 2);
 }
 
 // 根据生日的月份和日期，计算星座。0 魔羯 1 水瓶 2 双鱼 3牡羊 4金牛 5双子 6巨蟹 7狮子 8处女 9天秤 10天蝎 11射手 12魔羯
-function getAstroIndex(m,d){
-    return m-(d<"102223444433".charAt(m-1)- -19);  //输出0～12的数字，0表示摩羯，1表示水瓶，依此类推，...，11是射手，12是摩羯。
+function getAstroIndex(m, d) {
+    return m - (d < "102223444433".charAt(m - 1) - -19);  //输出0～12的数字，0表示摩羯，1表示水瓶，依此类推，...，11是射手，12是摩羯。
 }
 
-function radomDescription(){
-    var shareData = {sharetitle: 'Happy Thanksgiving', sharecontent: '3 secs to meet real you, so accurate!', sharelinkurl: window.location.href};
-    window.shareData = shareData;  
-} 
+function radomDescription() {
+    var shareArray = ['Notice：My latest identity on Thanksgiving day is xxx',
+        '3 secs to meet real you, so accurate!',
+        'OMG: I have made such contribution to Thanksgiving!',
+        'Finally get to know something when I see this result.',
+        'Never expected! 100 years ago, my identity turned out to be...',
+        '5 questions figure out my personality, unbelievable!',
+        'Wow! My match with xxx has reached ###, click to start your test.'];
+    var index = Math.random() * 100 % shareArray.length; 
+    var shareContent = shareArray[index];
+    var shareData = { sharetitle: 'Happy Thanksgiving', sharecontent: shareContent, sharelinkurl: window.location.href };
+    window.shareData = shareData;
+}
 
-function dataMobileSelect(){
+function dataMobileSelect() {
     var years = [];
     var month = [];
     var day = [];
@@ -148,11 +157,13 @@ function dataMobileSelect(){
     myDate.getMonth();       //获取当前月份(0-11,0代表1月)
     myDate.getDate();
     var _data = [];
-    for (i = 0; i < myDate.getFullYear() - 45 - 1920 ; i++) {
+    // for (i = 0; i < myDate.getFullYear() - 45 - 1920; i++) 
+    {
+        var i = 0;
         //年
         var obj = {};
-        var yer = 1920 + i + 1;
-        obj.value = 1920 + i + 1;
+        var yer = 1999 + i + 1;
+        obj.value = 1999 + i + 1;
         var _data2 = [];
         for (n = 0; n < 12; n++) {
             //月
@@ -216,14 +227,14 @@ function dataMobileSelect(){
                 }
             }
             obj2.childs = _data3;
-            _data2.push(obj2);
+            _data.push(obj2);
         }
-        obj.childs = _data2;
-        _data.push(obj)
+        // obj.childs = _data2;
+        // _data.push(obj)
     }
     var mobileSelect1 = new MobileSelect({
         trigger: '.optiondate',
-        title: 'Choose Birthday',
+        title: 'Chose your birthday',
         wheels: [
             { data: _data }
         ],
@@ -231,11 +242,11 @@ function dataMobileSelect(){
             console.log(data);
         },
         callback: function (indexArr, data) {
-            $(".optiondate").html('&nbsp;'+ data[1].value + ' / '+ data[2].value + ' / ' + data[0].value + '&nbsp;');
+            $(".optiondate").html('&nbsp;' + data[1].value + ' / ' + data[0].value + '&nbsp;');
             console.log($(".optiondate").text());
             $(".optiondate").addClass("selected");
-            var list = $('.card-list'); 
-            $('.optiondate').attr("data-optionid", getAstroIndex(data[1].value,data[2].value)); 
+            var list = $('.card-list');
+            $('.optiondate').attr("data-optionid", getAstroIndex(data[1].value, data[2].value));
             list.children().eq(startIndex).find(".cp-btn").removeClass("cp-btn--disabled");
         }
     });
