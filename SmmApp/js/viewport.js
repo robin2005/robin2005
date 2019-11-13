@@ -76,10 +76,8 @@ function topBar() {
             $('#app').addClass("app-page--has-topbar");
         }
     }
-    $("#app").on("click", ".icon-andriod", function () {
-        goDownLoad();
-    });
-    $("#app").on("click", ".icon-ios", function () {
+    
+    $("#app").on("click", ".DownloadApp", function () {
         goDownLoad();
     });
 }
