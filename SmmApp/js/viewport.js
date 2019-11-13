@@ -97,7 +97,7 @@ function goDownLoad() {
     if (isAndroid) {
         openAppFun('smm://', "https://itunes.apple.com/us/app/id1465679728?mt=8");
     } else if (isIos) {
-        openAppFun('smm://', "https://itunes.apple.com/us/app/id1465679728?mt=8");
+        openAppFun('smm://', "https://play.google.com/store/apps/details?id=com.successfulmatch.seniormatchdating");
     } else {
         window.location.href = "https://www.seniormeetme.com/";
     }
@@ -135,15 +135,19 @@ function getAstroIndex(m, d) {
 }
 
 function radomDescription() {
+
+    var options = getQueryVariable('gender') + '_' + getQueryVariable('astro') + '';
+    var model = result[options];
     var shareArray = ['Notice：My latest identity on Thanksgiving day is xxx',
         '3 secs to meet real you, so accurate!',
         'OMG: I have made such contribution to Thanksgiving!',
         'Finally get to know something when I see this result.',
         'Never expected! 100 years ago, my identity turned out to be...',
         '5 questions figure out my personality, unbelievable!',
-        'Wow! My match with xxx has reached ###, click to start your test.'];
+        'Wow! My match with xxx has reached ###, click to start your test.'];  
     var index = Math.random() * 100 % shareArray.length; 
     var shareContent = shareArray[index];
+    shareContent = shareContent.replace("xxx",model.name).replace("###",model.sacle);
     var shareData = { sharetitle: 'Happy Thanksgiving', sharecontent: shareContent, sharelinkurl: window.location.href };
     window.shareData = shareData;
 }
@@ -242,11 +246,11 @@ function dataMobileSelect() {
             console.log(data);
         },
         callback: function (indexArr, data) {
-            $(".optiondate").html('&nbsp;' + data[1].value + ' / ' + data[0].value + '&nbsp;');
+            $(".optiondate").html('&nbsp;' + data[0].value + ' / ' + data[1].value + '&nbsp;');
             console.log($(".optiondate").text());
             $(".optiondate").addClass("selected");
             var list = $('.card-list');
-            $('.optiondate').attr("data-optionid", getAstroIndex(data[1].value, data[2].value));
+            $('.optiondate').attr("data-optionid", getAstroIndex(data[0].value, data[1].value));
             list.children().eq(startIndex).find(".cp-btn").removeClass("cp-btn--disabled");
         }
     });

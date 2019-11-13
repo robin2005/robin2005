@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="pragma" content="no-cache">
@@ -10,7 +11,7 @@
 	<meta property="fb:app_id" content="fb597450184095421" />
 	<meta property="og:image" content="https://robin2005.github.io/SmmApp/images/sharefb.png" />
 	<meta property="og:title" content="Happy Thanksgiving" />
-	<meta property="og:description" content="Happy Thanksgiving" />
+	<meta property="og:description" content="Test which celebrity you match the most" />
 	<meta property="og:type" content="article" />
 	<meta name="viewport"
 		content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
@@ -26,9 +27,9 @@
 	<script src='js/openApp.js'></script>
 	<script>
 		var now = new Date().getTime();
-        document.write('<script src="js/result.js?v=' + now + '"><\/script\>');
-        document.write('<script src="js/viewport.js?v=' + now + '"><\/script\>');
-	</script> 
+		document.write('<script src="js/result.js?v=' + now + '"><\/script\>');
+		document.write('<script src="js/viewport.js?v=' + now + '"><\/script\>');
+	</script>
 	<script>
 
 		$(document).ready(function () {
@@ -53,11 +54,11 @@
 				var height = appWidth * 138.0 / 300;
 				$('.card-list').attr("style", "background-image:url();");
 				var options = getQueryVariable('gender') + '_' + getQueryVariable('astro') + '';
-				if (result[options]) {
-					var model = result[options];
+				var model = result[options];
+				if (model) { 
 					var resultHtml = '<div class="card-box active"><div class="card"><div class="question-wrap result-card"><div class="question fs-18 result-html"><div class="result-avatar">' +
 						'<img src="' + model.img + '" /><div class="result-title">Congratulation!!</div>' +
-						'<div class="result-subtitle">Your match with Abraham Lincoln is<span> ' + model.sacle + '</span></div></div>' +
+						'<div class="result-subtitle">Your match with Abraham  ' + model.name + ' is<span> ' + model.sacle + '</span></div></div>' +
 						'<div class="result-content"><div class="content"> ' +
 						model.content +
 						'</div > <div class="share-title text-center"> Share to win a Super Match</div> <div class="action-wrap"><div class="cp-btn cp-btn--yellow share-btn">SHARE</div></div></div ></div ></div ></div ></div > ';
@@ -92,17 +93,17 @@
 				<i class="d-b icon-andriod flex__item "></i>
 			</div>
 		</div>
-	</div> 
-	 <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151864019-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+	</div>
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151864019-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
 
-  gtag('config', 'UA-151864019-1');
-</script>
-   	   
+		gtag('config', 'UA-151864019-1');
+	</script>
+
 </body>
 
 </html>
