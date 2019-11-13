@@ -36,7 +36,7 @@
 			radomDescription();
 			topBar();
 			$("#app").on("click", ".share", function () {
-				platform = getQueryVariable('smm_platform') + '';
+				platform = getQueryVariable('client') + '';
 				if (platform && platform.match(/ios/i)) {
 					window.webkit.messageHandlers.shareHandler.postMessage(window.shareData);
 				} else if (platform && platform.match(/android/i)) {
@@ -45,7 +45,7 @@
 			});
 
 			$("#app").on("click", ".start", function () {
-				window.location = 'home.html';
+				window.locatiosmm_platformn = 'home.html';
 			}); 
 
 			$("#app").on("click", ".icon-back", function () {

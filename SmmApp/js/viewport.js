@@ -69,7 +69,7 @@ function topBar() {
     if (ua.match(/MicroMessenger/i) == 'micromessenger') {
         $('#app').addClass("app-page--has-topbar");
     } else {
-        platform = getQueryVariable('smm_platform') + '';
+        platform = getQueryVariable('client') + '';
         if (platform && (platform.match(/ios/i) || platform.match(/android/i))) {
             $('#app').removeClass("app-page--has-topbar");
         } else {
@@ -83,7 +83,7 @@ function topBar() {
 }
 
 function goDownLoad() {
-    platform = getQueryVariable('smm_platform') + '';
+    platform = getQueryVariable('client') + '';
     if (platform && platform.match(/ios/i)) {
         return false;
     } else if (platform && platform.match(/android/i)) {
@@ -103,7 +103,7 @@ function goDownLoad() {
 }
 
 function loadFunction() {
-    platform = getQueryVariable('smm_platform') + '';
+    platform = getQueryVariable('client') + '';
     if (platform && platform.match(/ios/i) && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.chaneNavColor) {
         window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
     } else if (platform && platform.match(/android/i)) {
@@ -112,7 +112,7 @@ function loadFunction() {
 }
 
 function loadShareFunction() {
-    platform = getQueryVariable('smm_platform') + '';
+    platform = getQueryVariable('client') + '';
     if (platform && platform.match(/ios/i) && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.chaneNavColor) {
         window.webkit.messageHandlers.shareNavHandler.postMessage(window.shareData);
     } else if (platform && platform.match(/android/i)) {
@@ -150,7 +150,7 @@ function radomDescription() {
     var index = Math.floor(Math.floor(Math.random() * 100) % shareArray.length);
     var shareContent = shareArray[index] + '';
     shareContent = shareContent.replace("xxx", model.name).replace("###", model.sacle);
-    var sharelinkurl = window.location.href.replace("smm_platform", 'share');
+    var sharelinkurl = window.location.href.replace("client", 'share');
     var shareData = { sharetitle: 'Happy Thanksgiving', sharecontent: shareContent, sharelinkurl:sharelinkurl };
     window.shareData = shareData;
 }

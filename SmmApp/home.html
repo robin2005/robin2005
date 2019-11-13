@@ -53,7 +53,7 @@
                     var value = ''; 
                     value += options[0].attributes['data-optionid'].value;
                     var optiondate = $('.optiondate')[0].attributes['data-optionid'].value;
-                    window.location = 'result.html?smm_platform=' + platform + '&radom=' + Date.now() + '&gender=' + value + '&astro=' + optiondate;
+                    window.location = 'result.html?client=' + platform + '&radom=' + Date.now() + '&gender=' + value + '&astro=' + optiondate;
                 } else {
                     list.children().removeClass('prev').removeClass('active');
                     list.children().eq(startIndex).hide();
