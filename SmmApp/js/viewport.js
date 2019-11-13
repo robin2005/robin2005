@@ -142,7 +142,7 @@ function radomDescription() {
         'Never expected! 100 years ago, my identity turned out to be...',
         '5 questions figure out my personality, unbelievable!',
         'Wow! My match with xxx has reached ###, click to start your test.'];  
-    var index = Math.random() * 100 % shareArray.length; 
+    var index = Math.floor(Math.floor(Math.random() * 100) % shareArray.length); 
     var shareContent = shareArray[index] + '';
     shareContent = shareContent.replace("xxx",model.name).replace("###",model.sacle);
     var shareData = { sharetitle: 'Happy Thanksgiving', sharecontent: shareContent, sharelinkurl: window.location.href };
