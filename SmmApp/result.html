@@ -37,10 +37,10 @@
 			topBar();
 			$("#app").on("click", ".share", function () {
 				platform = getQueryVariable('client') + '';
-				if (platform && platform.match(/ios/i)) {
+				if (platform && platform.match(/ios/i) && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.shareHandler ) {
 					window.webkit.messageHandlers.shareHandler.postMessage(window.shareData);
-				} else if (platform && platform.match(/android/i)) {
-					window.android.shareHandler.postMessage(window.shareData);
+				} else if (platform && platform.match(/android/i)  && window.android && window.android.shareHandler ) {
+					window.android.shareHandler(window.shareData);
 				}
 			});
 
