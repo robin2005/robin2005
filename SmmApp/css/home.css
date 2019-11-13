@@ -2988,6 +2988,7 @@ h1, h2, h3, h4, h5, h6 {
     padding: 0 0.26667rem ;
     line-height: 35px;
     min-width: 100px; 
+    background: rgba(255,255,255,0.2);;
   } 
 
   .option-line
@@ -3074,8 +3075,15 @@ h1, h2, h3, h4, h5, h6 {
   background-size: 34px 25px;
   display: none;
 }
+.page-mark .downtext
+ {
+  -webkit-box-flex: 4;-ms-flex: 4; flex: 4; text-align: left; color: #8B69B9;font-size:0.48rem;
+  font-family:SFUIDisplay-Bold,SFUIDisplay;line-height: 20px;font-style: inherit;
+text-shadow:0px 0px 6px rgba(255,255,255,0.5);
+  font-weight:bold; margin: auto;
+ }
 
-.app-page--has-topbar .icon-ios,.app-page--has-topbar .icon-andriod ,.app-page--has-topbar .icon-down ,.app-page--has-topbar .icon-logo
+.app-page--has-topbar .icon-ios,.app-page--has-topbar .icon-andriod ,.app-page--has-topbar .icon-down ,.app-page--has-topbar .icon-logo ,.app-page--has-topbar .downtext
 {
  display: block;
 }
@@ -3256,11 +3264,4 @@ input{
    height: 40px;
    padding-left: 20px; /*设置padding的左区域为20px,也就是说内容显示区域向右移动20px*/
    width: 150px;
- }
-.page-mark .downtext
- {
-  -webkit-box-flex: 4;-ms-flex: 4; flex: 4; text-align: left; color: #8B69B9;font-size:0.48rem;
-  font-family:SFUIDisplay-Bold,SFUIDisplay;line-height: 20px;font-style: inherit;
-text-shadow:0px 0px 6px rgba(255,255,255,0.5);
-  font-weight:bold; margin: auto;
  }
