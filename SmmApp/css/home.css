@@ -2911,7 +2911,7 @@ input[type="search"]::-webkit-search-cancel-button {
 
 .app-page--has-topbar .page-answer
 { 
-  height: calc(100vh - 50px); 
+  height: calc(100vh - 75px); 
   margin-top: 50px;
 } 
 
