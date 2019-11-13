@@ -231,7 +231,7 @@ function dataMobileSelect(){
             console.log(data);
         },
         callback: function (indexArr, data) {
-            $(".optiondate").text(data[1].value + ' / '+ data[2].value + ' / ' + data[0].value );
+            $(".optiondate").html('&nbsp;'+ data[1].value + ' / '+ data[2].value + ' / ' + data[0].value + '&nbsp;');
             console.log($(".optiondate").text());
             $(".optiondate").addClass("selected");
             var list = $('.card-list'); 
