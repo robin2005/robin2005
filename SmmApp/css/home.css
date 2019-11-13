@@ -2894,7 +2894,7 @@ input[type="search"]::-webkit-search-cancel-button {
   background-repeat: no-repeat;
   background-size: 300px 138px;
   background-position: right bottom;
-  height: calc(100vh - 75px);
+  height: calc(100vh - 75px - 50px);
 }
 
 
@@ -2913,23 +2913,7 @@ input[type="search"]::-webkit-search-cancel-button {
 { 
   height: calc(100vh - 50px); 
   margin-top: 50px;
-}
-
-.page-answer .card-list
-{ 
-  /* height: calc(100vh);  */
-  height: calc(100vh - 75px - 50px);
 } 
-
-/* .app-page--has-topbar .page-answer .card-list
-{ 
-  height: calc(100vh - 75px - 50px);
-} 
-.app-page--has-topbar .page-answer .page-mark
-{ 
-  display: block;
-}  */
-
 
 .page-answer .card-list .card-box 
 {

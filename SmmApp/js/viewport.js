@@ -56,7 +56,7 @@ function getQueryVariable(variable) {
         var pair = vars[i].split("=");
         if (pair[0] == variable) { return pair[1]; }
     }
-    return (false);
+    return '';
 }
 
 
@@ -104,7 +104,7 @@ function goDownLoad() {
 
 function loadFunction() {
     platform = getQueryVariable('smm_platform') + '';
-    if (platform && platform.match(/ios/i) && window.webkit.messageHandlers.chaneNavColor) {
+    if (platform && platform.match(/ios/i) && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.chaneNavColor) {
         window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
     } else if (platform && platform.match(/android/i)) {
         window.android.chaneNavColor("#9C1025");
@@ -113,7 +113,7 @@ function loadFunction() {
 
 function loadShareFunction() {
     platform = getQueryVariable('smm_platform') + '';
-    if (platform && platform.match(/ios/i) && window.webkit.messageHandlers.chaneNavColor) {
+    if (platform && platform.match(/ios/i) && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.chaneNavColor) {
         window.webkit.messageHandlers.shareNavHandler.postMessage(window.shareData);
     } else if (platform && platform.match(/android/i)) {
         window.android.shareNavHandler(window.shareData);
