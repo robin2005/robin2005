@@ -150,7 +150,7 @@ function radomDescription() {
     var index = Math.floor(Math.floor(Math.random() * 100) % shareArray.length);
     var shareContent = shareArray[index] + '';
     shareContent = shareContent.replace("xxx", model.name).replace("###", model.sacle);
-    var sharelinkurl = window.location.href.replace("smm_platform", 'smm_plat');
+    var sharelinkurl = window.location.href.replace("smm_platform", 'share');
     var shareData = { sharetitle: 'Happy Thanksgiving', sharecontent: shareContent, sharelinkurl:sharelinkurl };
     window.shareData = shareData;
 }
