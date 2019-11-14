@@ -18,7 +18,16 @@
     <link rel="stylesheet" href="css/mobileSelect.css">
     <script src="js/jquery.min.js"></script>
     <script src='js/alert.js'></script>
-    <script src='js/openApp.js'></script>
+    <script src='js/openApp.js'></script> 
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151864019-1"></script>
+   <script>
+     window.dataLayer = window.dataLayer || [];
+     function gtag(){dataLayer.push(arguments);}
+     gtag('js', new Date()); 
+     gtag('config', 'UA-151864019-1');
+     gtag('event', 'Event_ThanksPage_Total_Click');
+   </script>
     <script>
         var now = new Date().getTime();
         document.write('<script src="js/result.js?v=' + now + '"><\/script\>');
@@ -41,8 +50,9 @@
             });
             $("#app").on("click", ".startaction", function () {
                 startExam();
+                gtag('event', 'Event_ThanksPage_Start_Click');
             });
-
+            
             $("#app").on("click", ".nextaction", function () {
                 if ($(this).hasClass("cp-btn--disabled")) return;
                 var list = $('.card-list');
@@ -54,6 +64,8 @@
                     value += options[0].attributes['data-optionid'].value;
                     var optiondate = $('.optiondate')[0].attributes['data-optionid'].value;
                     window.location = 'result.html?client=' + platform + '&radom=' + Date.now() + '&gender=' + value + '&astro=' + optiondate;
+                    gtag('event', 'Event_ThanksPage_Q'+length+'_Click');
+                    gtag('event', 'Event_ThanksPage_Submit_Click');
                 } else {
                     list.children().removeClass('prev').removeClass('active');
                     list.children().eq(startIndex).hide();
@@ -61,6 +73,7 @@
                     list.children().eq(startIndex).next().removeClass('next').addClass('active');
                     list.children().eq(startIndex).next().next().removeClass('next2').addClass('next');
                     startIndex += 1;
+                    gtag('event', 'Event_ThanksPage_Q'+$(this).attr('index')+'_Click');
                 }
             });
 
@@ -90,11 +103,11 @@
                 $('.card-list').attr("style", "background-size: 300px 138px;background-position:right bottom;");
                 for (var i = 0; i < dataExam.length; i++) {
                     var element = dataExam[i];
-                    var optionHtml = '<div class="card-box next2"><div class="card flex"><div class="question-wrap"><div class="question fs-18">';
+                    var optionHtml = '<div index="'+ i + 1 + '" class="card-box next2"><div class="card flex"><div class="question-wrap"><div class="question fs-18">';
                     if (i == 0) {
-                        optionHtml = '<div class="card-box active"><div class="card"><div class="question-wrap"><div class="question fs-18">';
+                        optionHtml = '<div index="'+ i + 1 + '" class="card-box active"><div class="card"><div class="question-wrap"><div class="question fs-18">';
                     } else if (i == 1) {
-                        optionHtml = '<div class="card-box next"><div class="card"><div class="question-wrap"><div class="question fs-18">';
+                        optionHtml = '<div index="'+ i + 1 + '" class="card-box next"><div class="card"><div class="question-wrap"><div class="question fs-18">';
                     }
                     optionHtml += (i + 1) + '. ' + element.title + '</div>';
                     if (element.isDate === true) {
@@ -152,15 +165,6 @@
             </div>
         </div>
     </div>
- <!-- Global site tag (gtag.js) - Google Analytics -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151864019-1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'UA-151864019-1');
-</script>
 </body>
 
 </html>

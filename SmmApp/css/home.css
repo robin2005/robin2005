@@ -2919,7 +2919,7 @@ input[type="search"]::-webkit-search-cancel-button {
 { 
   height:calc(100vh - 75px - 50px);
 } 
-/*
+/* 
 .app-page--has-topbar .page-answer .page-mark
 { 
   display: block;
@@ -3038,7 +3038,7 @@ input[type="search"]::-webkit-search-cancel-button {
 }
 
 .page-answer .page-mark { 
-  background-image: url(../images/bottombar.png);
+  background-image: url(../images/bottombar1.png);
   background-repeat: repeat-x;
   background-size: 60px 150px;
   bottom: 0rem;
@@ -3048,7 +3048,12 @@ input[type="search"]::-webkit-search-cancel-button {
   text-align: center;
   width: 10rem;
   /* display: none; */
-}
+} 
+
+.app-page--has-topbar .page-answer .page-mark
+{ 
+  background-image: url(../images/bottombar.png);
+} 
 
 .page-mark .icon-ios{ 
   background-image: url(../images/ios_download.png) ;

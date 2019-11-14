@@ -94,10 +94,13 @@ function goDownLoad() {
     var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     if (isAndroid) {
         openAppFun('smm://', "https://play.google.com/store/apps/details?id=com.successfulmatch.seniormatchdating");
+        gtag('event', 'Event_ThanksPage_Download_Android_Click');
     } else if (isIos) {
         openAppFun('smm://', "https://itunes.apple.com/us/app/id1465679728?mt=8");
+        gtag('event', 'Event_ThanksPage_Download_IOS_Click');
     } else {
         window.location.href = "https://www.seniormeetme.com/";
+        gtag('event', 'Event_ThanksPage_Download_PC_Click');
     }
     return true;
 }
@@ -255,6 +258,7 @@ function dataMobileSelect() {
             var list = $('.card-list');
             $('.optiondate').attr("data-optionid", getAstroIndex(data[0].value, data[1].value));
             list.children().eq(startIndex).find(".cp-btn").removeClass("cp-btn--disabled");
+            gtag('event', 'Event_ThanksPage_Q'+$(".optiondate").attr('index')+'_Click');
         }
     });
 }  
