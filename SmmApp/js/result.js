@@ -10,7 +10,7 @@ A_3: {
     sacle: "80%",
     name: "John F. Kennedy",
     img: "images/avtar_3.png",
-    content: "John F. Kennedy - The first president reported sparing the turkey given to him.<br /><br />You are a passionate, motivated, and confident leader who builds community with your cheerful disposition and relentless determination. ",
+    content: "John F. Kennedy - The first president reported sparing the turkey given to him.<br /><br />You are a passionate, motivated, and confident leader who builds community with your cheerful disposition and relentless determination.",
 },
 B_3: {
     sacle: "90%",
@@ -82,7 +82,7 @@ A_9: {
     sacle: "80%",
     name: "Franklin Roosevelt",
     img: "images/avtar_2.png",
-    content: "Franklin Roosevelt - Signed a parliamentary resolution that officially changed the date of Thanksgiving from the last Thursday in November to the fourth Thursday in November.<br /><br />Relationships are paramount for you, who find balance in companionship. You love harmonious partnerships with fashionable mates, especially those who make attractive arm candy. ",
+    content: "Franklin Roosevelt - Signed a parliamentary resolution that officially changed the date of Thanksgiving from the last Thursday in November to the fourth Thursday in November.<br /><br />Relationships are paramount for you, who find balance in companionship. You love harmonious partnerships with fashionable mates, especially those who make attractive arm candy.",
 },
 B_9: {
     sacle: "90%",
@@ -112,7 +112,7 @@ B_11: {
     sacle: "90%",
     name: "Joan Allen",
     img: "images/avtar_9.png",
-    content: "Joan Allen - The heroine in the film \"The ice storm\" about Thanksgiving.<br /><br />You are excellent storytellers and can light up any room with your exhilarating tales and infectious laughter. ",
+    content: "Joan Allen - The heroine in the film \"The ice storm\" about Thanksgiving.<br /><br />You are excellent storytellers and can light up any room with your exhilarating tales and infectious laughter.",
 },
 A_12: {
     sacle: "80%",
@@ -154,7 +154,7 @@ A_2: {
     sacle: "80%",
     name: "Friedrich Wilhelm Nietzsche",
     img: "images/avtar_4.png",
-    content: "Friedrich Wilhelm Nietzsche -  \"Gratitude is the health of the soul.\"<br /><br />Kind and gentle, you're invigorated by shared experiences of music and romance. ",
+    content: "Friedrich Wilhelm Nietzsche -  \"Gratitude is the health of the soul.\"<br /><br />Kind and gentle, you're invigorated by shared experiences of music and romance.",
 },
 B_2: {
     sacle: "90%",
