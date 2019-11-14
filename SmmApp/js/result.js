@@ -3,8 +3,7 @@ var dataExam =
     [{ title: "What’s your gender?", a: "Male", b: "Female" },
     { title: "Your birthday is?", isDate: true },
     { title: "The Boomers intended to change the world. If there's a chance to back to the WW2 , which roles would you like to be?", a: "A poet with romantic fantasy", b: "A scholar with advanced ideas" },
-    { title: "Name a place where it might be romantic to get stranded with your partner.", a: "Cabin/Lodge", b: "Park" },
-    { title: "Name a food you would cook first on the grill for Thanksgiving Dinner.", a: "A poet with romantic fantasy", b: "A scholar with advanced ideas" }];
+    { title: "Name a place where it might be romantic to get stranded with your partner.", a: "Cabin/Lodge", b: "Park" }, { title: "Name a food you would cook first on the grill for Thanksgiving Dinner.", a: "Turkey", b: " Sweet potato pie" }];
 
 var result = {
     A_3: {
@@ -119,13 +118,13 @@ var result = {
         sacle: "80%",
         name: "Victor Hugo",
         img: "images/avtar_5.png",
-        content: "Victor Hugo - \" Dirty dog always ungrateful, ungrateful originally part of the base.\"<br /><br />For you, it’s important to maintain a healthy work-life balance and avoid treating your friends and partners like your assistants.",
+        content: "Victor Hugo - \" Dirty dog always ungrateful, ungrateful originally part of the base.\"<br /><br />For you, it's important to maintain a healthy work-life balance and avoid treating your friends and partners like your assistants.",
     },
     B_12: {
         sacle: "90%",
         name: "Sarah Josepha Buell Hale",
         img: "images/avtar_6.png",
-        content: "Sarah Josepha Buell Hale - Campaigned for the creation of the American holiday -Thanksgiving<br /><br />For you, it’s important to maintain a healthy work-life balance and avoid treating your friends and partners like your assistants.",
+        content: "Sarah Josepha Buell Hale - Campaigned for the creation of the American holiday -Thanksgiving<br /><br />For you, it's important to maintain a healthy work-life balance and avoid treating your friends and partners like your assistants.",
     },
     A_1: {
         sacle: "80%",
@@ -137,13 +136,13 @@ var result = {
         sacle: "80%",
         name: "Victor Hugo",
         img: "images/avtar_5.png",
-        content: "Victor Hugo - \" Dirty dog always ungrateful, ungrateful originally part of the base.\"<br /><br />For you, it’s important to maintain a healthy work-life balance and avoid treating your friends and partners like your assistants.",
+        content: "Victor Hugo - \" Dirty dog always ungrateful, ungrateful originally part of the base.\"<br /><br />For you, it's important to maintain a healthy work-life balance and avoid treating your friends and partners like your assistants.",
     },
     B_0: {
         sacle: "90%",
         name: "Sarah Josepha Buell Hale",
         img: "images/avtar_6.png",
-        content: "Sarah Josepha Buell Hale - Campaigned for the creation of the American holiday -Thanksgiving<br /><br />For you, it’s important to maintain a healthy work-life balance and avoid treating your friends and partners like your assistants.",
+        content: "Sarah Josepha Buell Hale - Campaigned for the creation of the American holiday -Thanksgiving<br /><br />For you, it's important to maintain a healthy work-life balance and avoid treating your friends and partners like your assistants.",
     },
     B_1: {
         sacle: "90%",
