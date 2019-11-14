@@ -58,7 +58,7 @@
                 var list = $('.card-list');
                 var length = list.children().length;
                 if (startIndex == length - 1) {
-                    if (goDownLoad()) {
+                    if (isGoDownLoad()) {
                         // 判断是否已存在，如果已存在则直接显示
                         if (M.dialog2) {
                             return M.dialog2.show();
@@ -66,15 +66,16 @@
                         M.dialog2 = jqueryAlert({
                             'content': 'View your match inside the app.',
                             'modal': true,
-                            'buttons': {
+                            'buttons': { 
                                 'Cancel': function () {
                                     M.dialog2.close();
                                 },
                                 'Ok': function () {
+                                    goDownLoad();
                                 }
                             }
-                        }
-                            return;
+                        });
+                        return;
                     }
                     var options = $('.optionitem.selected');
                     var value = '';
