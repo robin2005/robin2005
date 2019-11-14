@@ -28,7 +28,7 @@ B_4: {
     sacle: "80%",
     name: "Gertrude Stein",
     img: "images/avtar_10.png",
-    content: "Gertrude Stein  - \" Silent gratitude isn't very much use to anyone. \"<br /><br />You occasional obstinate, however, you are dependable partners, soothing your friends and lovers through your trustworthiness and devotion.",
+    content: "Gertrude Stein  - \"Silent gratitude isn't very much use to anyone. \"<br /><br />You occasional obstinate, however, you are dependable partners, soothing your friends and lovers through your trustworthiness and devotion.",
 },
 A_5: {
     sacle: "80%",
@@ -100,7 +100,7 @@ B_10: {
     sacle: "80%",
     name: "Ella Wheeler Wilcox",
     img: "images/avtar_7.png",
-    content: "Ella Wheeler Wilcox - \" Laugh, and the world laughs with you; Weep, and you weep alone. \"<br /><br />You never show your cards, and your enigmatic nature is what makes you so seductive and beguiling.",
+    content: "Ella Wheeler Wilcox - \"Laugh, and the world laughs with you; Weep, and you weep alone. \"<br /><br />You never show your cards, and your enigmatic nature is what makes you so seductive and beguiling.",
 },
 A_11: {
     sacle: "80%",
@@ -148,7 +148,7 @@ B_1: {
     sacle: "90%",
     name: "Gertrude Stein",
     img: "images/avtar_10.png",
-    content: "Gertrude Stein  - \" Silent gratitude isn't very much use to anyone. \"<br /><br />You like things to be simple and easily-control, so you know precisely who or what to love or hate.",
+    content: "Gertrude Stein  - \"Silent gratitude isn't very much use to anyone. \"<br /><br />You like things to be simple and easily-control, so you know precisely who or what to love or hate.",
 },
 A_2: {
     sacle: "80%",
@@ -160,6 +160,6 @@ B_2: {
     sacle: "90%",
     name: "Ella Wheeler Wilcox",
     img: "images/avtar_7.png",
-    content: " Ella Wheeler Wilcox - \" Laugh, and the world laughs with you; Weep, and you weep alone. \"<br /><br />Kind and gentle, you're invigorated by shared experiences of music and romance.",
+    content: " Ella Wheeler Wilcox - \"Laugh, and the world laughs with you; Weep, and you weep alone. \"<br /><br />Kind and gentle, you're invigorated by shared experiences of music and romance.",
 }
 };
