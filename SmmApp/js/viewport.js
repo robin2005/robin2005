@@ -82,6 +82,15 @@ function topBar() {
     });
 }
 
+function isGoDownLoad() {
+    platform = getQueryVariable('client') + '';
+    if (platform && platform.match(/ios/i)) {
+        return false;
+    } else if (platform && platform.match(/android/i)) {
+        return false;
+    }
+    return true;
+}
 function goDownLoad() {
     platform = getQueryVariable('client') + '';
     if (platform && platform.match(/ios/i)) {

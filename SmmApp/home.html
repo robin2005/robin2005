@@ -36,6 +36,8 @@
     <script src="js/mobileSelect.js"></script>
     <script>
         var startIndex = 0;
+        var M = {};
+
         $(document).ready(function () {
 
             $("#app").on("click", ".optionitem", function () {
@@ -60,18 +62,19 @@
                 if (startIndex == length - 1) {
                     if (isGoDownLoad()) {
                         // 判断是否已存在，如果已存在则直接显示
-                        if (M.dialog2) {
-                            return M.dialog2.show();
+                        if (M.dialog) {
+                            return M.dialog.show();
                         }
-                        M.dialog2 = jqueryAlert({
+                        M.dialog = jqueryAlert({
                             'content': 'View your match inside the app.',
                             'modal': true,
                             'buttons': { 
                                 'Cancel': function () {
-                                    M.dialog2.close();
+                                    M.dialog.close();
                                 },
                                 'Ok': function () {
                                     goDownLoad();
+                                    M.dialog.close();
                                 }
                             }
                         });
