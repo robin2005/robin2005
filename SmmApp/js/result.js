@@ -52,7 +52,7 @@ B_6: {
     sacle: "80%",
     name: "Sarah Josepha Buell Hale",
     img: "images/avtar_6.png",
-    content: "Sarah Josepha Buell Hale - Campaigned for the creation of the American holiday - Thanksgiving<br /><br />For you, it’s important to maintain a healthy work-life balance and avoid treating your friends and partners like your assistants.",
+    content: "Sarah Josepha Buell Hale - Campaigned for the creation of the American holiday - Thanksgiving<br /><br />For you, it's important to maintain a healthy work-life balance and avoid treating your friends and partners like your assistants.",
 },
 A_7: {
     sacle: "80%",
@@ -118,7 +118,7 @@ A_12: {
     sacle: "80%",
     name: "Victor Hugo",
     img: "images/avtar_5.png",
-    content: "Victor Hugo - \"Dirty dog always ungrateful, ungrateful originally part of the base.\"<br /><br />For you, it’s important to maintain a healthy work-life balance and avoid treating your friends and partners like your assistants.",
+    content: "Victor Hugo - \"Dirty dog always ungrateful, ungrateful originally part of the base.\"<br /><br />For you, it's important to maintain a healthy work-life balance and avoid treating your friends and partners like your assistants.",
 },
 B_12: {
     sacle: "90%",
@@ -136,13 +136,13 @@ A_0: {
     sacle: "80%",
     name: "Victor Hugo",
     img: "images/avtar_5.png",
-    content: "Victor Hugo - \"Dirty dog always ungrateful, ungrateful originally part of the base.\"<br /><br />For you, it’s important to maintain a healthy work-life balance and avoid treating your friends and partners like your assistants.",
+    content: "Victor Hugo - \"Dirty dog always ungrateful, ungrateful originally part of the base.\"<br /><br />For you, it's important to maintain a healthy work-life balance and avoid treating your friends and partners like your assistants.",
 },
 B_0: {
     sacle: "90%",
     name: "Sarah Josepha Buell Hale",
     img: "images/avtar_6.png",
-    content: "Sarah Josepha Buell Hale - Campaigned for the creation of the American holiday - Thanksgiving<br /><br />For you, it’s important to maintain a healthy work-life balance and avoid treating your friends and partners like your assistants.",
+    content: "Sarah Josepha Buell Hale - Campaigned for the creation of the American holiday - Thanksgiving<br /><br />For you, it's important to maintain a healthy work-life balance and avoid treating your friends and partners like your assistants.",
 },
 B_1: {
     sacle: "90%",
