@@ -102,12 +102,12 @@ function goDownLoad() {
     var isAndroid = u.indexOf('Android') > -1 || u.indexOf('Linux') > -1; //android终端或者uc浏览器
     var isIos = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/); //ios终端
     if (isAndroid) {
-        openAppFun('smm://', "https://play.google.com/store/apps/details?id=com.successfulmatch.seniormatchdating");
+        openAppFun('smm://', "https://app.appsflyer.com/com.successfulmatch.seniormatchdating?pid=thanksgiving&is_retargeting=true");
         gtag('event', 'Event_ThanksPage_Download_Android_Click');
     } else if (isIos) {
-        openAppFun('smm://', "https://app.appsflyer.com/id1465679728?pid=Social%20Facebook");
+        openAppFun('smm://', "https://app.appsflyer.com/id1465679728?pid=thanksgiving&is_retargeting=true");
         gtag('event', 'Event_ThanksPage_Download_IOS_Click');
-    } else {
+    } else { 
         window.location.href = "https://www.seniormeetme.com/";
         gtag('event', 'Event_ThanksPage_Download_PC_Click');
     }
