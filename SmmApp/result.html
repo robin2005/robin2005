@@ -69,6 +69,7 @@
 				var height = appWidth * 138.0 / 300;
 				$('.card-list').attr("style", "background-image:url();");
 				var options = getQueryVariable('gender') + '_' + getQueryVariable('astro') + '';
+				var gender = getQueryVariable('gender') == 'A' ? 'His' :'Her';
 				var share = getQueryVariable('share') + '';
 				var model = result[options] || {
 					sacle: "",
@@ -77,9 +78,10 @@
 					content: ""
 				};;
 				if (model) {
+					var Other = share.length > 0 ? gender : 'Your';
 					var resultHtml = '<div class="card-box active"><div class="card"><div class="question-wrap result-card"><div class="question fs-18 result-html"><div class="result-avatar">' +
 						'<img src="' + model.img + '" /><div class="result-title">Congratulation!!</div>' +
-						'<div class="result-subtitle">Your match with ' + model.name + ' is<span> ' + model.sacle + '</span></div></div>' +
+						'<div class="result-subtitle">'+ Other +' match with ' + model.name + ' is<span> ' + model.sacle + '</span></div></div>' +
 						'<div class="result-content"><div class="content"> ' +
 						model.content ;
 						if(share.length > 0){
