@@ -105,7 +105,7 @@ function goDownLoad() {
         openAppFun('smm://', "https://play.google.com/store/apps/details?id=com.successfulmatch.seniormatchdating");
         gtag('event', 'Event_ThanksPage_Download_Android_Click');
     } else if (isIos) {
-        openAppFun('smm://', "https://itunes.apple.com/us/app/id1465679728?mt=8");
+        openAppFun('smm://', "https://app.appsflyer.com/id1465679728?pid=Social%20Facebook");
         gtag('event', 'Event_ThanksPage_Download_IOS_Click');
     } else {
         window.location.href = "https://www.seniormeetme.com/";
