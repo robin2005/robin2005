@@ -118,8 +118,8 @@ function loadFunction() {
     platform = getQueryVariable('client') + '';
     if (platform && platform.match(/ios/i) && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.chaneNavColor) {
         window.webkit.messageHandlers.chaneNavColor.postMessage("#9C1025");
-    } else if (platform && platform.match(/android/i)  && window.android &&  window.android.chaneNavColor) {
-        window.android.chaneNavColor("#9C1025");
+    } else if (platform && platform.match(/android/i)  && window.javaCode &&  window.javaCode.chaneNavColor) {
+        window.javaCode.chaneNavColor("#9C1025");
     }
 }
 
@@ -127,8 +127,8 @@ function loadShareFunction() {
     platform = getQueryVariable('client') + '';
     if (platform && platform.match(/ios/i) && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.chaneNavColor) {
         window.webkit.messageHandlers.shareNavHandler.postMessage(window.shareData);
-    } else if (platform && platform.match(/android/i) && window.android &&  window.android.shareNavHandler) {
-        window.android.shareNavHandler(window.shareData);
+    } else if (platform && platform.match(/android/i) && window.javaCode &&  window.javaCode.shareNavHandler) {
+        window.javaCode.shareNavHandler(window.shareData);
     }
 }
 
