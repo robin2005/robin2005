@@ -50,7 +50,7 @@
 				if (platform && platform.match(/ios/i) && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.shareHandler ) {
 					window.webkit.messageHandlers.shareHandler.postMessage(window.shareData);
 				} else if (platform && platform.match(/android/i)  && window.javaCode && window.javaCode.shareHandler ) {
-					window.javaCode.shareHandler(window.shareData);
+					window.javaCode.shareHandler(window.shareData.sharetitle,window.shareData.shareContent,window.shareData.sharelinkurl); 
 				}
 			});
 
