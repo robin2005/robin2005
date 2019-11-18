@@ -128,7 +128,7 @@ function loadShareFunction() {
     if (platform && platform.match(/ios/i) && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.chaneNavColor) {
         window.webkit.messageHandlers.shareNavHandler.postMessage(window.shareData);
     } else if (platform && platform.match(/android/i) && window.javaCode &&  window.javaCode.shareNavHandler) {
-        window.javaCode.shareNavHandler(window.shareData.sharetitle,window.shareData.shareContent,window.shareData.sharelinkurl); 
+        window.javaCode.shareNavHandler(window.shareData.sharetitle,window.shareData.sharecontent,window.shareData.sharelinkurl); 
     }
 }
 
