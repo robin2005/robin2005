@@ -3236,7 +3236,7 @@ display: block;
   overflow-y: scroll;
   -webkit-text-size-adjust: 100%;
   -ms-text-size-adjust: 100%;
-  height: calc(100% - 200px);  
+  height: calc(100% - 210px);  
   
 }
 .result-content .share-title
@@ -3248,7 +3248,7 @@ display: block;
   font-weight:600;
   color:rgba(250,100,0,1);
   line-height:18px;
-  margin: 0.43rem auto;
+  margin: 0.40rem auto;
   bottom: 1.90rem;
   width: calc(100% - 0.53rem); 
 }
