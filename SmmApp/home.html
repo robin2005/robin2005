@@ -84,8 +84,9 @@
                     var value = '';
                     value += options[0].attributes['data-optionid'].value;
                     var optiondate = $('.optiondate')[0].attributes['data-optionid'].value;
-                    window.location = 'result.html?client=' + platform + '&radom=' + Date.now() + '&gender=' + value + '&astro=' + optiondate;
-                    gtag('event', 'Event_ThanksPage_Q' + length + '_Click');
+                    window.location = 'result.html?client=' + platform + '&radom=' + Date.now() + '&gender=' + value + '&astro=' + optiondate; 
+                    console.log('Event_ThanksPage_Q' + $(this).attr('index') + '_Click'); 
+                    gtag('event', 'Event_ThanksPage_Q' + $(this).attr('index') + '_Click');
                     gtag('event', 'Event_ThanksPage_Submit_Click');
                 } else {
                     list.children().removeClass('prev').removeClass('active');
