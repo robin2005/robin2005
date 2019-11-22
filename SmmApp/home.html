@@ -94,6 +94,7 @@
                     list.children().eq(startIndex).next().removeClass('next').addClass('active');
                     list.children().eq(startIndex).next().next().removeClass('next2').addClass('next');
                     startIndex += 1;
+                    console.log('Event_ThanksPage_Q' + $(this).attr('index') + '_Click'); 
                     gtag('event', 'Event_ThanksPage_Q' + $(this).attr('index') + '_Click');
                 }
             });
@@ -124,11 +125,11 @@
                 $('.card-list').attr("style", "background-size: 300px 138px;background-position:right bottom;");
                 for (var i = 0; i < dataExam.length; i++) {
                     var element = dataExam[i];
-                    var optionHtml = '<div index="' + i + 1 + '" class="card-box next2"><div class="card flex"><div class="question-wrap"><div class="question fs-18">';
+                    var optionHtml = '<div  class="card-box next2"><div class="card flex"><div class="question-wrap"><div class="question fs-18">';
                     if (i == 0) {
-                        optionHtml = '<div index="' + i + 1 + '" class="card-box active"><div class="card"><div class="question-wrap"><div class="question fs-18">';
+                        optionHtml = '<div  class="card-box active"><div class="card"><div class="question-wrap"><div class="question fs-18">';
                     } else if (i == 1) {
-                        optionHtml = '<div index="' + i + 1 + '" class="card-box next"><div class="card"><div class="question-wrap"><div class="question fs-18">';
+                        optionHtml = '<div   class="card-box next"><div class="card"><div class="question-wrap"><div class="question fs-18">';
                     }
                     optionHtml += (i + 1) + '. ' + element.title + '</div>';
                     if (element.isDate === true) {
@@ -142,7 +143,7 @@
                         optionHtml += element.b;
                         optionHtml += '</div></div><div class="option-line"></div><div class="option-line"></div>';
                     }
-                    optionHtml += '<div class="action-wrap"><div class="nextaction cp-btn cp-btn--yellow cp-btn--disabled">';
+                    optionHtml += '<div class="action-wrap"><div index="' + i + 1 + '" class="nextaction cp-btn cp-btn--yellow cp-btn--disabled">';
                     if (i == dataExam.length - 1) {
                         optionHtml += '&nbsp;&nbsp;' + 'Submission'.toUpperCase() + '&nbsp;&nbsp;';
                     } else {
