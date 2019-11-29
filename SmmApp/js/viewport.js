@@ -253,7 +253,7 @@ function dataMobileSelect() {
     }
     var mobileSelect1 = new MobileSelect({
         trigger: '.optiondate',
-        title: 'Chose your birthday',
+        title: 'Choose your birthday',
         wheels: [
             { data: _data }
         ],
