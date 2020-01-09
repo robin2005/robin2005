@@ -36,7 +36,13 @@
       "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/taste.png",
       "url": "Tiku_taste.json"
     }],
-  "menunews": [
+  "menunews": [{
+    "tag": "6",
+    "title": "近期能抽到上上签吗？",
+    "subtitle": "一起做做这条心理测试呗~~~",
+    "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/temlate3-3.png",
+    "url": "Tiku_taste_6.json"
+  },
   {
     "tag": "1",
     "title": "国际标准智商测试",
