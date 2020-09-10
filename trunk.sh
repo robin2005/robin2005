@@ -1,8 +1,10 @@
 #! /bin/bash
  
-#获取podspec 中版本号
-version= "1.0"
+#版本号
+version = "1.0"
+
 echo "version:"  ${version}
+
 #git提交
 git add .
 read -t 600 -p "修改内容[默认为${version}]:" diff
