@@ -1,7 +1,7 @@
 #! /bin/bash
  
 #版本号
-version = "1.0"
+version="0.0.1"
 
 echo "version:"  ${version}
 
