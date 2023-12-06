@@ -34,13 +34,12 @@
 		</div>
 	</div>
 	<!-- Footer -->
-	<center style="margin: 20px;"> 
+	<center style="margin: 20px;">
 		<!-- Copyright -->
-		<ul>
-			{% if site.title or site.author %}
-			<li>&copy; {{- site.title | default: site.author -}}. All rights reserved.</li>
-			{% endif %}
-		</ul> 
+
+		{% if site.title or site.author %}
+		&copy; {{- site.title | default: site.author -}}. All rights reserved.
+		{% endif %}
 	</center>
 </body>
 
