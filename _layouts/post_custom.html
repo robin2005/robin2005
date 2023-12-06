@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+{%- include head.html -%}
+<style>
+	body {
+		font-family: Noto Sans SC;
+		font-size: 16px;
+	}
+
+	p,
+	ul,
+	ol,
+	dl,
+	table {
+		margin-bottom: 0.5em;
+	}
+
+	strong,
+	b {
+		font-weight: 500;
+		color: #666;
+	}
+</style>
+
+<body>
+	<!-- Main -->
+	<div>
+		<!-- Post -->
+		<div class="container">
+			<center>
+				<h2>{{- page.title -}}</h2>
+			</center>
+			{{- content -}}
+		</div>
+	</div>
+	<!-- Footer -->
+	<center style="margin: 20px;"> 
+		<!-- Copyright -->
+		<ul>
+			{% if site.title or site.author %}
+			<li>&copy; {{- site.title | default: site.author -}}. All rights reserved.</li>
+			{% endif %}
+		</ul> 
+	</center>
+</body>
+
+</html>

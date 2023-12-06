@@ -1,27 +1,52 @@
 #! /bin/bash
- 
-#版本号
-version="0.0.1"
+#!/bin/sh
+# @author xi_feng  
+# @Email xi_feng@hunliji.com
+# @createBy 2020-03-12
+# Shell脚本提交git代码 简单,快速,高效
+# 
 
-echo "version:"  ${version}
+echo ' >>>>>> start push <<<<<< '
+echo " ====== 当前分支 ====== "
+branch=$(git symbolic-ref --short -q HEAD)
+echo $branch
 
-#git提交
-git add .
-read -t 600 -p "修改内容[默认为${version}]:" diff
-if [ -z ${diff} ];then  
-diff=${version}
-fi 
-git commit -m ${diff}
-git push
-read -t 600 -p "版本内容[默认为${version}]:" diff
-if [ -z ${diff} ];then  
-diff=${version}
+# 判断参数1是否包含参数2
+contains_str(){
+  contains_result=$(echo $1 | grep "${2}")
+  if [[ -n $contains_result  ]] ; then
+    return 1
+  else
+    return 0
+  fi
+}
+
+# 检查本地状态
+echo ">>>>>> 执行 git add 之前,本地文件状态如下 <<<<<<"
+git status
+statusResult=$(git status)
+no_change="nothing to commit"
+contains_str "$statusResult" "$no_change"
+if [[ $? == 1 ]]; then
+  echo "==== 当前没有新增或者修改的文件 ===="
+  exit
 fi
-# 移除本地tag
-git tag -d ${version}
-# 移除远程tag
-git push origin --delete tag ${version}
-# 新建tag
-git tag -a ${version} -m ${diff}
-# 推送tag
-git push origin ${version}
+
+git add .
+
+# 判断是否有填写推送消息
+# 没有就自动填写一个
+msg="$1"
+if [ ! -n "$msg" ]; then
+  author=$(git config user.name)
+  msg="git commit by $author"
+fi
+echo $msg
+
+git commit -m "${msg}"
+
+git pull
+git push
+git status
+
+echo echo "==== 推送成功 ===="
