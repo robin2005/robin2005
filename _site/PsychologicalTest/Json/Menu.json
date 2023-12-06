@@ -1,0 +1,101 @@
+{
+  "menus": [{
+      "tag": "1",
+      "title": "情感",
+      "menutype": "1",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/love.png",
+      "url": "Tiku_love.json"
+    },{
+      "tag": "2",
+      "title": "性格",
+      "menutype": "1",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/character.png",
+      "url": "Tiku_character.json"
+    },{
+      "tag": "3",
+      "title": "职业",
+      "menutype": "1",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/job.png",
+      "url": "Tiku_job.json"
+    },{
+      "tag": "3",
+      "title": "社交",
+      "menutype": "1",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/social.png",
+      "url": "Tiku_social.json"
+    },{
+      "tag": "4",
+      "title": "能力",
+      "menutype": "1",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/ability.png",
+      "url": "Tiku_ability.json"
+    },{
+      "tag": "5",
+      "title": "趣味",
+      "menutype": "1",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/taste.png",
+      "url": "Tiku_taste.json"
+    }],
+  "menunews": [{
+    "tag": "6",
+    "title": "近期能抽到上上签吗？",
+    "subtitle": "一起做做这条心理测试呗~~~",
+    "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/temlate3-3.png",
+    "url": "Tiku_taste_6.json"
+  },
+  {
+    "tag": "1",
+    "title": "国际标准智商测试",
+    "subtitle": "智商，通俗地可以理解为智力，是指空间、逻辑、创造、记忆等能力。",
+    "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/20140722180825.png",
+    "url": "Tiku_job_5.json"
+  },
+    {
+      "tag": "2",
+      "title": "全国人格分裂等级认证！",
+      "subtitle": "人格分裂，在影视剧中似乎很神秘，但现实生活中，却离我们并不遥远。",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/1b3bd07b2b3e.jpg",
+        "url": "Tiku_character_2.json"},
+    {
+      "tag": "3",
+      "title": "你是完美主义者吗？",
+      "subtitle": "你是否痴迷于完美？无论你做得多好，你都经常让自己失望吗？你对周围的人有太多期待吗？即使我们生活在一个不完美的世界，仍然有许多人痴迷于让他们的生活绝对完美。",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/shutterstock_752885209.png",
+      "url": "Tiku_character_7.json"
+    },{
+      "tag": "5",
+      "title": "职业能力倾向测试",
+      "subtitle": "职业能力倾向测试可以发现一个人的潜在才能，预测个体在将来的学习和工作中可能达到的成功程度，帮助选择适合自己的职业",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/gatb.jpg",
+      "url": "Tiku_job_6.json"
+    },
+    {
+      "tag": "4",
+      "title": "猪年你怎样做才能更受欢迎?",
+      "subtitle": "超准的心理测试题篇三",  
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/0df68090b1c44cb3af3db4abacbd2266.jpeg",
+      "url": "Tiku_3.json"
+    }
+  ],
+  "news": [{
+    "title": "普通人如何找到自己隐藏的天赋？ ",
+    "subtitle": "内心的安宁，才是安全感的来源",
+    "imageUrl": "https://robin2005.github.io/PsychologicalTest/News/157105406815736998.jpg",
+    "url": "https://robin2005.github.io/PsychologicalTest/News/7.html"
+  },{
+    "title": "大家都在说的安全感，到底是指什么？",
+    "subtitle": "其实绝大多数人的努力程度远没有到拼天赋的地步",
+    "imageUrl": "https://robin2005.github.io/PsychologicalTest/News/15710550674633933.jpg",
+    "url": "https://robin2005.github.io/PsychologicalTest/News/6.html"
+  },{
+    "title": "人们为什么要寻找替罪羊？ ",
+    "subtitle": "替罪羊可以让我们保持自己的道德感",
+    "imageUrl": "https://robin2005.github.io/PsychologicalTest/News/e824b899a9014c08a2fe4f470a7b02087af4f40f.jpg",
+    "url": "https://robin2005.github.io/PsychologicalTest/News/4.html"
+  }, {
+    "title": "心理学告诉你，为什么总是在失去之后才懂得“珍惜”",
+    "subtitle": "你要学会珍惜，珍惜爱情友情，珍惜生活生命，不要等到失去了，才觉得宝贵。",
+    "imageUrl": "https://robin2005.github.io/PsychologicalTest/News/D158663472_M.jpg",
+    "url": "https://robin2005.github.io/PsychologicalTest/News/5.html"
+  }]
+}

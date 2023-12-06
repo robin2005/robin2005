@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>EventBusProtocol Protocol Reference</title>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
+    
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
+  <body>
+    <a name="//apple_ref/swift/Protocol/EventBusProtocol" class="dashAnchor"></a>
+    <a title="EventBusProtocol Protocol Reference"></a>
+    <header>
+      <div class="content-wrapper">
+        <p><a href="../index.html">ADTFoundation 0.0.1 Docs</a> (49% documented)</p>
+        <p class="header-right">
+          <form role="search" action="../search.json">
+            <input type="text" placeholder="Search documentation" data-typeahead>
+          </form>
+        </p>
+      </div>
+    </header>
+    <div class="content-wrapper">
+      <p id="breadcrumbs">
+        <a href="../index.html">ADTFoundation Reference</a>
+        <img id="carat" src="../img/carat.png" />
+        EventBusProtocol Protocol Reference
+      </p>
+    </div>
+    <div class="content-wrapper">
+      <nav class="sidebar">
+        <ul class="nav-groups">
+          <li class="nav-group-name">
+            <a href="../Classes.html">Classes</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Classes/Cache.html">Cache</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Device.html">Device</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Device/CPU.html">– CPU</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Device.html#/s:13ADTFoundation6DeviceC9DiskSpaceV">– DiskSpace</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Device.html#/s:13ADTFoundation6DeviceC11MemorySpaceV">– MemorySpace</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Device/Type.html">– Type</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Device/Version.html">– Version</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/DiskCache.html">DiskCache</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Dynamic.html">Dynamic</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/Gcd.html">Gcd</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/MemoryCache.html">MemoryCache</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RunTime.html">RunTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/RunTime/Print.html">– Print</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Classes/WeakBox.html">WeakBox</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Enums.html">Enumerations</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Enums/DateFormatMode.html">DateFormatMode</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Enums/RegexPattern.html">RegexPattern</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Extensions.html">Extensions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Extensions/Array.html">Array</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Bool.html">Bool</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/c:@S@CGPoint">CGPoint</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/c:@S@CGRect">CGRect</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/c:@S@CGSize">CGSize</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/c:@S@CGVector">CGVector</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Character.html">Character</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/CharacterSet.html">CharacterSet</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Data.html">Data</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Date.html">Date</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Dictionary.html">Dictionary</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/DispatchQueue.html">DispatchQueue</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/DispatchTime.html">DispatchTime</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Double.html">Double</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSCoder.html">NSCoder</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/NSObject.html">NSObject</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Numeric.html">Numeric</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/SignedInteger.html">SignedInteger</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/String.html">String</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/Timer.html">Timer</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/UIEdgeInsets">UIEdgeInsets</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/c:@S@UIEdgeInsets">UIEdgeInsets</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/UIOffset">UIOffset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/c:@S@UIOffset">UIOffset</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/UIRectEdge">UIRectEdge</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions.html#/c:@E@UIRectEdge">UIRectEdge</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/URL.html">URL</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Extensions/UnsignedInteger.html">UnsignedInteger</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Functions.html">Functions</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Functions.html#/s:13ADTFoundation2eeoiySbSayAA12RegexPatternOG_AEtF">==(_:_:)</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Protocols.html">Protocols</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Protocols/CacheProtocol.html">CacheProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols.html#/s:13ADTFoundation11EventBusKeyP">EventBusKey</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/EventBusProtocol.html">EventBusProtocol</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Protocols/Then.html">Then</a>
+              </li>
+            </ul>
+          </li>
+          <li class="nav-group-name">
+            <a href="../Structs.html">Structures</a>
+            <ul class="nav-group-tasks">
+              <li class="nav-group-task">
+                <a href="../Structs/EventBus.html">EventBus</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs.html#/s:13ADTFoundation12EventBusItemV">EventBusItem</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/Regex.html">Regex</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="../Structs/WeakArray.html">WeakArray</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <article class="main-content">
+        <section>
+          <section class="section">
+            <h1>EventBusProtocol</h1>
+              <div class="declaration">
+                <div class="language">
+                  
+                  <pre class="highlight swift"><code><span class="kd">public</span> <span class="kd">protocol</span> <span class="kt">EventBusProtocol</span></code></pre>
+
+                </div>
+              </div>
+            <p>Undocumented</p>
+
+          </section>
+          <section class="section task-group-section">
+            <div class="task-group">
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13ADTFoundation16EventBusProtocolP0bC3KeyQa"></a>
+                    <a name="//apple_ref/swift/Alias/EventBusKey" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13ADTFoundation16EventBusProtocolP0bC3KeyQa">EventBusKey</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">EventBusKey</span> <span class="p">:</span> <span class="kt">Hashable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13ADTFoundation16EventBusProtocolP0bC5ValueQa"></a>
+                    <a name="//apple_ref/swift/Alias/EventBusValue" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13ADTFoundation16EventBusProtocolP0bC5ValueQa">EventBusValue</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">associatedtype</span> <span class="kt">EventBusValue</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13ADTFoundation16EventBusProtocolP6eventsSayAA0bC4ItemVy0bC3KeyQz0bC5ValueQzGGvp"></a>
+                    <a name="//apple_ref/swift/Property/events" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13ADTFoundation16EventBusProtocolP6eventsSayAA0bC4ItemVy0bC3KeyQz0bC5ValueQzGGvp">events</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">events</span><span class="p">:</span> <span class="p">[</span><span class="kt"><a href="../Structs.html#/s:13ADTFoundation12EventBusItemV">EventBusItem</a></span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/EventBusProtocol.html#/s:13ADTFoundation16EventBusProtocolP0bC3KeyQa">EventBusKey</a></span><span class="p">,</span> <span class="kt"><a href="../Protocols/EventBusProtocol.html#/s:13ADTFoundation16EventBusProtocolP0bC5ValueQa">EventBusValue</a></span><span class="o">&gt;</span><span class="p">]</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13ADTFoundation16EventBusProtocolP6keySetShy0bC3KeyQzGvp"></a>
+                    <a name="//apple_ref/swift/Property/keySet" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13ADTFoundation16EventBusProtocolP6keySetShy0bC3KeyQzGvp">keySet</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">var</span> <span class="nv">keySet</span><span class="p">:</span> <span class="kt">Set</span><span class="o">&lt;</span><span class="kt"><a href="../Protocols/EventBusProtocol.html#/s:13ADTFoundation16EventBusProtocolP0bC3KeyQa">EventBusKey</a></span><span class="o">&gt;</span> <span class="p">{</span> <span class="k">get</span> <span class="k">set</span> <span class="p">}</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/subscribe%20%2F%20push"></a>
+                <a name="//apple_ref/swift/Section/subscribe / push" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/subscribe%20%2F%20push"></a>
+                  <h3 class="section-name"><p>subscribe / push</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13ADTFoundation16EventBusProtocolPAAE9subscribe8observer3key5eventyyXl_0bC3KeyQzy0bC5ValueQzctF"></a>
+                    <a name="//apple_ref/swift/Method/subscribe(observer:key:event:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13ADTFoundation16EventBusProtocolPAAE9subscribe8observer3key5eventyyXl_0bC3KeyQzy0bC5ValueQzctF">subscribe(observer:<wbr>key:<wbr>event:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>订阅数据更新</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">subscribe</span><span class="p">(</span><span class="nv">observer</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt"><a href="../Protocols/EventBusProtocol.html#/s:13ADTFoundation16EventBusProtocolP0bC3KeyQa">EventBusKey</a></span><span class="p">,</span> <span class="nv">event</span><span class="p">:</span> <span class="kd">@escaping</span> <span class="p">(</span><span class="kt"><a href="../Protocols/EventBusProtocol.html#/s:13ADTFoundation16EventBusProtocolP0bC5ValueQa">EventBusValue</a></span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kt">Void</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>target</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>担保实例</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>订阅数据名</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>event</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>数据回调</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13ADTFoundation16EventBusProtocolPAAE4push3key5valuey0bC3KeyQz_0bC5ValueQztF"></a>
+                    <a name="//apple_ref/swift/Method/push(key:value:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13ADTFoundation16EventBusProtocolPAAE4push3key5valuey0bC3KeyQz_0bC5ValueQztF">push(key:<wbr>value:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>推送数据更新</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">push</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt"><a href="../Protocols/EventBusProtocol.html#/s:13ADTFoundation16EventBusProtocolP0bC3KeyQa">EventBusKey</a></span><span class="p">,</span> <span class="nv">value</span><span class="p">:</span> <span class="kt"><a href="../Protocols/EventBusProtocol.html#/s:13ADTFoundation16EventBusProtocolP0bC5ValueQa">EventBusValue</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>订阅数据名</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>value</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>推送数据</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="task-group">
+              <div class="task-name-container">
+                <a name="/remove%20event"></a>
+                <a name="//apple_ref/swift/Section/remove event" class="dashAnchor"></a>
+                <div class="section-name-container">
+                  <a class="section-name-link" href="#/remove%20event"></a>
+                  <h3 class="section-name"><p>remove event</p>
+</h3>
+                </div>
+              </div>
+              <ul>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13ADTFoundation16EventBusProtocolPAAE6remove8observeryyXl_tF"></a>
+                    <a name="//apple_ref/swift/Method/remove(observer:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13ADTFoundation16EventBusProtocolPAAE6remove8observeryyXl_tF">remove(observer:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>移除 target 下所有订阅事件</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="nv">observer</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>target</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>担保 target</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13ADTFoundation16EventBusProtocolPAAE6remove3keyy0bC3KeyQz_tF"></a>
+                    <a name="//apple_ref/swift/Method/remove(key:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13ADTFoundation16EventBusProtocolPAAE6remove3keyy0bC3KeyQz_tF">remove(key:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>移除 key 所有订阅事件</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="nv">key</span><span class="p">:</span> <span class="kt"><a href="../Protocols/EventBusProtocol.html#/s:13ADTFoundation16EventBusProtocolP0bC3KeyQa">EventBusKey</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>订阅数据名</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/s:13ADTFoundation16EventBusProtocolPAAE6remove8observer3keyyyXl_0bC3KeyQztF"></a>
+                    <a name="//apple_ref/swift/Method/remove(observer:key:)" class="dashAnchor"></a>
+                    <a class="token" href="#/s:13ADTFoundation16EventBusProtocolPAAE6remove8observer3keyyyXl_0bC3KeyQztF">remove(observer:<wbr>key:<wbr>)</a>
+                    </code>
+                      <span class="declaration-note">
+                        Extension method
+                      </span>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>移除特定订阅事件</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">mutating</span> <span class="kd">func</span> <span class="nf">remove</span><span class="p">(</span><span class="nv">observer</span><span class="p">:</span> <span class="kt">AnyObject</span><span class="p">,</span> <span class="nv">key</span><span class="p">:</span> <span class="kt"><a href="../Protocols/EventBusProtocol.html#/s:13ADTFoundation16EventBusProtocolP0bC3KeyQa">EventBusKey</a></span><span class="p">)</span></code></pre>
+
+                        </div>
+                      </div>
+                      <div>
+                        <h4>Parameters</h4>
+                        <table class="graybox">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>target</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>担保 target</p>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <code>
+                                <em>key</em>
+                                </code>
+                              </td>
+                              <td>
+                                <div>
+                                  <p>订阅数据名</p>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </section>
+        </section>
+        <section id="footer">
+          <p>&copy; 2020 <a class="link" href="https://github.com/robin2005/ADTFoundation" target="_blank" rel="external">robin2005</a>. All rights reserved. (Last updated: 2020-09-10)</p>
+          <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external">jazzy ♪♫ v0.13.5</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external">Realm</a> project.</p>
+        </section>
+      </article>
+    </div>
+  </body>
+</div>
+</html>

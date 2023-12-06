@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta http-equiv="expires" content="0">
+	<meta property="og:image:width" content="200" />
+	<meta property="og:image:heigh" content="200" />
+	<meta property="fb:app_id" content="fb597450184095421" />
+	<meta property="og:image" content="https://robin2005.github.io/SmmApp/images/share.png" />
+	<meta property="og:title" content="Happy Thanksgiving" />
+	<meta property="og:description" content="Test which celebrity you match the most" />
+	<meta property="og:type" content="article" />
+	<meta name="viewport"
+		content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+	<meta name="flexible" content="initial-dpr=1" />
+	<script>
+		var random = Math.random();
+		document.write('<link href="css/home.css?v=' + random + '" rel="stylesheet" type="text/css"/>');
+	</script>
+	<title>Happy Thanksgiving</title>
+	<link rel="stylesheet" href="css/alert.css">
+	<script src="js/jquery.min.js"></script>
+	<script src='js/alert.js'></script>
+	<script src='js/openApp.js'></script> 
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-151864019-1"></script>
+	<script>
+		window.dataLayer = window.dataLayer || [];
+		function gtag() { dataLayer.push(arguments); }
+		gtag('js', new Date());
+
+		gtag('config', 'UA-151864019-1');
+	</script>
+	<script>
+		var now = new Date().getTime();
+		document.write('<script src="js/result.js?v=' + now + '"><\/script\>');
+		document.write('<script src="js/viewport.js?v=' + now + '"><\/script\>');
+	</script>
+	<script>
+
+		$(document).ready(function () {
+			radomDescription();
+			topBar();
+			$("#app").on("click", ".share", function () { 
+				gtag('event', 'Event_ThanksPage_ShareH5_Click');
+				platform = getQueryVariable('client') + '';
+				if (platform && platform.match(/ios/i) && window.webkit && window.webkit.messageHandlers && window.webkit.messageHandlers.shareHandler ) {
+					window.webkit.messageHandlers.shareHandler.postMessage(window.shareData);
+				} else if (platform && platform.match(/android/i)  && window.javaCode && window.javaCode.shareHandler ) {
+					window.javaCode.shareHandler(window.shareData.sharetitle,window.shareData.sharecontent,window.shareData.sharelinkurl); 
+				}
+			});
+
+			$("#app").on("click", ".start", function () {
+				window.location = 'home.html';
+				gtag('event', 'Event_ThanksPage_TryAgain_Click');
+			}); 
+
+			$("#app").on("click", ".icon-back", function () {
+				window.history.go(-1);
+			});
+
+			function showExamResult() {
+				var appWidth = $("#app").width();
+				var appHeight = $("body").height();
+				var height = appWidth * 138.0 / 300;
+				$('.card-list').attr("style", "background-image:url();");
+				var options = getQueryVariable('gender') + '_' + getQueryVariable('astro') + '';
+				var gender = getQueryVariable('gender') == 'A' ? 'His' :'Her';
+				var share = getQueryVariable('share') + '';
+				var model = result[options] || {
+					sacle: "",
+					name: "",
+					img: "images/avtar_1.png",
+					content: ""
+				};;
+				if (model) {
+					var Other = share.length > 0 ? gender : 'Your';
+					var resultHtml = '<div class="card-box active"><div class="card"><div class="question-wrap result-card"><div class="question fs-18 result-html"><div class="result-avatar">' +
+						'<img src="' + model.img + '" /><div class="result-title">Congratulations!</div>' +
+						'<div class="result-subtitle">'+ Other +' match with ' + model.name + ' is<span> ' + model.sacle + '</span></div></div>' +
+						'<div class="result-content"><div class="content"> ' +
+						model.content ;
+						if(share.length > 0){
+							resultHtml += 		'</div > <div class="share-title text-center"> Share to win a Super Match</div> <div class="action-wrap"><div class="cp-btn cp-btn--yellow share-btn start">&nbsp;&nbsp;Try it NOW!&nbsp;&nbsp;</div></div></div ></div ></div ></div ></div > ';
+				        }else{
+							resultHtml += 		'</div > <div class="share-title text-center"> Share to win a Super Match</div> <div class="action-wrap"><div class="cp-btn cp-btn--yellow share-btn share">SHARE</div></div></div ></div ></div ></div ></div > ';
+				        }
+					$('.card-list').empty();
+					$('.card-list').append(resultHtml);
+				}
+			}
+			showExamResult();
+		});
+
+		$(window).load(function () {
+			loadShareFunction();
+		});
+
+	</script>
+</head>
+
+<body>
+	<div id="app">
+		<div class="topbar">
+			<div class="s-tabcell topbar-left fl"><span class="d-ibm icon-wrap"><i class="d-b icon-back"></i></span>
+			</div>
+			<div class="fs-23 topbar-title s-tabcell"><span class="d-ibm">Happy Thanksgiving</span></div>
+			<div class="s-tabcell topbar-right fr"></div>
+		</div>
+		<div class="page-answer ">
+			<div class="card-list">
+
+			</div>
+			<div class="page-mark flex DownloadApp">
+				<i class="d-b icon-logo flex__item"></i>
+				<i class="d-b flex__item d-bm downtext">Download SeniorMeetMe to
+					meet singles over 45</i>
+				<i class="d-b icon-down flex__item"></i>
+			</div>
+		</div>
+	</div>
+
+</body>
+
+</html>

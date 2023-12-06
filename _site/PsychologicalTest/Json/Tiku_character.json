@@ -1,0 +1,65 @@
+[{
+  "tag": "5",
+  "title": "你是完美主义者吗？",
+  "subtitle": "你是否痴迷于完美？无论你做得多好，你都经常让自己失望吗？你对周围的人有太多期待吗？即使我们生活在一个不完美的世界，仍然有许多人痴迷于让他们的生活绝对完美。",
+  "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/shutterstock_752885209.jpg",
+  "url": "Tiku_character_7.json"
+},{
+  "tag": "5",
+  "title": "菲尔人格测试",
+  "subtitle": "这个测试是菲尔博士在著名主持人欧普拉的节目里做的，国际上称为“菲尔人格测试”,这已经成为很多大公司人事部门实际用人的“试金石”。",
+  "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/b3119313b07eca80aba69bcc932397dda144837e.png",
+  "url": "Tiku_character_6.json"
+},{
+  "tag": "5",
+  "title": "你有几重人格？一秒测出你的多面个性 ",
+  "subtitle": "测测你的人格有多少面？",
+  "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/897abd06883e4eb698bb62778c80aeee.png",
+  "url": "Tiku_character_8.json"
+},{
+  "tag": "5",
+  "title": "你的心灵底色是什么颜色？",
+  "subtitle": "每个人在内心深处都藏有一种颜色。那么，哪种颜色藏在你心灵深处呢？",
+  "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/5319-160629162934462.jpg",
+  "url": "Tiku_character_5.json"
+},{
+  "tag": "5",
+  "title": "你的微笑抑郁指数有多高？",
+  "subtitle": "现代人的崩溃是一种默不作声的崩溃，笑脸迎人的背后，正经历着无比的煎熬！你的微笑抑郁指数有多高？快来测测吧！",
+  "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/20180613192340_8473.jpg",
+  "url": "Tiku_character_3.json"
+},{
+  "tag": "6",
+  "title": "你生气时会有多恐怖？",
+  "subtitle": "你是个好脾气的人吗？你有没有被人惹恼过？你知道你生气时会有多恐怖吗？快来测测吧~",
+  "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/WeChatfba748cef6a902b7f00c76239afc0fc5.png",
+  "url": "Tiku_character_4.json"
+},{
+      "tag": "1",
+      "title": "测测你会拿什么和魔鬼交易?",
+      "subtitle": "如果有一天你遇到了魔鬼，他允许你用生命中的一样东西来交换亿万元的资产，你会用什么来做交换呢？",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/20111017101011.jpg",
+      "url": "Tiku_character_1.json"
+    },
+    {
+      "tag": "2",
+      "title": "你是沉迷过去害怕变化的人吗?",
+      "subtitle": "为什么人们会沉迷于痛苦，陷入一次又一次“强迫性重复”呢？",
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/7d5f1460db624cff8d5e2cbc3279987a.png",
+      "url": "Tiku_2.json"
+    },
+    {
+      "tag": "3",
+      "title": "猪年你怎样做才能更受欢迎?",
+      "subtitle": "大多数人在生活、恋爱、职场上，因为沟通的问题，而感到压力巨大，深受困扰",  
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/0df68090b1c44cb3af3db4abacbd2266.jpeg",
+      "url": "Tiku_3.json"
+    },
+    {
+      "tag": "4",
+      "title": "全国人格分裂等级认证！",
+      "subtitle": "人格分裂，在影视剧中似乎很神秘，但现实生活中，却离我们并不遥远。",  
+      "imageUrl": "https://robin2005.github.io/PsychologicalTest/Images/1b3bd07b2b3e.jpg",
+      "url": "Tiku_character_2.json"
+    }
+  ]

@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <meta name="viewport"
+        content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=no">
+    <meta name="flexible" content="initial-dpr=1" />
+    <script>
+        var random = Math.random();
+        document.write('<link href="css/home.css?v=' + random + '" rel="stylesheet" type="text/css"/>');
+    </script>
+    <title>Happy Thanksgiving</title>
+    <link rel="stylesheet" href="css/alert.css">
+    <link rel="stylesheet" href="css/mobileSelect.css">
+    <script src="js/jquery.min.js"></script>
+    <script src='js/alert.js'></script>
+    <script src='js/openApp.js'></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-151864019-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'UA-151864019-1');
+        gtag('event', 'Event_ThanksPage_Total_Click');
+    </script>
+    <script>
+        var now = new Date().getTime();
+        document.write('<script src="js/result.js?v=' + now + '"><\/script\>');
+        document.write('<script src="js/viewport.js?v=' + now + '"><\/script\>');
+    </script>
+    <script src="js/mobileSelect.js"></script>
+    <script>
+        var startIndex = 0;
+        var M = {};
+
+        $(document).ready(function () {
+
+            $("#app").on("click", ".optionitem", function () {
+                $(this).parent().children().removeClass("selected");
+                $(this).addClass("selected");
+                var list = $('.card-list');
+                list.children().eq(startIndex).find(".cp-btn").removeClass("cp-btn--disabled");
+            });
+
+            $("#app").on("click", ".icon-back", function () {
+                startHtml();
+            });
+            $("#app").on("click", ".startaction", function () {
+                startExam();
+                gtag('event', 'Event_ThanksPage_Start_Click');
+            });
+
+            $("#app").on("click", ".nextaction", function () {
+                if ($(this).hasClass("cp-btn--disabled")) return;
+                var list = $('.card-list');
+                var length = list.children().length;
+                if (startIndex == length - 1) {
+                    if (isGoDownLoad()) {
+                        // 判断是否已存在，如果已存在则直接显示
+                        if (M.dialog) {
+                            return M.dialog.show();
+                        }
+                        M.dialog = jqueryAlert({
+                            'content': 'View your match inside the app.',
+                            'modal': true,
+                            'buttons': { 
+                                'Cancel': function () {
+                                    M.dialog.close();
+                                },
+                                'Ok': function () {
+                                    goDownLoad();
+                                    M.dialog.close();
+                                }
+                            }
+                        });
+                        return;
+                    }
+                    var options = $('.optionitem.selected');
+                    var value = '';
+                    value += options[0].attributes['data-optionid'].value;
+                    var optiondate = $('.optiondate')[0].attributes['data-optionid'].value;
+                    window.location = 'result.html?client=' + platform + '&radom=' + Date.now() + '&gender=' + value + '&astro=' + optiondate; 
+                    console.log('Event_ThanksPage_Q' + $(this).attr('index') + '_Click'); 
+                    gtag('event', 'Event_ThanksPage_Q' + $(this).attr('index') + '_Click');
+                    gtag('event', 'Event_ThanksPage_Submit_Click');
+                } else {
+                    list.children().removeClass('prev').removeClass('active');
+                    list.children().eq(startIndex).hide();
+                    list.children().eq(startIndex).addClass('prev').removeClass('active').removeClass('next2');
+                    list.children().eq(startIndex).next().removeClass('next').addClass('active');
+                    list.children().eq(startIndex).next().next().removeClass('next2').addClass('next');
+                    startIndex += 1;
+                    console.log('Event_ThanksPage_Q' + $(this).attr('index') + '_Click'); 
+                    gtag('event', 'Event_ThanksPage_Q' + $(this).attr('index') + '_Click');
+                }
+            });
+
+            function startHtml() {
+                startIndex = 0;
+                var appWidth = $("#app").width();
+                var appHeight = $("body").height();
+                var height = appWidth * 138.0 / 300;
+                $(".icon-back").hide();
+                $('.card-list').attr("style", "background-size: " + (appWidth) + "px  " + height + "px;background-position:right bottom;");
+                var starHtml = '<div class="card-box active"><div class="card"><div class="question-wrap"><div class="question fs-30 text-center"><span class="d-ibm icon-wrap"><i class="d-b icon-starttop"></i></span></div><div class="question fs-30 text-center">' +
+                    'Test which celebrity you match the most' +
+                    '</div><div class="question fs-24 text-center">' +
+                    'Share to your friends to have fun together' +
+                    '</div><ul class="options"><div class="option-line" style="height: 15px"></div><div class="action-wrap"><div class="cp-btn startaction cp-btn--yellow">' +
+                    'START</div></div></ul><div class="question fs-start-18 text-center"><br>' +
+                    '</div></div></div></div>';
+                $('.card-list').empty();
+                $('.card-list').append(starHtml);
+            }
+
+            function startExam() {
+                $('.card-list').empty();
+                $(".icon-back").show();
+                var appWidth = $("#app").width();
+                var appHeight = $("body").height();
+                $('.card-list').attr("style", "background-size: 300px 138px;background-position:right bottom;");
+                for (var i = 0; i < dataExam.length; i++) {
+                    var element = dataExam[i];
+                    var optionHtml = '<div  class="card-box next2"><div class="card flex"><div class="question-wrap"><div class="question fs-18">';
+                    if (i == 0) {
+                        optionHtml = '<div  class="card-box active"><div class="card"><div class="question-wrap"><div class="question fs-18">';
+                    } else if (i == 1) {
+                        optionHtml = '<div   class="card-box next"><div class="card"><div class="question-wrap"><div class="question fs-18">';
+                    }
+                    optionHtml += (i + 1) + '. ' + element.title + '</div>';
+                    if (element.isDate === true) {
+                        optionHtml += '<ul class="options"><div data-optionid="A" class="fs-16 option optiondate"><div class="option-content flex__item">';
+                        optionHtml += '&nbsp;mm / dd &nbsp;';
+                        optionHtml += '</div></div><div class="option-line"></div>';
+                    } else {
+                        optionHtml += '<ul class="options"><div data-optionid="A" class="fs-16 option optionitem"><div class="option-content flex__item">';
+                        optionHtml += element.a;
+                        optionHtml += '</div></div><div class="option-line"></div><div data-optionid="B" class="fs-16 option optionitem"><div class="option-content flex__item">';
+                        optionHtml += element.b;
+                        optionHtml += '</div></div><div class="option-line"></div><div class="option-line"></div>';
+                    }
+                    optionHtml += '<div class="action-wrap"><div index="' + i + 1 + '" class="nextaction cp-btn cp-btn--yellow cp-btn--disabled">';
+                    if (i == dataExam.length - 1) {
+                        optionHtml += '&nbsp;&nbsp;' + 'Submit'.toUpperCase() + '&nbsp;&nbsp;';
+                    } else {
+                        optionHtml += 'NEXT';
+                    }
+                    optionHtml += '</div></div></ul></div></div></div>';
+                    $('.card-list').append(optionHtml);
+                }
+                dataMobileSelect();
+            }
+            topBar();
+            startHtml();
+        });
+
+        $(window).load(function () {
+            loadFunction();
+        });
+
+    </script>
+</head>
+
+<body>
+    <div id="app">
+        <div class="topbar">
+            <div class="s-tabcell topbar-left fl"><span class="d-ibm icon-wrap"><i class="d-b icon-back"></i></span>
+            </div>
+            <div class="fs-23 topbar-title s-tabcell"><span class="d-ibm">Happy Thanksgiving</span></div>
+            <div class="s-tabcell topbar-right fr"></div>
+        </div>
+        <div class="page-answer ">
+            <div class="card-list">
+                <div class="card-box active">
+
+                </div>
+            </div>
+            <div class="page-mark flex DownloadApp">
+                <i class="d-b icon-logo flex__item"></i>
+                <i class="d-b flex__item d-bm downtext">Download SeniorMeetMe to
+                    meet singles over 45</i>
+                <i class="d-b icon-down flex__item"></i>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
