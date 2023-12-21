@@ -137,3 +137,9 @@ Credits:
 		jquery.scrollzer (@ajlkn)
 		Skel (skel.io)
 ```
+
+# Start Service
+
+```
+bundle exec jekyll serve
+```
